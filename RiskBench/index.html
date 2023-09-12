@@ -285,12 +285,12 @@
     </section>
     <!-- /Interaction Types. -->
     
-    <!-- Dataset Collection Figure. -->
+    <!-- Data Collection. -->
     <section class="section is-small">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3">Dataset Collection</h2>
+            <h2 class="title is-3">Data Collection</h2>
             <div class="content has-text-justified">
               <p>
                 A scenario taxonomy and data augmentation pipeline are developed to collect 
@@ -310,7 +310,7 @@
         </div>
       </div>
     </section>
-    <!-- /Dataset Collection Figure. -->
+    <!-- /Data Collection. -->
 
 
     <!-- Dataset Details. -->
@@ -325,22 +325,19 @@
           <div class="column is-half">
             <h2 class="title is-4">Sensor Suite</h2>
             <div class="content has-text-justified">
-              <p>
+              <!-- <p>
                 <b>This section need to change to the newest version of our sensor suite.</b>
-              </p>
+              </p> -->
               <p>
-                We collect camera/depth/instance segmentation images from all 6 different views. For optical flow and dynamic 
+                We collect camera/depth/instance segmentation images from all front view sensors. For optical flow and dynamic 
                 vision sensors, we collect using the front-facing camera. 
-                Each perspective-view camera has a 90-degree field of view.
+                Our perspective-view camera has a 120-degree field of view.
               </p>
               <p>
-                In addition, we also collect bird’seye-view (BEV) camera images and instance segmentation.
-                The image resolution of the perspective-view sensor is 1280 by 720. 
-                The resolution of the BEV image is 512 by 512.
+                In addition, we also collect object bboxs and precise lane mark which can render BEV images ( max  pixel per merter: 10 ).
               </p>
               <p>
-                Alongside the camera data, we also collect LiDAR, GNSS, IMU, and Collision sensors. 
-                Our data is captured at a frame rate of 20 Hz.
+                Alongside the camera data, we also collect LiDAR, GNSS, IMU. Our data is captured at a frame rate of 20 Hz.
               </p>
             </div>
           </div>
@@ -412,6 +409,24 @@
 ’i’, ’t’, ’s’, and ’r’ indicate 4-way intersection, 3-way intersection, straight, and roundabout, respectively.
               </p>
               <img src="./static/img/Area_ID.png" alt="tasks" />
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-4">Additional Maps from Real World</h2>
+            <div class="content has-text-justified">
+              <h2 class="title is-5">A1</h2>
+              <img src="./static/img/A1.png" alt="tasks" />
+            </div>
+            <div class="content has-text-justified">
+              <h2 class="title is-5">B3</h2> 
+              <img src="./static/img/B3.png" alt="tasks" />
+            </div>
+            <div class="content has-text-justified">
+              <h2 class="title is-5">B7</h2>
+              <img src="./static/img/B7.png" alt="tasks" />
             </div>
           </div>
         </div>
