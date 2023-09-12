@@ -212,15 +212,15 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
         </div>
       </div>
-    </div> -->
+    </div>
     <!--/ Paper video. -->
   </div>
 </section>
@@ -232,7 +232,17 @@
     <section class="section is-small">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Interaction Types</h2>
+          <div class="column is-five-fifths">
+            <h2 class="title is-3">Interaction Types</h2>
+            <div class="content has-text-justified">
+              <p>
+                Our taxonomy comprises four interaction types: <b>Interactive</b>: yielding to dynamic risk, 
+                <b>Collision</b>: crashing scenario, <b>Obstacle</b>: interacting with static elements, 
+                and <b>Non-interactive</b>: normal driving, 
+                aiming to cover the different definitions of risks discussed in the community.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div class="columns is-vcentered">
@@ -272,24 +282,37 @@
             </div>  
           </div>
         </div>
-
       </div>
     </section>
     <!-- /Interaction Types. -->
-
+    
     <!-- Dataset Collection Figure. -->
     <section class="section is-small">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Dataset Collection Figure</h2>
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Dataset Collection</h2>
+            <div class="content has-text-justified">
+              <p>
+                A scenario taxonomy and data augmentation pipeline are developed to collect 
+                a range of diverse scenarios in a procedural manner. The 
+                taxonomy includes various attributes such as road topology, 
+                scenario types, ego vehicle behavior, and traffic participants’ 
+                behavior. From this taxonomy, if a scenario script is set, two 
+                human subjects can act accordingly. To form the final scenario dataset, 
+                we augment the collected scenario by changing attributes, including time of day, weather conditions, and traffic density.
+              </p>
+            </div>
+          </div>
         </div>
-        <br/>
+        
         <div class="columns is-centered has-text-centered">
           <img src="./static/img/data_collection.png" alt="tasks" />
         </div>
       </div>
     </section>
     <!-- /Dataset Collection Figure. -->
+
 
     <!-- Dataset Details. -->
     <section class="section is-small">
@@ -299,24 +322,42 @@
         </div>
         <br/>
 
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-4">Title</h2>
+        <div class="columns is-vcentered">
+          <div class="column is-half">
+            <h2 class="title is-4">Sensor Suite</h2>
             <div class="content has-text-justified">
               <p>
-                Description
+                <b>This section need to change to the newest version of our sensor suite.</b>
               </p>
-              <img src="./static/img/Area_ID.png" alt="tasks" />
+              <p>
+                We collect camera/depth/instance segmentation images from all 6 different views. For optical flow and dynamic 
+                vision sensors, we collect using the front-facing camera. 
+                Each perspective-view camera has a 90-degree field of view.
+              </p>
+              <p>
+                In addition, we also collect bird’seye-view (BEV) camera images and instance segmentation.
+                The image resolution of the perspective-view sensor is 1280 by 720. 
+                The resolution of the BEV image is 512 by 512.
+              </p>
+              <p>
+                Alongside the camera data, we also collect LiDAR, GNSS, IMU, and Collision sensors. 
+                Our data is captured at a frame rate of 20 Hz.
+              </p>
             </div>
+          </div>
+          <div class="column is-half">
+            <img src="./static/img/FoV_vehicular_sensors.png" alt="tasks" />
           </div>
         </div>
 
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-4">Title</h2>
+            <h2 class="title is-4">Scenario Taxonomy</h2>
             <div class="content has-text-justified">
               <p>
-                Description
+                The following summarizes all possible values of each taxonomy attribute.
+                The maximum number of <b>Basic Scenario</b> that the proposed taxonomy can describe is 547 
+                which is calculated without considering <b>Map</b> and <b>Area ID</b>.
               </p>
               <!-- <img src="./static/img/Scenario_Taxonomy.png" alt="tasks" /> -->
             </div>
@@ -361,29 +402,28 @@
           </div>
         </div>
 
-        <div class="columns is-vcentered">
-          <div class="column is-half">
-            <h2 class="title is-4">Title</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-4">Illustration of the labeled Area ID</h2>
             <div class="content has-text-justified">
               <p>
-                Description
+                We select three representative urban maps used in our dataset. The notations
+’i’, ’t’, ’s’, and ’r’ indicate 4-way intersection, 3-way intersection, straight, and roundabout, respectively.
               </p>
+              <img src="./static/img/Area_ID.png" alt="tasks" />
             </div>
-          </div>
-          <div class="column is-half">
-            <img src="./static/img/FoV_vehicular_sensors.png" alt="tasks" />
           </div>
         </div>
 
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-4">Title</h2>
-            <div class="content has-text-justified">
+            <h2 class="title is-4">Dataset Splits</h2>
+            <!-- <div class="content has-text-justified">
               <p>
-                Description
-              </p>
+                The statistics of the training, validation, and testing sets in different scenario types.
+              </p> -->
               <!-- <img src="./static/img/statistics.png" alt="tasks" /> -->
-            </div>
+            <!-- </div> -->
             <div class="content is-centered">
               <table style="border:3.px #cccccc solid;" cellpadding="10" border='1'>
                 <tr>
@@ -434,7 +474,6 @@
             Description
           </p>
         </div>
-
       </div>
     </section>
     <!-- /Experiment Setups. -->
@@ -448,16 +487,15 @@
       
         <div class="content has-text-centered">
           <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
+                  controls
+                  muted
+                  preload
+                  playsinline
+                  width="75%">
             <!-- <source src="./static/videos/replay.mp4"
                     type="video/mp4"> -->
           </video>
         </div>
-
       </div>
     </section>
     <!-- /Localization and Anticipation. -->
@@ -471,16 +509,15 @@
       
         <div class="content has-text-centered">
           <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
+                  controls
+                  muted
+                  preload
+                  playsinline
+                  width="75%">
             <!-- <source src="./static/videos/replay.mp4"
                     type="video/mp4"> -->
           </video>
         </div>
-
       </div>
     </section>
     <!-- /Planning-aware. -->
