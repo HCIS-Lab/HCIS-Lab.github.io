@@ -450,120 +450,123 @@
 
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-4">Labeled Area ID Examples</h2>
+            <h2 class="title is-4">Labeled Area for Data Collection</h2>
             <div class="content has-text-justified">
               <p>
-                We select three representative urban maps used in our dataset. The notations 
-                ’i’, ’t’, ’s’, and ’r’ indicate 4-way intersection, 3-way intersection, straight, and roundabout, respectively.
+                <b>Maps from CARLA simulator.</b> The notations ’i’, ’t1’, ''t2', 't3', ’s’, and ’r’ indicate 4-way intersection, 
+                T-intersection-A, T-intersection-B, T-intersection-C, straight, and roundabout.
               </p>
               <!-- <img src="./static/img/Area_ID.png" alt="tasks" /> -->
 
               <!-- Slideshow container -->
-            <div class="slideshow-container">
+              <div class="slideshow-container">
 
-              <!-- Full-width images with number and caption text -->
-              <div class="mySlides fade">                
-                <img src="./static/img/Town01.png" style="width:100%">
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">                
+                  <img src="./static/img/Town01.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="./static/img/Town02.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="./static/img/Town03.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="./static/img/Town05.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="./static/img/Town06.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="./static/img/Town07.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="./static/img/Town10.png" style="width:100%">
+                </div>
+
+              </div>
+              <!-- <br> -->
+
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+              </div>       
+
+              <p>
+                <b>Additional Maps from Real World.</b> 
+                To overcome the limited number of roundabouts in CARLA, 
+                we incorporate real-world maps from CAROM-Air [1] and reconstruct them in the CARLA simulator. 
+                Specifically, we select A0, A1, A6, B3, B7, B8 from CAROM-Air.
+              </p>
+              <!-- Slideshow container -->
+              <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides2 fade">
+                  <!-- <div class="numbertext">1 / 3</div> -->
+                  <img src="./static/img/A0.png" style="width:100%">
+                  <!-- <div class="text"><b>A1</b></div> -->
+                </div>
+
+                <div class="mySlides2 fade">
+                  <!-- <div class="numbertext">2 / 3</div> -->
+                  <img src="./static/img/A1.png" style="width:100%">
+                  <!-- <div class="text">Caption Two</div> -->
+                </div>
+
+                <div class="mySlides2 fade">
+                  <!-- <div class="numbertext">3 / 3</div> -->
+                  <img src="./static/img/A6.png" style="width:100%">
+                  <!-- <div class="text">Caption Three</div> -->
+                </div>
+
+                <div class="mySlides2 fade">
+                  <!-- <div class="numbertext">1 / 3</div> -->
+                  <img src="./static/img/B3.png" style="width:100%">
+                  <!-- <div class="text"><b>A1</b></div> -->
+                </div>
+
+                <div class="mySlides2 fade">
+                  <!-- <div class="numbertext">2 / 3</div> -->
+                  <img src="./static/img/B7.png" style="width:100%">
+                  <!-- <div class="text">Caption Two</div> -->
+                </div>
+
+                <div class="mySlides2 fade">
+                  <!-- <div class="numbertext">3 / 3</div> -->
+                  <img src="./static/img/B8.png" style="width:100%">
+                  <!-- <div class="text">Caption Three</div> -->
+                </div>
+              </div>
+              <!-- <br> -->
+
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                <span class="dot2" onclick="currentSlide2(1)"></span>
+                <span class="dot2" onclick="currentSlide2(2)"></span>
+                <span class="dot2" onclick="currentSlide2(3)"></span>
+                <span class="dot2" onclick="currentSlide2(4)"></span>
+                <span class="dot2" onclick="currentSlide2(5)"></span>
+                <span class="dot2" onclick="currentSlide2(6)"></span>
               </div>
 
-              <div class="mySlides fade">
-                <img src="./static/img/Town02.png" style="width:100%">
-              </div>
-
-              <div class="mySlides fade">
-                <img src="./static/img/Town03.png" style="width:100%">
-              </div>
-
-              <div class="mySlides fade">
-                <img src="./static/img/Town05.png" style="width:100%">
-              </div>
-
-              <div class="mySlides fade">
-                <img src="./static/img/Town06.png" style="width:100%">
-              </div>
-
-              <div class="mySlides fade">
-                <img src="./static/img/Town07.png" style="width:100%">
-              </div>
-
-              <div class="mySlides fade">
-                <img src="./static/img/Town10.png" style="width:100%">
-              </div>
+            <!-- </div> -->
+              <!-- <img src="./static/img/Area_ID.png" alt="tasks" /> -->
+            <!-- </div> -->
 
             </div>
-            <!-- <br> -->
-
-            <!-- The dots/circles -->
-            <div style="text-align:center">
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-              <span class="dot" onclick="currentSlide(4)"></span>
-              <span class="dot" onclick="currentSlide(5)"></span>
-              <span class="dot" onclick="currentSlide(6)"></span>
-              <span class="dot" onclick="currentSlide(7)"></span>
-            </div>       
-
-            </div>
-          </div>
-        </div>
-
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-4">Additional Maps from Real World</h2>
-
-            <!-- Slideshow container -->
-            <div class="slideshow-container">
-
-              <!-- Full-width images with number and caption text -->
-              <div class="mySlides2 fade">
-                <!-- <div class="numbertext">1 / 3</div> -->
-                <img src="./static/img/A0.png" style="width:100%">
-                <!-- <div class="text"><b>A1</b></div> -->
-              </div>
-
-              <div class="mySlides2 fade">
-                <!-- <div class="numbertext">2 / 3</div> -->
-                <img src="./static/img/A1.png" style="width:100%">
-                <!-- <div class="text">Caption Two</div> -->
-              </div>
-
-              <div class="mySlides2 fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="./static/img/A6.png" style="width:100%">
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-
-              <div class="mySlides2 fade">
-                <!-- <div class="numbertext">1 / 3</div> -->
-                <img src="./static/img/B3.png" style="width:100%">
-                <!-- <div class="text"><b>A1</b></div> -->
-              </div>
-
-              <div class="mySlides2 fade">
-                <!-- <div class="numbertext">2 / 3</div> -->
-                <img src="./static/img/B7.png" style="width:100%">
-                <!-- <div class="text">Caption Two</div> -->
-              </div>
-
-              <div class="mySlides2 fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="./static/img/B8.png" style="width:100%">
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-            </div>
-            <!-- <br> -->
-
-            <!-- The dots/circles -->
-            <div style="text-align:center">
-              <span class="dot2" onclick="currentSlide2(1)"></span>
-              <span class="dot2" onclick="currentSlide2(2)"></span>
-              <span class="dot2" onclick="currentSlide2(3)"></span>
-              <span class="dot2" onclick="currentSlide2(4)"></span>
-              <span class="dot2" onclick="currentSlide2(5)"></span>
-              <span class="dot2" onclick="currentSlide2(6)"></span>
-            </div>
-
           </div>
         </div>
 
@@ -717,6 +720,15 @@
   </div>
 </section>
 
+<div class="container is-max-desktop content">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <p>
+        [1] Lu et al., "CAROM Air -- Vehicle Localization and Traffic Scene Reconstruction from Aerial Videos". ICRA 2023.
+      </p>
+    </div>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="container">
