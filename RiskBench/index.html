@@ -623,11 +623,89 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-five-fifths">
             <h2 class="title is-3">Experiment Setups</h2>
-            <div class="content has-text-justified">
-              <p>
-                description
-              </p>
-            </div>
+          </div>
+        </div>
+        <div class="column is-five-fifths">
+          <h2 class="title is-4">Risk Identification Baselines</h2>
+          <div class="content has-text-justified">
+            <p>
+              The baselines take a sequence of historical data as input
+              and output a risk score for each road user (e.g., vehicle
+              or pedestrian) or an unexpected event (e.g., collision or
+              construction zone). We consider a road user or an unexpected
+              event risk if the score exceeds a predefined threshold. We
+              implement 10 risk identification algorithms and categorize
+              them into the following four types.
+            </p>
+            <menu>
+              <li>
+                <b>Rule-based:</b>             
+              </li>
+              <li>
+                <b>Trajectory Prediction and Collision Checking:</b>
+              </li>
+              <li>
+                <b>Collision Anticipation:</b>
+              </li>
+              <li>
+                <b>Behavior Prediction-based:</b>
+              </li>
+            </menu>
+            <p>
+              For training details, please refer to our <a href="https://github.com/HCIS-Lab/RiskBench">github</a>.
+            </p>
+          </div>
+
+          <h2 class="title is-4">Evaluation Metrics</h2>
+          <div class="content has-text-justified">
+            <p>
+              We devise three metrics that evaluate the ability of a risk 
+              identification algorithm to (1) identify locations of risks, (2) 
+              anticipate risks, and (3) facilitate decision-making.
+            </p>
+          </div>
+          <div class="content has-text-justified">
+            <ul class="nav pull-right">
+              <LI>
+                <b>Risk Localization:</b>  We utilize <b>precision</b> and <b>recall</b> for
+                risk localization evaluation and the <b>False Alarm Rate</b> for Non-interactive scenarios (no risky dynamic
+                elements or events), i.e., a positive prediction is a false alarm.
+              </LI>
+              <br/>
+
+              <LI>
+                <b>Risk Anticipation:</b> We propose <b>Progressive Increasing Cost</b> (PIC), 
+                an anticipation and localization-aware metric. Our insight is that we penalize a
+                false identification more when we are closer to the risk than far from the risk.
+              </LI>
+              <br/>
+
+              <LI>
+                <b>Planning Awareness:</b> We propose <b>Influenced Ratio</b> (IR)
+                to evaluate if a risk identification algorithm can facilitate
+                decision-making. Assume we access an ideal planner that
+                can interact with traffic participants and unexpected events.
+                <!-- <span class="math inline">IR = |<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub> − <em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub>|/<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span>, 
+                where the parameter <span class="math inline"><em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span> denotes the closest
+                distance while interacting between the ego vehicle and the
+                true risk in a scenario using the full observation. The parameter <span class="math inline"><em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub></span> denotes the closest distance while interacting
+                between the ego vehicle and the true risk with the masked
+                observation. -->
+                
+                <img src="./static/img/planning_aware.png" alt="tasks" width="100%" height="100%"/>
+              
+                <p>
+                  An ideal planner should be
+                  able to yield to the crossing vehicle as shown in (a). If a risk
+                  identification model successfully identifies the vehicle as the
+                  risk, we hide all the other objects. The planner should plan
+                  a slow-down path, as shown in (b). In contrast, if the model
+                  identifies the wrong object as risk (e.g., the green one), the
+                  planner will plan a path to (nearly) collide with the True
+                  Risk, as shown in (c).
+                </p>
+              </LI>
+            </ul>
           </div>
         </div>
       </div>
