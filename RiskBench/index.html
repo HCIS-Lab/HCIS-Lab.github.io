@@ -11,9 +11,10 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
     <script>
-      let slideIndex = 1, slideIndex2 = 1;
+      let slideIndex = 1, slideIndex2 = 1, slideIndex3 = 1;
       showSlides(slideIndex);
       showSlides2(slideIndex2);
+      showSlides3(slideIndex3);
 
       // Next/previous controls
       function plusSlides(n) {
@@ -26,6 +27,9 @@
       }
       function currentSlide2(n) {
         showSlides2(slideIndex2 = n);
+      }
+      function currentSlide3(n) {
+        showSlides3(slideIndex3 = n);
       }
 
       function showSlides(n) {
@@ -58,6 +62,22 @@
         }
         slides[slideIndex2-1].style.display = "block";
         dots[slideIndex2-1].className += " active";
+      }
+
+      function showSlides3(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides3");
+        let dots = document.getElementsByClassName("dot3");
+        if (n > slides.length) {slideIndex3 = 1}
+        if (n < 1) {slideIndex3 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex3-1].style.display = "block";
+        dots[slideIndex3-1].className += " active";
       }
     </script>
     <script>
@@ -95,6 +115,7 @@
 <script type="module">
   showSlides(slideIndex);
   showSlides2(slideIndex2);
+  showSlides3(slideIndex3);
 </script>
 <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -362,6 +383,251 @@
     <!-- /Data Collection. -->
 
 
+    <!-- Experiment Setups. -->
+    <section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-five-fifths">
+            <h2 class="title is-3">Experiment Setups</h2>
+          </div>
+        </div>
+        <div class="column is-five-fifths">
+          <h2 class="title is-4">Risk Identification Baselines</h2>
+          <div class="content has-text-justified">
+            <p>
+              The baselines take a sequence of historical data as input
+              and output a risk score for each road user (e.g., vehicle
+              or pedestrian) or an unexpected event (e.g., collision or
+              construction zone). We consider a road user or an unexpected
+              event risk if the score exceeds a predefined threshold. We
+              implement 10 risk identification algorithms and categorize
+              them into the following four types.
+            </p>
+            
+            <ul class="nav pull-right">
+              <li>
+                <b>Rule-based:</b>             
+              </li>
+              <li>
+                <b>Trajectory Prediction and Collision Checking:</b>
+              </li>
+              <li>
+                <b>Collision Anticipation:</b>
+              </li>
+              <li>
+                <b>Behavior Prediction-based:</b>
+              </li>
+            </ul>
+            <p>
+              For training details, please refer to our <a href="https://github.com/HCIS-Lab/RiskBench">github</a>.
+            </p>
+          </div>
+
+          <h2 class="title is-4">Evaluation Metrics</h2>
+          <div class="content has-text-justified">
+            <p>
+              We devise three metrics that evaluate the ability of a risk 
+              identification algorithm to (1) identify locations of risks, (2) 
+              anticipate risks, and (3) facilitate decision-making.
+            </p>
+          </div>
+          <div class="content has-text-justified">
+            <ul class="nav pull-right">
+              <LI>
+                <b>Risk Localization:</b>  We utilize <b>precision</b> and <b>recall</b> for
+                risk localization evaluation and the <b>False Alarm Rate</b> for Non-interactive scenarios (no risky dynamic
+                elements or events), i.e., a positive prediction is a false alarm.
+              </LI>
+              <br/>
+
+              <LI>
+                <b>Risk Anticipation:</b> We propose <b>Progressive Increasing Cost</b> (PIC), 
+                an anticipation and localization-aware metric. Our insight is that we penalize a
+                false identification more when we are closer to the risk than far from the risk.
+              </LI>
+              <br/>
+
+              <LI>
+                <b>Planning Awareness:</b> We propose <b>Influenced Ratio</b> (IR)
+                to evaluate if a risk identification algorithm can facilitate
+                decision-making. Assume we access an ideal planner that
+                can interact with traffic participants and unexpected events.
+                <!-- <span class="math inline">IR = |<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub> − <em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub>|/<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span>, 
+                where the parameter <span class="math inline"><em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span> denotes the closest
+                distance while interacting between the ego vehicle and the
+                true risk in a scenario using the full observation. The parameter <span class="math inline"><em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub></span> denotes the closest distance while interacting
+                between the ego vehicle and the true risk with the masked
+                observation. -->
+                
+                <img src="./static/img/planning_aware.png" alt="tasks" width="100%" height="100%"/>
+              
+                <p>
+                  An ideal planner should be
+                  able to yield to the crossing vehicle as shown in (a). If a risk
+                  identification model successfully identifies the vehicle as the
+                  risk, we hide all the other objects. The planner should plan
+                  a slow-down path, as shown in (b). In contrast, if the model
+                  identifies the wrong object as risk (e.g., the green one), the
+                  planner will plan a path to (nearly) collide with the True
+                  Risk, as shown in (c).
+                </p>
+              </LI>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Experiment Setups. -->
+
+    <!-- Localization and Anticipation. -->
+    <section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-five-fifths">
+            <h2 class="title is-3">Localization and Anticipation Demo</h2>
+            <div class="content has-text-justified">
+              <!-- <p>
+                description
+              </p> -->
+            </div>
+          </div>
+        </div>
+      
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-five-fifths">
+            <h2 class="title is-4">Fine-grained Scenario-based Analysis</h2>
+            <div class="content has-text-centered">
+              <!-- <video id="replay-video"
+                      controls
+                      muted
+                      preload
+                      playsinline
+                      width="75%">
+                <source src="./static/gif/localization_anticipation.gif"
+                        type="video/webm">
+              </video> -->
+              <img src="./static/gif/localization_anticipation.gif" alt="tasks" />
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-five-fifths">
+            <h2 class="title is-4">Qualitative Results For RIsk Identification</h2>
+            <div class="content has-text-centered">
+              <!-- <video id="replay-video"
+                      controls
+                      muted
+                      preload
+                      playsinline
+                      width="75%">
+                <source src="./static/gif/localization_anticipation.gif"
+                        type="video/webm">
+              </video> -->
+              <img src="./static/gif/localization_anticipation.gif" alt="tasks" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /Localization and Anticipation. -->
+
+    <!-- Planning-aware. -->
+    <section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-five-fifths">
+            <h2 class="title is-3">Planning-aware Demo</h2>
+            <div class="content has-text-justified">
+              <!-- <p>
+                description
+              </p> -->
+            </div>
+          </div>
+        </div>
+      
+        <div class="content has-text-centered">
+          <!-- Slideshow container -->
+          <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/interactive-10_i-1_1_p_c_l_1_0-variant_scenario-WetSunset_low_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/interactive-10_t2-4_1_t_u_r_1_rl_1-variant_scenario-HardRainSunset_mid_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/interactive-10_t2-7_1_t_r_r_1_0-variant_scenario-HardRainSunset_mid_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/interactive-10_t3-6_1_p_j_f_1_j-variant_scenario-WetSunset_high_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/interactive-10_t3-7_1_t_u_f_1_0-variant_scenario-WetNoon_high_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/obstacle-10_i-1_1_f_sr-variant_scenario-WetSunset_low_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/obstacle-10_i-1_1_l_sl-variant_scenario-CloudySunset_low_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/obstacle-10_s-1_1_f_sl-variant_scenario-CloudySunset_high_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/obstacle-10_s-2_3_f_sl-variant_scenario-ClearSunset_high_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/obstacle-10_s-3_1_f_sr-variant_scenario-HardRainSunset_low_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/obstacle-10_s-6_2_f_sr-variant_scenario-HardRainSunset_high_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/obstacle-10_t1-3_0_r_sr-variant_scenario-CloudySunset_low_.gif" style="width:100%">
+            </div>
+            <div class="mySlides3 fade">                
+              <img src="./static/gif/obstacle-10_t1-7_2_l_sr-variant_scenario-CloudySunset_mid_.gif" style="width:100%">
+            </div>
+
+
+
+          </div>
+          <!-- <br> -->
+
+          <!-- The dots/circles -->
+          <div style="text-align:center">
+            <span class="dot3" onclick="currentSlide3(1)"></span>
+            <span class="dot3" onclick="currentSlide3(2)"></span>
+            <span class="dot3" onclick="currentSlide3(3)"></span>
+            <span class="dot3" onclick="currentSlide3(4)"></span>
+            <span class="dot3" onclick="currentSlide3(5)"></span>
+            <span class="dot3" onclick="currentSlide3(6)"></span>
+            <span class="dot3" onclick="currentSlide3(7)"></span>
+            <span class="dot3" onclick="currentSlide3(8)"></span>
+            <span class="dot3" onclick="currentSlide3(9)"></span>
+            <span class="dot3" onclick="currentSlide3(10)"></span>
+            <span class="dot3" onclick="currentSlide3(11)"></span>
+            <span class="dot3" onclick="currentSlide3(12)"></span>
+            <span class="dot3" onclick="currentSlide3(13)"></span>
+          </div>
+
+          <!-- <video id="replay-video"
+                  controls
+                  muted
+                  preload
+                  playsinline
+                  width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video> -->
+        </div>
+      </div>
+    </section>
+    <!-- /Planning-aware. -->
+
     <!-- Dataset Details. -->
     <section class="section is-small">
       <div class="container is-max-desktop">
@@ -616,160 +882,6 @@
       </div>
     </section>
     <!-- /Dataset Details. -->
-
-    <!-- Experiment Setups. -->
-    <section class="section is-small">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-five-fifths">
-            <h2 class="title is-3">Experiment Setups</h2>
-          </div>
-        </div>
-        <div class="column is-five-fifths">
-          <h2 class="title is-4">Risk Identification Baselines</h2>
-          <div class="content has-text-justified">
-            <p>
-              The baselines take a sequence of historical data as input
-              and output a risk score for each road user (e.g., vehicle
-              or pedestrian) or an unexpected event (e.g., collision or
-              construction zone). We consider a road user or an unexpected
-              event risk if the score exceeds a predefined threshold. We
-              implement 10 risk identification algorithms and categorize
-              them into the following four types.
-            </p>
-            
-            <ul class="nav pull-right">
-              <li>
-                <b>Rule-based:</b>             
-              </li>
-              <li>
-                <b>Trajectory Prediction and Collision Checking:</b>
-              </li>
-              <li>
-                <b>Collision Anticipation:</b>
-              </li>
-              <li>
-                <b>Behavior Prediction-based:</b>
-              </li>
-            </ul>
-            <p>
-              For training details, please refer to our <a href="https://github.com/HCIS-Lab/RiskBench">github</a>.
-            </p>
-          </div>
-
-          <h2 class="title is-4">Evaluation Metrics</h2>
-          <div class="content has-text-justified">
-            <p>
-              We devise three metrics that evaluate the ability of a risk 
-              identification algorithm to (1) identify locations of risks, (2) 
-              anticipate risks, and (3) facilitate decision-making.
-            </p>
-          </div>
-          <div class="content has-text-justified">
-            <ul class="nav pull-right">
-              <LI>
-                <b>Risk Localization:</b>  We utilize <b>precision</b> and <b>recall</b> for
-                risk localization evaluation and the <b>False Alarm Rate</b> for Non-interactive scenarios (no risky dynamic
-                elements or events), i.e., a positive prediction is a false alarm.
-              </LI>
-              <br/>
-
-              <LI>
-                <b>Risk Anticipation:</b> We propose <b>Progressive Increasing Cost</b> (PIC), 
-                an anticipation and localization-aware metric. Our insight is that we penalize a
-                false identification more when we are closer to the risk than far from the risk.
-              </LI>
-              <br/>
-
-              <LI>
-                <b>Planning Awareness:</b> We propose <b>Influenced Ratio</b> (IR)
-                to evaluate if a risk identification algorithm can facilitate
-                decision-making. Assume we access an ideal planner that
-                can interact with traffic participants and unexpected events.
-                <!-- <span class="math inline">IR = |<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub> − <em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub>|/<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span>, 
-                where the parameter <span class="math inline"><em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span> denotes the closest
-                distance while interacting between the ego vehicle and the
-                true risk in a scenario using the full observation. The parameter <span class="math inline"><em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub></span> denotes the closest distance while interacting
-                between the ego vehicle and the true risk with the masked
-                observation. -->
-                
-                <img src="./static/img/planning_aware.png" alt="tasks" width="100%" height="100%"/>
-              
-                <p>
-                  An ideal planner should be
-                  able to yield to the crossing vehicle as shown in (a). If a risk
-                  identification model successfully identifies the vehicle as the
-                  risk, we hide all the other objects. The planner should plan
-                  a slow-down path, as shown in (b). In contrast, if the model
-                  identifies the wrong object as risk (e.g., the green one), the
-                  planner will plan a path to (nearly) collide with the True
-                  Risk, as shown in (c).
-                </p>
-              </LI>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /Experiment Setups. -->
-
-    <!-- Localization and Anticipation. -->
-    <section class="section is-small">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-five-fifths">
-            <h2 class="title is-3">Localization and Anticipation Demo</h2>
-            <div class="content has-text-justified">
-              <!-- <p>
-                description
-              </p> -->
-            </div>
-          </div>
-        </div>
-      
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                  controls
-                  muted
-                  preload
-                  playsinline
-                  width="75%">
-            <source src="./static/video/localization_anticipation.webm"
-                    type="video/webm">
-          </video>
-        </div>
-      </div>
-    </section>
-    <!-- /Localization and Anticipation. -->
-
-    <!-- Planning-aware. -->
-    <section class="section is-small">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-five-fifths">
-            <h2 class="title is-3">Planning-aware Demo</h2>
-            <div class="content has-text-justified">
-              <!-- <p>
-                description
-              </p> -->
-            </div>
-          </div>
-        </div>
-      
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                  controls
-                  muted
-                  preload
-                  playsinline
-                  width="75%">
-            <!-- <source src="./static/videos/replay.mp4"
-                    type="video/mp4"> -->
-          </video>
-        </div>
-      </div>
-    </section>
-    <!-- /Planning-aware. -->
 
   </div>
 </section>
