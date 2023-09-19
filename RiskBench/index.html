@@ -11,10 +11,11 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
     <script>
-      let slideIndex = 1, slideIndex2 = 1, slideIndex3 = 1;
+      let slideIndex = 1, slideIndex2 = 1, slideIndex3 = 1, slideIndex4 = 1;
       showSlides(slideIndex);
       showSlides2(slideIndex2);
       showSlides3(slideIndex3);
+      showSlides4(slideIndex4);
 
       // Next/previous controls
       function plusSlides(n) {
@@ -31,6 +32,10 @@
       function currentSlide3(n) {
         showSlides3(slideIndex3 = n);
       }
+      function currentSlide4(n) {
+        showSlides4(slideIndex4 = n);
+      }
+
 
       function showSlides(n) {
         let i;
@@ -79,6 +84,22 @@
         slides[slideIndex3-1].style.display = "block";
         dots[slideIndex3-1].className += " active";
       }
+      
+      function showSlides4(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides4");
+        let dots = document.getElementsByClassName("dot4");
+        if (n > slides.length) {slideIndex4 = 1}
+        if (n < 1) {slideIndex4 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex4-1].style.display = "block";
+        dots[slideIndex4-1].className += " active";
+      }
     </script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -116,6 +137,7 @@
   showSlides(slideIndex);
   showSlides2(slideIndex2);
   showSlides3(slideIndex3);
+  showSlides4(slideIndex4);
 </script>
 <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -506,7 +528,32 @@
                 <source src="./static/gif/localization_anticipation.gif"
                         type="video/webm">
               </video> -->
-              <img src="./static/gif/localization_anticipation.gif" alt="tasks" />
+              <!-- Slideshow container -->
+              <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides4 fade">                
+                  <img src="./static/gif/qualitative_interactive.gif" style="width:100%">
+                </div>
+                <div class="mySlides4 fade">                
+                  <img src="./static/gif/qualitative_collision.gif" style="width:100%">
+                </div>
+                <div class="mySlides4 fade">                
+                  <img src="./static/gif/qualitative_obstacle.gif" style="width:100%">
+                </div>
+                <div class="mySlides4 fade">                
+                  <img src="./static/gif/qualitative_non-inter.gif" style="width:100%">
+                </div>
+              </div>
+              <!-- <br> -->
+
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                <span class="dot4" onclick="currentSlide4(1)"></span>
+                <span class="dot4" onclick="currentSlide4(2)"></span>
+                <span class="dot4" onclick="currentSlide4(3)"></span>
+                <span class="dot4" onclick="currentSlide4(4)"></span>
+              </div>
             </div>
           </div>
         </div>
