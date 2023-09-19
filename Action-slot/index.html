@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Action-Slot: Visual Action-centric Representation for Traffic Pattern Recognition"> 
+  <meta name="keywords" content="Slot Attention, Traffic Pattern, Action Recognition">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action-Slot: Visual Action-centric Representation for Traffic Pattern Recognition</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Action-Slot: Visual Action-centric Representation for Traffic Pattern Recognition</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block-name">
+              <a href="https://sites.google.com/view/chialiangkuo">Chi-Hsi Kung</a><sup>1</sup>,</span>
+            <span class="author-block-name">
+              <a href="https://research.nvidia.com/person/yu-wei-chao">Shu-Wei Lu</a><sup>1</sup>,</span>
+            <span class="author-block-name">
+              <a href="https://research.nvidia.com/person/yu-wei-chao">Yi-Hsuan Tsai</a><sup>2</sup>,</span>
+            <span class="author-block-name">
+              <a href="https://sites.google.com/site/yitingchen0524">Yi-Ting Chen</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>National Yang Ming Chiao Tung University</span>
+            <span class="author-block"><sup>2</sup>Google</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <!-- <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+      <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+          <div class="flex-container">
+            <img src="./static/videos/supporting_item_6-scissor_3_short.gif" class="image-row-3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="abstract">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Recognizing traffic patterns is a crucial aspect for intelligent driving systems. To address the need for fine-grained traffic scene understanding, we introduce a dataset that is specifically designed for topology-aware traffic pattern recognition, framed as a multi-label action recognition task. We first identify the unique challenges of this task and explore the limitation of existing video action recognition methods. Then, we propose Action-Slot, a slot-attention-based approach that enables the learning of compact action-centric representations to capture both motion and contextual information. Our key idea is to design action slots that are capable of paying attention to regions where individual traffic patterns occur, without the need to explicitly provide perception guidance. To further enhance slot attention, we propose to use a background slot that competes with action slots, thus facilitating the training process not to focus on background regions where there are no activities. To validate the effectiveness of our method, we conduct comprehensive experiments and ablation studies against various action recognition baselines on the proposed dataset. We will make our dataset, code, and models available to the public.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Semantic Keypoint Trajectory (SKT)</h2>
+    </div>
+    <div class="content has-text-justified">
+      <p>  </p>
+      <img src="./static/images/overall.png">
+    </div>
+    <div class="content has-text-justified">
+      <img src="./static/videos/skt-animation.gif">
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        The task of robot hanging a grasped object onto a supporting item 
+        involves a diverse range of grasped objects and supporting items 
+        with various shapes and geometric structures. In this work, we 
+        introduce Semantic Keypoint Trajectory (SKT), an actionable representation 
+        that specifies where and how to hang grasped objects onto a supporting item. 
+        Our experiments show that SKT is object-agnostic, enabling hanging various 
+        objects onto the same supporting item.
+      </p>
+
+      <!-- <p>
+        SKT is an actionable representation that
+        simultaneously models the hanging part of the supporting
+        item and the hanging movements of the objects’ keypoints.
+        The design of SKT
+        is inspired by the observation that keypoints can be defined
+        across objects such that they have similar movements when
+        hanging onto the same supporting item.
+      </p> -->
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">SKT Generation Network</h2>
+    </div>
+    <div class="content has-text-justified">
+      <h3 style="text-align: center;">The Shape-Conditioned Trajectory Deformation Network (SCTDN)</h3>
+    </div>
+    <div class="content has-text-justified">
+      <img src="./static/images/architecture.png">
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        <!-- We propose a Shape-Conditioned Trajectory Deformation
+        Network (SCTDN), a novel learning framework for the hanging task. It leverages the strategy of deforming a template
+        trajectory based on shape-conditioned features to generate
+        the target semantic keypoint trajectory (SKT) for the partial
+        point cloud of the input supporting item. -->
+        We introduce a novel learning framework for SKT generation: Shape-Conditioned Trajectory Deformation Network (SCTDN). 
+        SCTDN takes the partial point cloud of a supporting item as input and generates the corresponding SKT by deforming 
+        a retrieved template SKT based on the task- relevant geometric structure features.
+      </p>
+      <p>
+        Building on the well-established advancements in object keypoint prediction, our proposed representation and the 
+        learning framework aims to tackle the challenge of effectively determining the appropriate actions for object hanging tasks.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Environment Settings</h2>
+    </div>
+    <div class="flex-container">
+      <img src="./static/images/blank.png" class="image-row-blank">
+      <img src="./static/images/setting.png" class="image-row-center">
+      <img src="./static/images/blank.png" class="image-row-blank">
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        Our environment setting of the hanging task involves a supporting item and an object grasped by a
+        robot arm. The robot’s objective is to determine a sequence of actions for hanging a grasped
+        object onto a supporting item.
+        To obtain the keypoint of an object, an Apriltag board is positioned in front of the hanging part to 
+        establish the oriented object keypoint. Alternatively, one can use off-the-shelf methods such as 
+        Takeuchi et al. [1] and Wei Gao, Russ Tedrake [2] to obtain oriented object keypoints.
+      </p>
+    </div>
+
+    <div class="flex-container">
+      <img src="./static/images/blank.png" class="image-row-blank">
+      <img src="./static/images/simulation_object_hooks.png" class="image-row-center">
+      <img src="./static/images/blank.png" class="image-row-blank">
+    </div>
+    <div class="flex-container">
+      <img src="./static/images/blank.png" class="image-row-blank">
+      <img src="./static/images/real_objects_hooks.png" class="image-row-center">
+      <img src="./static/images/blank.png" class="image-row-blank">
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        For simulation evaluation, we assess the performance of all methods by measuring their success rates and 
+        inference times across <b>3,000 hanging processes involving 50 objects and 60 unseen supporting items</b> (Top). 
+        These supporting items are manually categorized into four levels of difficulty: Easy, Normal, Hard, and Very
+        Hard based on the complexity of the hanging part on them, with 15 assigned to each level.
+        For real-world evaluation, we used a total of 10 objects and 10 supporting items for our hanging evaluation (Bottom).
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Qualitative Results</h2>
+      <div class="content hs-text-jstified">
+      </div>
+    </div>
+    <!-- before / after deformation -->
+    <div class="content has-text-justified">
+      <h3 style="text-align: center;">Before / After Trajectory Deformation</h3>
+      <div class="flex-container">
+        <img src="./static/images/blank.png" class="image-row-blank">
+        <img src="./static/images/before_after_deformation.png" class="image-row-center">
+        <img src="./static/images/blank.png" class="image-row-blank">
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        The visualization results of the semantic keypoint trajectories of the testing shapes
+        before and after deformation by SCTDN. (a) before deformation (using template semantic key-
+        point trajectories only.) (b) after deformation of the template semantic keypoint trajectories
+        using SCTDN.
+      </p>
+    </div>
+    <!-- before / after deformation -->
+    <div class="content has-text-justified">
+      <div class="content has-text-justified">
+        <h3 style="text-align: center;">Affordance Maps and SKTs Predicted by SCTDN</h3>
+      </div>
+      <div class="flex-container">
+        <img src="./static/images/blank.png" class="image-row-blank">
+        <img src="./static/images/simulation_inference.png" class="image-row-center">
+        <img src="./static/images/blank.png" class="image-row-blank">
+      </div>
+      <p style="text-align: center;">Simulation</p>
+    </div>
+    <div class="content has-text-justified">
+      <div class="flex-container">
+        <img src="./static/images/blank.png" class="image-row-blank">
+        <img src="./static/images/real_inference.png" class="image-row-center">
+        <img src="./static/images/blank.png" class="image-row-blank">
+      </div>
+      <p style="text-align: center;">Real World</p>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        The visualization of point clouds, affordance maps, and the semantic keypoint
+        trajectories for each supporting item.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{skthang2023,
+  title={Action-Slot: Visual Action-centric Representation for Traffic Pattern Recognition},
+  author={Chi-Hsi Kung, Shu-Wei Lu, Yi-Hsuan Tsai, Yi-Ting Chen},
+  year={2023},
+  booktitle={arXiv},
+}
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/images/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template modified from <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">NeRFies</a>.
+          <p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

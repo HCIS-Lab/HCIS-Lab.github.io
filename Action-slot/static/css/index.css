@@ -1,0 +1,280 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.hs-text-jstified {
+  padding: 20px;
+  text-align: left;
+}
+
+.flex-container {
+  display: flex; /* 使用 Flex 布局 */
+  justify-content: space-between; /* 左右对齐 */
+  align-items: center; /* 垂直居中对齐 */
+  padding: 0%;
+}
+
+.has-text-justified {
+  justify-content: space-between; /* 左右对齐 */
+  align-items: center; /* 垂直居中对齐 */
+  text-align: center; /* 垂直居中对齐 */
+  padding: 10px;
+}
+
+.image-row-blank {
+  max-width: 10%; /* Set the maximum width for each image */
+}
+
+.image-row-center {
+  max-width: 80%; /* Set the maximum width for each image */
+}
+
+.image-row-2 {
+  max-width: 50%; /* Set the maximum width for each image */
+}
+
+.image-row-3 {
+  max-width: 33.3%; /* Set the maximum width for each image */
+}
+
+.image-row-4 {
+  max-width: 25%; /* Set the maximum width for each image */
+  justify-content: center; 
+  align-items: center;
+}
+
+.image-row-5 {
+  max-width: 20%; /* Set the maximum width for each image */
+}
+
+.image-row-6 {
+  max-width: 16.7%; /* Set the maximum width for each image */
+}
+
+
+.success {
+  background-color: #77ff77; 
+  justify-content: center; 
+  align-items: center;
+  padding: 1px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 10px;
+  line-height: 11px;
+  text-align: center;
+  /* color: #005878; */
+}
+
+.failed {
+  background-color: #ff7777; 
+  justify-content: center; 
+  align-items: center;
+  padding-top: 1px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 10px;
+  line-height: 11px;
+  text-align: center;
+  /* color: #005878; */
+}
+
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   /* color: hsl(204, 86%, 53%) !important; */
+   color: #005878 !important;
+}
+
+.publication-authors a {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.author-block-name {
+  display: inline-block;
+  color: #005878 ;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+#abstract {
+  background-color: #eeeeee;
+}
+
+.is-3 {
+  color: #005878 !important;
+}
+
+table {
+  border-collapse: collapse;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  line-height: 17px;
+  font-family: 'New Times Roman';
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 0px;
+}
+
+/* Style the table header row */
+th {
+  background-color: #f2f2f2;
+}
+
+/* Style the top border line */
+table thead tr {
+  border-top: 2px solid #000000; /* Change the color or width as needed */
+}
+
+table tr.middle-border td {
+  border-top: 2px solid #000; /* Change the color or width as needed */
+}
+
+table tr td.rowhead-border {
+  border-right: 1px solid #888888; /* Change the color or width as needed */
+}
+
+table tr th.rowhead-border {
+  border-right: 1px solid #888888; /* Change the color or width as needed */
+}
