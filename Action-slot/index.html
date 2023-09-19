@@ -218,11 +218,8 @@
       <img src="./static/images/teaser.png">
     </div>
     <div class="content has-text-justified">
-      <img src="./static/videos/skt-animation.gif">
-    </div>
-    <div class="content has-text-justified">
       <p>
-        The task of .
+        
       </p>
     </div>
   </div>
@@ -272,12 +269,7 @@
     </div>
     <div class="content has-text-justified">
       <p>
-        Our environment setting of the hanging task involves a supporting item and an object grasped by a
-        robot arm. The robot’s objective is to determine a sequence of actions for hanging a grasped
-        object onto a supporting item.
-        To obtain the keypoint of an object, an Apriltag board is positioned in front of the hanging part to 
-        establish the oriented object keypoint. Alternatively, one can use off-the-shelf methods such as 
-        Takeuchi et al. [1] and Wei Gao, Russ Tedrake [2] to obtain oriented object keypoints.
+        Our environment setting.
       </p>
     </div>
 
@@ -307,7 +299,7 @@
 <section class="section is-max-desktop">
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Benchmark</h2>
+      <h2 class="title is-3">Benchmark on the TACO Dataset</h2>
     </div>
     <div class="content hs-text-jstified">
       <h3 style="text-align: center;">Table 1: </h3>
@@ -353,15 +345,85 @@
           <td>53.1</td>
         </tr>
         <tr class="middle-border">
-          <td class="rowhead-border">SCTDN (pos+rot)</td>
-          <td class="rowhead-border">10</td>
-          <td class="rowhead-border">69.4</td>
-          <td>90.7</td>
-          <td>83.1</td>
-          <td>60.1</td>
-          <td>43.6</td>
+          <td>MViT</td>
+          <td>57.9</td>
+          <td>16</td>
+          <td>59.4</td>
+          <td>45.0</td>
+          <td>53.7</td>
         </tr>
-
+        <tr>
+          <td>VideoMAE</td>
+          <td>57.9</td>
+          <td>16</td>
+          <td>69.9</td>
+          <td>50.9</td>
+          <td>62.3</td>
+        </tr>
+        <tr class="middle-border">
+          <td>ARG</td>
+          <td>12.2</td>
+          <td>16</td>
+          <td>54.6</td>
+          <td><44.1</td>
+          <td><50.4</td>
+        </tr>
+        <tr>
+          <td>ARG*</td>
+          <td>12.2</td>
+          <td>16</td>
+          <td>56.7</td>
+          <td>48.3</td>
+          <td>53.4</td>
+        </tr>
+        <tr>
+          <td>ORN</td>
+          <td>4.8</td>
+          <td>16</td>
+          <td>51.3</td>
+          <td>43.1</td>
+          <td>48.0</td>
+        </tr>
+        <tr>
+          <td>ORN*</td>
+          <td>4.8</td>
+          <td>16</td>
+          <td>53.3</td>
+          <td>48.7</td>
+          <td>51.5</td>
+        </tr>
+        <tr class="middle-border">
+          <td>SAVi</td>
+          <td>2.3</td>
+          <td>16</td>
+          <td>53.9</td>
+          <td><47.1</td>
+          <td><51.0</td>
+        </tr>
+        <tr>
+          <td>MO</td>
+          <td>2.3</td>
+          <td>16</td>
+          <td>50.7</td>
+          <td>53.5</td>
+          <td>51.8</td>
+        </tr>
+        <tr>
+          <td>Slot-VPS</td>
+          <td>2.3</td>
+          <td>16</td>
+          <td>67.0</td>
+          <td>62.9</td>
+          <td>65.4</td>
+        </tr>
+        <tr class="middle-border">
+          <td>Action-Slot</td>
+          <td>2.3</td>
+          <td>16</td>
+          <td>74.7</td>
+          <td>69.3</td>
+          <td>72.6</td>
+        </tr>
       </table>
       <p>
       </p>
@@ -373,60 +435,86 @@
 
 <hr>
 
+
 <section class="section is-max-desktop">
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Qualitative Results</h2>
-      <div class="content hs-text-jstified">
-      </div>
+      <h2 class="title is-3">Benchmark on the ROAD Dataset</h2>
     </div>
-    <!-- before / after deformation -->
-    <div class="content has-text-justified">
-      <h3 style="text-align: center;">Before / After Trajectory Deformation</h3>
-      <div class="flex-container">
-        <img src="./static/images/blank.png" class="image-row-blank">
-        <img src="./static/images/before_after_deformation.png" class="image-row-center">
-        <img src="./static/images/blank.png" class="image-row-blank">
-      </div>
-    </div>
-    <div class="content has-text-justified">
+    <div class="content hs-text-jstified">
+      <h3 style="text-align: center;">Table 1: </h3>
+      <table>
+        <tr>
+          <th class="rowhead-border"></th>
+          <th>pretrained on TACO</th>
+          <th>trained from scratch on ROAD</th>
+          <th>pretrained on TACO + fine-tune on ROAD</th>
+        </tr>
+        <tr class="middle-border">
+          <td>I3D</td>
+          <td>19.5</td>
+          <td>33.4</td>
+          <td>40.5</td>
+        </tr>
+        <tr>
+          <td>X3D</td>
+          <td>20.0</td>
+          <td>41.8</td>
+          <td>43.3</td>
+        </tr>
+        <tr>
+          <td>SlowFast</td>
+          <td>27.2</td>
+          <td>40.7</td>
+          <td>56.4</td>
+        </tr>
+        <tr>
+          <td>VideoMAE</td>
+          <td>24.7</td>
+          <td>26.8</td>
+          <td>29.2</td>
+        </tr>
+        <tr class="middle-border">
+        <tr>
+          <td>MO</td>
+          <td>33.8</td>
+          <td>40.6</td>
+          <td>46.0</td>
+        </tr>
+        <tr>
+          <td>Slot-VPS</td>
+          <td>30.8</td>
+          <td>36.7</td>
+          <td>52.1</td>
+        </tr>
+        <tr class="middle-border">
+          <td>Action-Slot (I3D)</td>
+          <td>24.6</td>
+          <td>35.6</td>
+          <td>46.3 (+5.8%)</td>
+        </tr>
+        <tr>
+          <td>Action-slot (X3D)</td>
+          <td>31.3</td>
+          <td>40.1</td>
+          <td>54.4 (+11.1%)</td>
+        </tr>
+        <tr>
+          <td>Action-slot (SlowFast)</td>
+          <td>36.8</td>
+          <td>37.5</td>
+          <td>62.5 (+6.1%)</td>
+        </tr>
+      </table>
       <p>
-        The visualization results of the semantic keypoint trajectories of the testing shapes
-        before and after deformation by SCTDN. (a) before deformation (using template semantic key-
-        point trajectories only.) (b) after deformation of the template semantic keypoint trajectories
-        using SCTDN.
+      </p>
+
       </p>
     </div>
-    <!-- before / after deformation -->
-    <div class="content has-text-justified">
-      <div class="content has-text-justified">
-        <h3 style="text-align: center;">Affordance Maps and SKTs Predicted by SCTDN</h3>
-      </div>
-      <div class="flex-container">
-        <img src="./static/images/blank.png" class="image-row-blank">
-        <img src="./static/images/simulation_inference.png" class="image-row-center">
-        <img src="./static/images/blank.png" class="image-row-blank">
-      </div>
-      <p style="text-align: center;">Simulation</p>
-    </div>
-    <div class="content has-text-justified">
-      <div class="flex-container">
-        <img src="./static/images/blank.png" class="image-row-blank">
-        <img src="./static/images/real_inference.png" class="image-row-center">
-        <img src="./static/images/blank.png" class="image-row-blank">
-      </div>
-      <p style="text-align: center;">Real World</p>
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        The visualization of point clouds, affordance maps, and the semantic keypoint
-        trajectories for each supporting item.
-      </p>
-    </div>
-  </div>
+  </div> 
 </section>
 
-
+<hr>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
