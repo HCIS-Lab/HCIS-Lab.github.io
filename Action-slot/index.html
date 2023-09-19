@@ -289,13 +289,13 @@
 
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides4 fade">                
-                  <img src="./static/images/carla_3.gif" style="width:100%">
+                  <img src="./static/images/carla_3.gif" style="width:60%">
                 </div>
                 <div class="mySlides4 fade">                
-                  <img src="./static/gif/carla_4.gif" style="width:100%">
+                  <img src="./static/images/carla_4.gif" style="width:60%">
                 </div>
                 <div class="mySlides4 fade">                
-                  <img src="./static/gif/carla_5.gif" style="width:100%">
+                  <img src="./static/images/carla_5.gif" style="width:60%">
                 </div>
               </div>
               <!-- <br> -->
@@ -328,13 +328,13 @@
 
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides4 fade">                
-                  <img src="./static/images/road_1.gif" style="width:100%">
+                  <img src="./static/images/road_1.gif" style="width:60%">
                 </div>
                 <div class="mySlides4 fade">                
-                  <img src="./static/gif/road_2.gif" style="width:100%">
+                  <img src="./static/images/road_2.gif" style="width:60%">
                 </div>
                 <div class="mySlides4 fade">                
-                  <img src="./static/gif/road_3.gif" style="width:100%">
+                  <img src="./static/images/road_3.gif" style="width:60%">
                 </div>
               </div>
               <!-- <br> -->
@@ -511,12 +511,28 @@
           <td>65.4</td>
         </tr>
         <tr class="middle-border">
-          <td>Action-Slot</td>
+          <td>Action-Slot (I3D)</td>
+          <td>2.3</td>
+          <td>8</td>
+          <td>58.3</td>
+          <td>55.2</td>
+          <td>56.5</td>
+        </tr>
+        <tr>
+          <td>Action-Slot (X3D)</td>
           <td>2.3</td>
           <td>16</td>
           <td>74.7</td>
           <td>69.3</td>
           <td>72.6</td>
+        </tr>
+        <tr>
+          <td>Action-slot (SlowFast)</td>
+          <td>2.3</td>
+          <td>32</td>
+          <td>65.7</td>
+          <td>63.5</td>
+          <td>64.8</td>
         </tr>
       </table>
       <p>
@@ -526,8 +542,6 @@
     </div>
   </div> 
 </section>
-
-<hr>
 
 
 <section class="section is-max-desktop">
@@ -600,13 +614,62 @@
           <td>62.5 (+6.1%)</td>
         </tr>
       </table>
-      <p>
-      </p>
 
       </p>
     </div>
   </div> 
 </section>
+
+<hr>
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Dataset Details</h2>
+    </div>
+<!--     <div class="content has-text-justified">
+      <h3 style="text-align: center;">The Shape-Conditioned Trajectory Deformation Network (SCTDN)</h3>
+    </div> -->
+    <div class="content hs-text-jstified">
+      <h3 style="text-align: center;">Table 1: </h3>
+      <table>
+        <tr>
+          <th> </th>
+          <th>size (minutes)</th>
+          <th># of clips</th>
+          <th># of labels</th>
+        </tr>
+        <tr class="middle-border">
+          <td>ROAD</td>
+          <td>134</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>annotated ROAD</td>
+          <td>27</td>
+          <td>127</td>
+          <td>338</td>
+        </tr>
+        <tr class="middle-border">
+          <td>TACO</td>
+          <td>284</td>
+          <td>3130</td>
+          <td>7584</td>
+        </tr>
+      </table>
+    </div>
+      <p>
+        Building on the well-established advancements in object keypoint prediction, our proposed representation and the 
+        learning framework aims to tackle the challenge of effectively determining the appropriate actions for object hanging tasks.
+      </p>
+    </div>
+    <div class="content has-text-justified">
+      <img src="./static/images/statistics.png">
+    </div>
+  </div>
+</section>
+
 
 <hr>
 
