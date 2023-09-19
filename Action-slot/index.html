@@ -214,12 +214,11 @@
       <h2 class="title is-3">Traffic Pattern Recognition</h2>
     </div>
     <div class="content has-text-justified">
-      <p>  </p>
       <img src="./static/images/teaser.png">
     </div>
     <div class="content has-text-justified">
       <p>
-        
+        Illustration of the topology-aware traffic pattern recognition task. Distinct categories of traffic patterns, represented by colored arrows, are defined based on semantic regions (such as roadways and corners) and object types. The objective is to predict the traffic patterns occurring in a scene from an egocentric video.
       </p>
     </div>
   </div>
@@ -242,14 +241,7 @@
     </div>
     <div class="content has-text-justified">
       <p>
-
-        We introduce a novel learning framework for SKT generation: Shape-Conditioned Trajectory Deformation Network (SCTDN). 
-        SCTDN takes the partial point cloud of a supporting item as input and generates the corresponding SKT by deforming 
-        a retrieved template SKT based on the task- relevant geometric structure features.
-      </p>
-      <p>
-        Building on the well-established advancements in object keypoint prediction, our proposed representation and the 
-        learning framework aims to tackle the challenge of effectively determining the appropriate actions for object hanging tasks.
+        The top of the figure illustrates the proposed framework. Action-Slot first takes video as input and uses a 3D-CNN encoder to extract spatial-temporal feature patches. All patches are then processed with individual slots simultaneously to find the most relevant spatial-temporal patches corresponding to each action slot. After updating the action slots, all action slots are fed into a fully-connected layer to predict the probability of the corresponding action category, except for the background slot. The bottom of the figure depicts the attention maps of action and background slots. In addition, we propose to incorporate a background mask Mbg to supervise the background slot and facilitate the other slots to capture action signals. Moreover, we regularize slots allocated to negative classes (e.g., R3-R4: V) with an all-zero mask \(Mneg\).
       </p>
     </div>
   </div>
