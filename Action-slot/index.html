@@ -98,7 +98,7 @@
             <span class="author-block-name">
               <a href="https://research.nvidia.com/person/yu-wei-chao">Shu-Wei Lu</a><sup>1</sup>,</span>
             <span class="author-block-name">
-              <a href="https://research.nvidia.com/person/yu-wei-chao">Yi-Hsuan Tsai</a><sup>2</sup>,</span>
+              <a href="https://sites.google.com/site/yihsuantsai/">Yi-Hsuan Tsai</a><sup>2</sup>,</span>
             <span class="author-block-name">
               <a href="https://sites.google.com/site/yitingchen0524">Yi-Ting Chen</a><sup>1</sup>,
             </span>
@@ -168,7 +168,7 @@
   </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="content has-text-justified">
       <div class="container is-max-desktop">
@@ -180,7 +180,16 @@
       </div>
     </div>
   </div>
+</section> -->
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+      <img src="./static/videos/action_slot_viz.gif">
+    </div>
+  </div>
 </section>
+
 
 <section class="section" id="abstract">
   <div class="container is-max-desktop">
@@ -215,10 +224,11 @@
       <p>
         The task of .
       </p>
-
     </div>
   </div>
 </section>
+
+
 
 <hr>
 
@@ -235,11 +245,7 @@
     </div>
     <div class="content has-text-justified">
       <p>
-        <!-- We propose a Shape-Conditioned Trajectory Deformation
-        Network (SCTDN), a novel learning framework for the hanging task. It leverages the strategy of deforming a template
-        trajectory based on shape-conditioned features to generate
-        the target semantic keypoint trajectory (SKT) for the partial
-        point cloud of the input supporting item. -->
+
         We introduce a novel learning framework for SKT generation: Shape-Conditioned Trajectory Deformation Network (SCTDN). 
         SCTDN takes the partial point cloud of a supporting item as input and generates the corresponding SKT by deforming 
         a retrieved template SKT based on the task- relevant geometric structure features.
@@ -261,7 +267,7 @@
     </div>
     <div class="flex-container">
       <img src="./static/images/blank.png" class="image-row-blank">
-      <img src="./static/images/setting.png" class="image-row-center">
+      <img src="./static/images/taco_road_dist" class="image-row-center">
       <img src="./static/images/blank.png" class="image-row-blank">
     </div>
     <div class="content has-text-justified">
@@ -295,6 +301,74 @@
       </p>
     </div>
   </div>
+</section>
+
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Benchmark</h2>
+    </div>
+    <div class="content hs-text-jstified">
+      <h3 style="text-align: center;">Table 1: </h3>
+      <table>
+        <tr>
+          <th class="rowhead-border"></th>
+          <th>Parameters (M)</th>
+          <th>Sequence length</th>
+          <th>mAP (vehicle)</th>
+          <th>mAP (pedestrian)</th>
+          <th>mAP</th>
+        </tr>
+        <tr class="middle-border">
+          <td>I3D</td>
+          <td>27.3</td>
+          <td>8</td>
+          <td>55.2</td>
+          <td>51.8</td>
+          <td>53.8</td>
+        </tr>
+        <tr>
+          <td>X3D</td>
+          <td>3.0</td>
+          <td>16</td>
+          <td>67.4</td>
+          <td>59.0</td>
+          <td>64.0</td>
+        </tr>
+        <tr>
+          <td>CSN</td>
+          <td>21.4</td>
+          <td>32</td>
+          <td>69.3</td>
+          <td>61.9</td>
+          <td>66.3</td>
+        </tr>
+        <tr>
+          <td>SlowFast</td>
+          <td>33.7</td>
+          <td>32</td>
+          <td>61.4</td>
+          <td>58.1</td>
+          <td>53.1</td>
+        </tr>
+        <tr class="middle-border">
+          <td class="rowhead-border">SCTDN (pos+rot)</td>
+          <td class="rowhead-border">10</td>
+          <td class="rowhead-border">69.4</td>
+          <td>90.7</td>
+          <td>83.1</td>
+          <td>60.1</td>
+          <td>43.6</td>
+        </tr>
+
+      </table>
+      <p>
+      </p>
+
+      </p>
+    </div>
+  </div> 
 </section>
 
 <hr>
