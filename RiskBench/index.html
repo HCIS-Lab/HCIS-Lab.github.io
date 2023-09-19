@@ -266,7 +266,7 @@
                     <span class="icon">
                         <i class="far fa-images"></i>
                     </span>
-                    <span>Data</span>
+                    <span>Dataset</span>
                     </a>
                 </span>
             </div>
@@ -294,7 +294,7 @@
           <p>
             To address this limitation, we introduce <b>RiskBench</b>, the largest scenario-based benchmark for risk identification. 
             Our benchmark is created using a scenario-based approach, which is widely accepted in the automotive industry. 
-            We design a scenario taxonomy and augmentation pipeline to enable the systematic collection of risks under different scenarios. 
+            We design a scenario taxonomy and augmentation pipeline to enable the systematic collection of ground truth risk under different scenarios. 
             We assess the ability of nine algorithms to (1) detect and locate risks, (2) anticipate risks, and (3) facilitate decision-making. 
             We conduct extensive experiments and summarize future research onrisk identification. 
             Our aim is to encourage collaborative endeavors in achieving a society with zero collisions.
@@ -428,16 +428,16 @@
             
             <ul class="nav pull-right">
               <li>
-                <b>Rule-based:</b>             
+                <b>Rule-based:</b> 	&thinsp; <b>Random</b> (randomly pick an object) and <b>Range</b> (pick any objects within a predefined distance).            
               </li>
               <li>
-                <b>Trajectory Prediction and Collision Checking:</b>
+                <b>Trajectory Prediction and Collision Checking:</b> 	&thinsp; <b>Kalman filter</b> [1], <b>SocialGAN</b> [2], <b>MANTRA</b> [3], and <b>QCNet</b> [4].
               </li>
               <li>
-                <b>Collision Anticipation:</b>
+                <b>Collision Anticipation:</b> 	&thinsp; <b>DSA</b> [5] and <b>RRL</b> [6].
               </li>
               <li>
-                <b>Behavior Prediction-based:</b>
+                <b>Behavior Prediction-based:</b>	&thinsp; <b>BP</b> [7] and <b>BCP</b> [8].
               </li>
             </ul>
             <p>
@@ -466,6 +466,8 @@
                 <b>Risk Anticipation:</b> We propose <b>Progressive Increasing Cost</b> (PIC), 
                 an anticipation and localization-aware metric. Our insight is that we penalize a
                 false identification more when we are closer to the risk than far from the risk.
+                Given a scenario with T frames, we calculate the F-1 score for each frame t and define the metric as 
+                <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">PIC</mtext><mo>=</mo><mo>−</mo><msubsup><mo>∑</mo><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>−</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mrow><mi>𝚕</mi><mi>𝚘</mi><mi>𝚐</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><msub><mn>1</mn><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\textrm{PIC} = -\sum_{t=1}^{n} e^{-(T-t)}\mathtt{log}(F1_{t})</annotation></semantics></math>.
               </LI>
               <br/>
 
@@ -474,12 +476,12 @@
                 to evaluate if a risk identification algorithm can facilitate
                 decision-making. Assume we access an ideal planner that
                 can interact with traffic participants and unexpected events.
-                <!-- <span class="math inline">IR = |<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub> − <em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub>|/<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span>, 
+                IR is defined as 
+                <span class="math inline">IR = |<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub> − <em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub>|/<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span>, 
                 where the parameter <span class="math inline"><em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span> denotes the closest
                 distance while interacting between the ego vehicle and the
                 true risk in a scenario using the full observation. The parameter <span class="math inline"><em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub></span> denotes the closest distance while interacting
-                between the ego vehicle and the true risk with the masked
-                observation. -->
+                between the ego vehicle and the true risk with the masked observation.
                 
                 <img src="./static/img/planning_aware.png" alt="tasks" width="100%" height="100%"/>
               
@@ -813,7 +815,7 @@
               <p>
                 <b>Additional Maps from Real World.</b> 
                 To overcome the limited number of roundabouts in CARLA, 
-                we incorporate real-world maps from CAROM-Air [1] and reconstruct them in the CARLA simulator. 
+                we incorporate real-world maps from CAROM-Air [9] and reconstruct them in the CARLA simulator. 
                 Specifically, we select A0, A1, A6, B3, B7, B8 from CAROM-Air.
               </p>
               <!-- Slideshow container -->
@@ -955,7 +957,31 @@
   <div class="columns is-centered">
     <div class="column is-four-fifths">
       <p>
-        [1] Lu et al., "CAROM Air -- Vehicle Localization and Traffic Scene Reconstruction from Aerial Videos". ICRA 2023.
+        [1] Thrun, Sebastian. "Probabilistic robotics." Communications of the ACM 45.3 (2002): 52-57.
+      </p>
+      <p>
+        [2] Gupta, Agrim, et al. "Social gan: Socially acceptable trajectories with generative adversarial networks." Proceedings of the IEEE conference on computer vision and pattern recognition. 2018.
+      </p>
+      <p>
+        [3] Marchetti, Francesco, et al. "Mantra: Memory augmented networks for multiple trajectory prediction." Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 2020.
+      </p>
+      <p>
+        [4] Zhou, Zikang, et al. "Query-Centric Trajectory Prediction." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.
+      </p>
+      <p>
+        [5] Chan, Fu-Hsiang, et al. "Anticipating accidents in dashcam videos." Computer Vision–ACCV 2016: 13th Asian Conference on Computer Vision, Taipei, Taiwan, November 20-24, 2016, Revised Selected Papers, Part IV 13. Springer International Publishing, 2017.
+      </p>
+      <p>
+        [6] Zeng, Kuo-Hao, et al. "Agent-centric risk assessment: Accident anticipation and risky region localization." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017.
+      </p>
+      <p>
+        [7] Li, Chengxi, et al. "Learning 3d-aware egocentric spatial-temporal interaction via graph convolutional networks." 2020 IEEE International Conference on Robotics and Automation (ICRA). IEEE, 2020.
+      </p>
+      <p>
+        [8] Li, Chengxi, Stanley H. Chan, and Yi-Ting Chen. "Who make drivers stop? towards driver-centric risk assessment: Risk object identification via causal inference." 2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). IEEE, 2020.
+      </p>
+      <p>
+        [9] Lu et al., "CAROM Air -- Vehicle Localization and Traffic Scene Reconstruction from Aerial Videos". ICRA 2023.
       </p>
     </div>
   </div>
