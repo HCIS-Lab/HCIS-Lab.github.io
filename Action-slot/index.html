@@ -359,9 +359,9 @@
 
               <!-- The dots/circles -->
               <div style="text-align:center">
-                <span class="dot3" onclick="currentSlide4(1)"></span>
-                <span class="dot3" onclick="currentSlide4(2)"></span>
-                <span class="dot3" onclick="currentSlide4(3)"></span>
+                <span class="dot3" onclick="currentSlide3(1)"></span>
+                <span class="dot3" onclick="currentSlide3(2)"></span>
+                <span class="dot3" onclick="currentSlide3(3)"></span>
               </div>
             </div>
           </div>
@@ -398,53 +398,15 @@
 
               <!-- The dots/circles -->
               <div style="text-align:center">
-                <span class="dot3" onclick="currentSlide4(1)"></span>
-                <span class="dot3" onclick="currentSlide4(2)"></span>
-                <span class="dot3" onclick="currentSlide4(3)"></span>
+                <span class="dot3" onclick="currentSlide3(1)"></span>
+                <span class="dot3" onclick="currentSlide3(2)"></span>
+                <span class="dot3" onclick="currentSlide3(3)"></span>
               </div>
             </div>
           </div>
         </div>
 
 <hr>
-
-<section class="section is-max-desktop">
-  <div class="container is-max-desktop">
-    <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Environment Settings</h2>
-    </div>
-    <div class="flex-container">
-      <img src="./static/images/blank.png" class="image-row-blank">
-      <img src="./static/images/taco_road_dist" class="image-row-center">
-      <img src="./static/images/blank.png" class="image-row-blank">
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        Our environment setting.
-      </p>
-    </div>
-
-    <div class="flex-container">
-      <img src="./static/images/blank.png" class="image-row-blank">
-      <img src="./static/images/simulation_object_hooks.png" class="image-row-center">
-      <img src="./static/images/blank.png" class="image-row-blank">
-    </div>
-    <div class="flex-container">
-      <img src="./static/images/blank.png" class="image-row-blank">
-      <img src="./static/images/real_objects_hooks.png" class="image-row-center">
-      <img src="./static/images/blank.png" class="image-row-blank">
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        For simulation evaluation, we assess the performance of all methods by measuring their success rates and 
-        inference times across <b>3,000 hanging processes involving 50 objects and 60 unseen supporting items</b> (Top). 
-        These supporting items are manually categorized into four levels of difficulty: Easy, Normal, Hard, and Very
-        Hard based on the complexity of the hanging part on them, with 15 assigned to each level.
-        For real-world evaluation, we used a total of 10 objects and 10 supporting items for our hanging evaluation (Bottom).
-      </p>
-    </div>
-  </div>
-</section>
 
 
 <section class="section is-max-desktop">
@@ -456,7 +418,7 @@
       <h3 style="text-align: center;">Table 1: </h3>
       <table>
         <tr>
-          <th class="rowhead-border"></th>
+          <th></th>
           <th>Parameters (M)</th>
           <th>Sequence length</th>
           <th>mAP (vehicle)</th>
@@ -610,7 +572,7 @@
       <h3 style="text-align: center;">Table 1: </h3>
       <table>
         <tr>
-          <th class="rowhead-border"></th>
+          <th ></th>
           <th>pretrained on TACO</th>
           <th>trained from scratch on ROAD</th>
           <th>pretrained on TACO + fine-tune on ROAD</th>
@@ -675,6 +637,24 @@
       </p>
     </div>
   </div> 
+</section>
+
+<hr>
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Limitation</h2>
+    </div>
+    <div class="content has-text-justified">
+      <img src="./static/images/confusion.gif">
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        We find the ability of Action-Slot in the following challenging case is less effective. We show a scenario where there are two pedestrians walking toward each other on the right-hand side crosswalk. We show the attention maps of the C1-C2: P and C2-C1: P slots. Although the learned attention maps are able to localize the region of interest, we find Action-Slot may have confusion to recognize the two patterns. Note that, in this case, Action-Slot fails to recognize one of the patterns, i.e., C2-C1: P.
+      </p>
+    </div>
+  </div>
 </section>
 
 <hr>
