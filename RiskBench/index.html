@@ -466,6 +466,8 @@
                 <b>Risk Anticipation:</b> We propose <b>Progressive Increasing Cost</b> (PIC), 
                 an anticipation and localization-aware metric. Our insight is that we penalize a
                 false identification more when we are closer to the risk than far from the risk.
+                Given a scenario with T frames, we calculate the F-1 score for each frame t and define the metric as 
+                <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">PIC</mtext><mo>=</mo><mo>−</mo><msubsup><mo>∑</mo><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mi>e</mi><mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>−</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mrow><mi>𝚕</mi><mi>𝚘</mi><mi>𝚐</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><msub><mn>1</mn><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\textrm{PIC} = -\sum_{t=1}^{n} e^{-(T-t)}\mathtt{log}(F1_{t})</annotation></semantics></math>.
               </LI>
               <br/>
 
@@ -474,12 +476,12 @@
                 to evaluate if a risk identification algorithm can facilitate
                 decision-making. Assume we access an ideal planner that
                 can interact with traffic participants and unexpected events.
-                <!-- <span class="math inline">IR = |<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub> − <em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub>|/<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span>, 
+                IR is defined as 
+                <span class="math inline">IR = |<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub> − <em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub>|/<em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span>, 
                 where the parameter <span class="math inline"><em>D</em><sub><em>o</em><em>r</em><em>i</em><em>g</em></sub></span> denotes the closest
                 distance while interacting between the ego vehicle and the
                 true risk in a scenario using the full observation. The parameter <span class="math inline"><em>D</em><sub><em>p</em><em>o</em><em>s</em><em>t</em></sub></span> denotes the closest distance while interacting
-                between the ego vehicle and the true risk with the masked
-                observation. -->
+                between the ego vehicle and the true risk with the masked observation.
                 
                 <img src="./static/img/planning_aware.png" alt="tasks" width="100%" height="100%"/>
               
