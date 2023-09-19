@@ -98,7 +98,7 @@
             <span class="author-block-name">
               <a href="https://research.nvidia.com/person/yu-wei-chao">Shu-Wei Lu</a><sup>1</sup>,</span>
             <span class="author-block-name">
-              <a href="https://research.nvidia.com/person/yu-wei-chao">Yi-Hsuan Tsai</a><sup>2</sup>,</span>
+              <a href="https://sites.google.com/site/yihsuantsai/">Yi-Hsuan Tsai</a><sup>2</sup>,</span>
             <span class="author-block-name">
               <a href="https://sites.google.com/site/yitingchen0524">Yi-Ting Chen</a><sup>1</sup>,
             </span>
@@ -224,7 +224,6 @@
       <p>
         The task of .
       </p>
-
     </div>
   </div>
 </section>
@@ -268,7 +267,7 @@
     </div>
     <div class="flex-container">
       <img src="./static/images/blank.png" class="image-row-blank">
-      <img src="./static/images/setting.png" class="image-row-center">
+      <img src="./static/images/taco_road_dist" class="image-row-center">
       <img src="./static/images/blank.png" class="image-row-blank">
     </div>
     <div class="content has-text-justified">
@@ -302,6 +301,104 @@
       </p>
     </div>
   </div>
+</section>
+
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">More Ablation Study of SCTDN and VAT-Mart</h2>
+    </div>
+    <div class="content hs-text-jstified">
+      <h3 style="text-align: center;">Table 1: More Ablation Studies of SCTDN</h3>
+      <table>
+        <tr>
+          <th class="rowhead-border"></th>
+          <th class="rowhead-border">Waypoint Num</th>
+          <th class="rowhead-border">All (%)</th>
+          <th>Easy (%)</th>
+          <th>Normal (%)</th>
+          <th>Hard (%)</th>
+          <th>Very Hard (%)</th>
+        </tr>
+        <tr class="middle-border">
+          <td class="rowhead-border">SCTDN (pos)</td>
+          <td class="rowhead-border">10</td>
+          <td class="rowhead-border">79.4</td>
+          <td>74.8</td>
+          <td>90.3</td>
+          <td>78.3</td>
+          <td>74.3</td>
+        </tr>
+        <tr>
+          <td class="rowhead-border">SCTDN (pos)</td>
+          <td class="rowhead-border">20</td>
+          <td class="rowhead-border">83.3</td>
+          <td>84.1</td>
+          <td>89.2</td>
+          <td>80.5</td>
+          <td>79.5</td>
+        </tr>
+        <tr>
+          <td class="rowhead-border">SCTDN (pos)</td>
+          <td class="rowhead-border">40</td>
+          <td class="rowhead-border">83.7</td>
+          <td>85.5</td>
+          <td>91.7</td>
+          <td>79.7</td>
+          <td>77.7</td>
+        </tr>
+        <tr class="middle-border">
+          <td class="rowhead-border">SCTDN (pos+rot)</td>
+          <td class="rowhead-border">10</td>
+          <td class="rowhead-border">69.4</td>
+          <td>90.7</td>
+          <td>83.1</td>
+          <td>60.1</td>
+          <td>43.6</td>
+        </tr>
+        <tr>
+          <td class="rowhead-border">SCTDN (pos+rot)</td>
+          <td class="rowhead-border">20</td>
+          <td class="rowhead-border">67.6</td>
+          <td>85.9</td>
+          <td>78.4</td>
+          <td>54.5</td>
+          <td>51.7</td>
+        </tr>
+        <tr>
+          <td class="rowhead-border">SCTDN (pos+rot)</td>
+          <td class="rowhead-border">40</td>
+          <td class="rowhead-border">71.5</td>
+          <td>91.5</td>
+          <td>80.5</td>
+          <td>56.0</td>
+          <td>58.1</td>
+        </tr>
+      </table>
+      <p>
+        We implement an extended version of SCTDN that consider both position and rotation of the semantic keypoint trajectory.
+        For this extended version, the final trajectories \( \hat{\mathcal{T}^{S}} \) is defined as:
+         \[ \hat{\mathcal{T}^{S}} = 
+        \Big\{ \big\{ \xi^{\text{temp}_{\hat{c^S}}}_{i_{\text{pos}}} + \hat{\xi^{\text{offset}}_{i_{\text{pos}}}}, R^{-1}\big(R(\hat{\xi^{\text{offset}}_{i_{\text{rot}}}}) 
+        \times R(\xi^{\text{temp}_{\hat{c^S}}}_{i_{\text{rot}}})\big) \big\} | i \in [0, 1, ..., T-1] \Big\} \]
+        , where \( i_{\text{pos}} \) and \( i_{\text{rot}} \) are the position and rotation of a waypoint, respectively. 
+        
+        The function \( R: \mathbb{R}^{w} \rightarrow \mathbb{R}^{3 \times 3} \) maps the rotation representation of the waypoint to the corresponding rotation matrix. 
+        In our implementation, we adopt a 6D rotation representation to ensure the continuity of rotations.
+      </p>
+      <p>
+        In this section, we conduct a comparative analysis of different waypoint numbers and the use of position-only and position-and-rotation representations to assess their impact on the execution success rate of SCTDN. 
+        The corresponding results are presented in Table 1.
+        Firstly, focusing on the waypoint number, we observe a slight improvement in the success rate when the number of waypoints is set to 40. 
+        However, the influence of varying waypoint numbers on the success rate is not significant.
+        Secondly, examining the waypoint dimension, we find that incorporating rotation does not yield better results compared to the original version that solely considers position. 
+        On the contrary, the overall success rate experiences a decline of over 10%. 
+        This decline can be attributed, in part, to the inherent challenges associated with training the rotation component, as the rotation loss fails to converge. 
+        Consequently, inaccurate rotation predictions during execution contribute to the overall decrease in performance.
+      </p>
+    </div>
+  </div> 
 </section>
 
 <hr>
