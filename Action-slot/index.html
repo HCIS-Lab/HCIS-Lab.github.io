@@ -41,122 +41,122 @@
   <script src="./static/js/index.js"></script>
   <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+  </script>
 
-<script>
-      let slideIndex = 1, slideIndex2 = 1, slideIndex3 = 1, slideIndex4 = 1;
-      showSlides(slideIndex);
-      showSlides2(slideIndex2);
-      showSlides3(slideIndex3);
-      showSlides4(slideIndex4);
+  <script>
+        let slideIndex = 1, slideIndex2 = 1, slideIndex3 = 1, slideIndex4 = 1;
+        showSlides(slideIndex);
+        showSlides2(slideIndex2);
+        showSlides3(slideIndex3);
+        showSlides4(slideIndex4);
 
-      // Next/previous controls
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-
-      // Thumbnail image controls
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-      function currentSlide2(n) {
-        showSlides2(slideIndex2 = n);
-      }
-      function currentSlide3(n) {
-        showSlides3(slideIndex3 = n);
-      }
-      function currentSlide4(n) {
-        showSlides4(slideIndex4 = n);
-      }
-
-
-      function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-      }
-
-      function showSlides2(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides2");
-        let dots = document.getElementsByClassName("dot2");
-        if (n > slides.length) {slideIndex2 = 1}
-        if (n < 1) {slideIndex2 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex2-1].style.display = "block";
-        dots[slideIndex2-1].className += " active";
-      }
-
-      function showSlides3(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides3");
-        let dots = document.getElementsByClassName("dot3");
-        if (n > slides.length) {slideIndex3 = 1}
-        if (n < 1) {slideIndex3 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex3-1].style.display = "block";
-        dots[slideIndex3-1].className += " active";
-      }
-      
-      function showSlides4(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides4");
-        let dots = document.getElementsByClassName("dot4");
-        if (n > slides.length) {slideIndex4 = 1}
-        if (n < 1) {slideIndex4 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex4-1].style.display = "block";
-        dots[slideIndex4-1].className += " active";
-      }
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-        dataLayer.push(arguments);
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
         }
 
-        gtag('js', new Date());
-
-        gtag('config', 'G-PYVRSFMDRL');
-    </script>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-        dataLayer.push(arguments);
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        function currentSlide2(n) {
+          showSlides2(slideIndex2 = n);
+        }
+        function currentSlide3(n) {
+          showSlides3(slideIndex3 = n);
+        }
+        function currentSlide4(n) {
+          showSlides4(slideIndex4 = n);
         }
 
-        gtag('js', new Date());
 
-        gtag('config', 'G-PYVRSFMDRL');
-    </script>
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+
+        function showSlides2(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides2");
+          let dots = document.getElementsByClassName("dot2");
+          if (n > slides.length) {slideIndex2 = 1}
+          if (n < 1) {slideIndex2 = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex2-1].style.display = "block";
+          dots[slideIndex2-1].className += " active";
+        }
+
+        function showSlides3(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides3");
+          let dots = document.getElementsByClassName("dot3");
+          if (n > slides.length) {slideIndex3 = 1}
+          if (n < 1) {slideIndex3 = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex3-1].style.display = "block";
+          dots[slideIndex3-1].className += " active";
+        }
+        
+        function showSlides4(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides4");
+          let dots = document.getElementsByClassName("dot4");
+          if (n > slides.length) {slideIndex4 = 1}
+          if (n < 1) {slideIndex4 = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex4-1].style.display = "block";
+          dots[slideIndex4-1].className += " active";
+        }
+      </script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+          dataLayer.push(arguments);
+          }
+
+          gtag('js', new Date());
+
+          gtag('config', 'G-PYVRSFMDRL');
+      </script>
+
+      <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+          dataLayer.push(arguments);
+          }
+
+          gtag('js', new Date());
+
+          gtag('config', 'G-PYVRSFMDRL');
+      </script>
 </head>
 <body>
 
@@ -166,7 +166,7 @@
   showSlides3(slideIndex3);
   showSlides4(slideIndex4);
 </script>
-    
+      
 
 
 <section class="hero">
@@ -514,8 +514,8 @@
           <td>12.2</td>
           <td>16</td>
           <td>54.6</td>
-          <td><44.1</td>
-          <td><50.4</td>
+          <td>44.1</td>
+          <td>50.4</td>
         </tr>
         <tr>
           <td>ARG*</td>
@@ -546,8 +546,8 @@
           <td>2.3</td>
           <td>16</td>
           <td>53.9</td>
-          <td><47.1</td>
-          <td><51.0</td>
+          <td>47.1</td>
+          <td>51.0</td>
         </tr>
         <tr>
           <td>MO</td>
