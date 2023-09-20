@@ -45,45 +45,115 @@
 </head>
 <body>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
+<script type="module">
+  showSlides(slideIndex);
+  showSlides2(slideIndex2);
+  showSlides3(slideIndex3);
+  showSlides4(slideIndex4);
+</script>
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
+<script>
+      let slideIndex = 1, slideIndex2 = 1, slideIndex3 = 1, slideIndex4 = 1;
+      showSlides(slideIndex);
+      showSlides2(slideIndex2);
+      showSlides3(slideIndex3);
+      showSlides4(slideIndex4);
 
-  </div>
-</nav> -->
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      function currentSlide2(n) {
+        showSlides2(slideIndex2 = n);
+      }
+      function currentSlide3(n) {
+        showSlides3(slideIndex3 = n);
+      }
+      function currentSlide4(n) {
+        showSlides4(slideIndex4 = n);
+      }
+
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+      }
+
+      function showSlides2(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides2");
+        let dots = document.getElementsByClassName("dot2");
+        if (n > slides.length) {slideIndex2 = 1}
+        if (n < 1) {slideIndex2 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex2-1].style.display = "block";
+        dots[slideIndex2-1].className += " active";
+      }
+
+      function showSlides3(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides3");
+        let dots = document.getElementsByClassName("dot3");
+        if (n > slides.length) {slideIndex3 = 1}
+        if (n < 1) {slideIndex3 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex3-1].style.display = "block";
+        dots[slideIndex3-1].className += " active";
+      }
+      
+      function showSlides4(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides4");
+        let dots = document.getElementsByClassName("dot4");
+        if (n > slides.length) {slideIndex4 = 1}
+        if (n < 1) {slideIndex4 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex4-1].style.display = "block";
+        dots[slideIndex4-1].className += " active";
+      }
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+        dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
 
 
 <section class="hero">
@@ -94,9 +164,9 @@
           <h1 class="title is-1 publication-title">Action-Slot: Visual Action-centric Representation for Traffic Pattern Recognition</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block-name">
-              <a href="https://sites.google.com/view/chialiangkuo">Chi-Hsi Kung</a><sup>1</sup>,</span>
+              <a href="https://hankkung.github.io/website/">Chi-Hsi Kung</a><sup>1</sup>,</span>
             <span class="author-block-name">
-              <a href="https://research.nvidia.com/person/yu-wei-chao">Shu-Wei Lu</a><sup>1</sup>,</span>
+              <a href="">Shu-Wei Lu</a><sup>1</sup>,</span>
             <span class="author-block-name">
               <a href="https://sites.google.com/site/yihsuantsai/">Yi-Hsuan Tsai</a><sup>2</sup>,</span>
             <span class="author-block-name">
@@ -131,15 +201,16 @@
                 </a>
               </span> -->
               <!-- Video Link. -->
-              <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
+              <!-- Dataset Link. -->
+                <span class="link-block">
+                    <a href="https://nycu1-my.sharepoint.com/:f:/g/personal/ychen_m365_nycu_edu_tw/EviA5ovlh6hPo_ZXEPQjxAQB2R3vNubk3HM1u4ib1VdPFA?e=WHEWdm"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span>
+                    <span>Dataset</span>
+                    </a>
+                </span>
               <!-- Code Link. -->
               <span class="link-block">
                 <a href=""
@@ -183,8 +254,8 @@
 </section> -->
 
 <section class="section is-max-desktop">
-  <div class="container is-max-desktop">
-    <div class="content has-text-justified">
+  <div class="container is-max-desktop" style="width:200%">
+    <div class="column is-centered has-text-centered">
       <img src="./static/videos/action_slot_viz.gif">
     </div>
   </div>
@@ -214,12 +285,11 @@
       <h2 class="title is-3">Traffic Pattern Recognition</h2>
     </div>
     <div class="content has-text-justified">
-      <p>  </p>
       <img src="./static/images/teaser.png">
     </div>
     <div class="content has-text-justified">
       <p>
-        
+        Illustration of the topology-aware traffic pattern recognition task. Distinct categories of traffic patterns, represented by colored arrows, are defined based on semantic regions (such as roadways and corners) and object types. The objective is to predict the traffic patterns occurring in a scene from an egocentric video.
       </p>
     </div>
   </div>
@@ -242,14 +312,7 @@
     </div>
     <div class="content has-text-justified">
       <p>
-
-        We introduce a novel learning framework for SKT generation: Shape-Conditioned Trajectory Deformation Network (SCTDN). 
-        SCTDN takes the partial point cloud of a supporting item as input and generates the corresponding SKT by deforming 
-        a retrieved template SKT based on the task- relevant geometric structure features.
-      </p>
-      <p>
-        Building on the well-established advancements in object keypoint prediction, our proposed representation and the 
-        learning framework aims to tackle the challenge of effectively determining the appropriate actions for object hanging tasks.
+        The top of the figure illustrates the proposed framework. Action-Slot first takes video as input and uses a 3D-CNN encoder to extract spatial-temporal feature patches. All patches are then processed with individual slots simultaneously to find the most relevant spatial-temporal patches corresponding to each action slot. After updating the action slots, all action slots are fed into a fully-connected layer to predict the probability of the corresponding action category, except for the background slot. The bottom of the figure depicts the attention maps of action and background slots. In addition, we propose to incorporate a background mask Mbg to supervise the background slot and facilitate the other slots to capture action signals. Moreover, we regularize slots allocated to negative classes (e.g., R3-R4: V) with an all-zero mask \(Mneg\).
       </p>
     </div>
   </div>
@@ -257,55 +320,125 @@
 
 <hr>
 
+
+<section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-five-fifths">
+            <h2 class="title is-3">Dataset and Annotation Samples</h2>
+            <div class="content has-text-justified">
+              <!-- <p>
+                description
+              </p> -->
+            </div>
+          </div>
+        </div>
+      
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-five-fifths">
+            <h2 class="title is-4">TACO Dataset</h2>
+            <div class="content has-text-centered">
+              <!-- <video id="replay-video"
+                      controls
+                      muted
+                      preload
+                      playsinline
+                      width="75%">
+                <source src="./static/gif/localization_anticipation.gif"
+                        type="video/webm">
+              </video> -->
+              <!-- Slideshow container -->
+              <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides3 fade">                
+                  <img src="./static/images/carla_3.gif" style="width:60%">
+                </div>
+                <div class="mySlides3 fade">                
+                  <img src="./static/images/carla_4.gif" style="width:60%">
+                </div>
+                <div class="mySlides3 fade">                
+                  <img src="./static/images/carla_5.gif" style="width:60%">
+                </div>
+              </div>
+              <!-- <br> -->
+
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                <span class="dot3" onclick="currentSlide3(1)"></span>
+                <span class="dot3" onclick="currentSlide3(2)"></span>
+                <span class="dot3" onclick="currentSlide3(3)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-five-fifths">
+            <h2 class="title is-4">ROAD Dataset</h2>
+            <div class="content has-text-centered">
+              <!-- <video id="replay-video"
+                      controls
+                      muted
+                      preload
+                      playsinline
+                      width="75%">
+                <source src="./static/gif/localization_anticipation.gif"
+                        type="video/webm">
+              </video> -->
+              <!-- Slideshow container -->
+              <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides3 fade">                
+                  <img src="./static/images/road_1.gif" style="width:60%">
+                </div>
+                <div class="mySlides3 fade">                
+                  <img src="./static/images/road_2.gif" style="width:60%">
+                </div>
+                <div class="mySlides3 fade">                
+                  <img src="./static/images/road_3.gif" style="width:60%">
+                </div>
+              </div>
+              <!-- <br> -->
+
+              <!-- The dots/circles -->
+              <div style="text-align:center">
+                <span class="dot3" onclick="currentSlide3(1)"></span>
+                <span class="dot3" onclick="currentSlide3(2)"></span>
+                <span class="dot3" onclick="currentSlide3(3)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<hr>
+
+
 <section class="section is-max-desktop">
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Environment Settings</h2>
-    </div>
-    <div class="flex-container">
-      <img src="./static/images/blank.png" class="image-row-blank">
-      <img src="./static/images/taco_road_dist" class="image-row-center">
-      <img src="./static/images/blank.png" class="image-row-blank">
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        Our environment setting.
-      </p>
+      <h2 class="title is-3">Experimental Results</h2>
     </div>
 
-    <div class="flex-container">
-      <img src="./static/images/blank.png" class="image-row-blank">
-      <img src="./static/images/simulation_object_hooks.png" class="image-row-center">
-      <img src="./static/images/blank.png" class="image-row-blank">
+    <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h3 style="text-align: center;">Qualitative Results for Traffic Patterns Invovling Multiple Agents: </h3>
     </div>
-    <div class="flex-container">
-      <img src="./static/images/blank.png" class="image-row-blank">
-      <img src="./static/images/real_objects_hooks.png" class="image-row-center">
-      <img src="./static/images/blank.png" class="image-row-blank">
+    <div class="content has-text-justified">
+      <img src="./static/images/q_v_p.gif">
     </div>
     <div class="content has-text-justified">
       <p>
-        For simulation evaluation, we assess the performance of all methods by measuring their success rates and 
-        inference times across <b>3,000 hanging processes involving 50 objects and 60 unseen supporting items</b> (Top). 
-        These supporting items are manually categorized into four levels of difficulty: Easy, Normal, Hard, and Very
-        Hard based on the complexity of the hanging part on them, with 15 assigned to each level.
-        For real-world evaluation, we used a total of 10 objects and 10 supporting items for our hanging evaluation (Bottom).
       </p>
     </div>
   </div>
-</section>
 
-
-<section class="section is-max-desktop">
-  <div class="container is-max-desktop">
-    <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Benchmark on the TACO Dataset</h2>
-    </div>
     <div class="content hs-text-jstified">
-      <h3 style="text-align: center;">Table 1: </h3>
+      <h3 style="text-align: center;">Quantitative Results on the TACO Dataset: </h3>
       <table>
         <tr>
-          <th class="rowhead-border"></th>
+          <th></th>
           <th>Parameters (M)</th>
           <th>Sequence length</th>
           <th>mAP (vehicle)</th>
@@ -417,12 +550,28 @@
           <td>65.4</td>
         </tr>
         <tr class="middle-border">
-          <td>Action-Slot</td>
+          <td>Action-Slot (I3D)</td>
+          <td>2.3</td>
+          <td>8</td>
+          <td>58.3</td>
+          <td>55.2</td>
+          <td>56.5</td>
+        </tr>
+        <tr>
+          <td>Action-Slot (X3D)</td>
           <td>2.3</td>
           <td>16</td>
           <td>74.7</td>
           <td>69.3</td>
           <td>72.6</td>
+        </tr>
+        <tr>
+          <td>Action-slot (SlowFast)</td>
+          <td>2.3</td>
+          <td>32</td>
+          <td>65.7</td>
+          <td>63.5</td>
+          <td>64.8</td>
         </tr>
       </table>
       <p>
@@ -433,19 +582,20 @@
   </div> 
 </section>
 
-<hr>
-
 
 <section class="section is-max-desktop">
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Benchmark on the ROAD Dataset</h2>
+      <h2 class="title is-3">Qauntitative Results on the ROAD Dataset</h2>
     </div>
+     <p>
+        The results show that TACO can serve as a good pre-training dataset and is transferable to the real world. Action-slot also outperform others by a large margin in the ROAD dataset.
+      </p>
     <div class="content hs-text-jstified">
       <h3 style="text-align: center;">Table 1: </h3>
       <table>
         <tr>
-          <th class="rowhead-border"></th>
+          <th ></th>
           <th>pretrained on TACO</th>
           <th>trained from scratch on ROAD</th>
           <th>pretrained on TACO + fine-tune on ROAD</th>
@@ -506,13 +656,81 @@
           <td>62.5 (+6.1%)</td>
         </tr>
       </table>
-      <p>
-      </p>
 
       </p>
     </div>
   </div> 
 </section>
+
+<hr>
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Limitation</h2>
+      <div class="content has-text-justified">
+      <p>
+        We find the ability of Action-Slot in the following challenging case is less effective. We show a scenario where there are two pedestrians walking toward each other on the right-hand side crosswalk. We show the attention maps of the C1-C2: P and C2-C1: P slots. Although the learned attention maps are able to localize the region of interest, we find Action-Slot may have confusion to recognize the two patterns. Note that, in this case, Action-Slot fails to recognize one of the patterns, i.e., C2-C1: P.
+      </p>
+    </div>
+    </div>
+    <div class="content has-text-justified">
+      <img src="./static/images/confusion.gif">
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section is-max-desktop">
+  <div class="container is-max-desktop">
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Dataset Details</h2>
+    </div>
+<!--     <div class="content has-text-justified">
+      <h3 style="text-align: center;">The Shape-Conditioned Trajectory Deformation Network (SCTDN)</h3>
+    </div> -->
+    <div class="content hs-text-jstified">
+      <h3 style="text-align: center;">Dataset Statistics: </h3>
+       <p>
+        Building on the well-established advancements in object keypoint prediction, our proposed representation and the 
+        learning framework aims to tackle the challenge of effectively determining the appropriate actions for object hanging tasks.
+      </p>
+      <table>
+        <tr>
+          <th> </th>
+          <th>size (minutes)</th>
+          <th># of clips</th>
+          <th># of labels</th>
+        </tr>
+        <tr class="middle-border">
+          <td>ROAD</td>
+          <td>134</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>annotated ROAD</td>
+          <td>27</td>
+          <td>127</td>
+          <td>338</td>
+        </tr>
+        <tr class="middle-border">
+          <td>TACO</td>
+          <td>284</td>
+          <td>3130</td>
+          <td>7584</td>
+        </tr>
+      </table>
+    </div>
+     
+    </div>
+    <div class="content has-text-justified">
+      <img src="./static/images/statistics.png">
+    </div>
+  </div>
+</section>
+
 
 <hr>
 
