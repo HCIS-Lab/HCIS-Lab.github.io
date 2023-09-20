@@ -44,7 +44,7 @@
 </script>
 </head>
 <body>
-  
+
 <script type="module">
   showSlides(slideIndex);
   showSlides2(slideIndex2);
@@ -418,12 +418,12 @@
 <section class="section is-max-desktop">
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Benchmark on the TACO Dataset</h2>
+      <h2 class="title is-3">Experimental Results</h2>
     </div>
 
     <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Qualitative Results</h2>
+      <h3 style="text-align: center;">Qualitative Results for Traffic Patterns Invovling Multiple Agents: </h3>
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/q_v_p.gif">
@@ -435,7 +435,7 @@
   </div>
 
     <div class="content hs-text-jstified">
-      <h3 style="text-align: center;">Table 1: </h3>
+      <h3 style="text-align: center;">Quantitative Results on the TACO Dataset: </h3>
       <table>
         <tr>
           <th></th>
@@ -586,8 +586,11 @@
 <section class="section is-max-desktop">
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Benchmark on the ROAD Dataset</h2>
+      <h2 class="title is-3">Qauntitative Results on the ROAD Dataset</h2>
     </div>
+     <p>
+        The results show that TACO can serve as a good pre-training dataset and is transferable to the real world. Action-slot also outperform others by a large margin in the ROAD dataset.
+      </p>
     <div class="content hs-text-jstified">
       <h3 style="text-align: center;">Table 1: </h3>
       <table>
@@ -665,14 +668,14 @@
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
       <h2 class="title is-3">Limitation</h2>
-    </div>
-    <div class="content has-text-justified">
-      <img src="./static/images/confusion.gif">
-    </div>
-    <div class="content has-text-justified">
+      <div class="content has-text-justified">
       <p>
         We find the ability of Action-Slot in the following challenging case is less effective. We show a scenario where there are two pedestrians walking toward each other on the right-hand side crosswalk. We show the attention maps of the C1-C2: P and C2-C1: P slots. Although the learned attention maps are able to localize the region of interest, we find Action-Slot may have confusion to recognize the two patterns. Note that, in this case, Action-Slot fails to recognize one of the patterns, i.e., C2-C1: P.
       </p>
+    </div>
+    </div>
+    <div class="content has-text-justified">
+      <img src="./static/images/confusion.gif">
     </div>
   </div>
 </section>
@@ -688,7 +691,11 @@
       <h3 style="text-align: center;">The Shape-Conditioned Trajectory Deformation Network (SCTDN)</h3>
     </div> -->
     <div class="content hs-text-jstified">
-      <h3 style="text-align: center;">Table 1: </h3>
+      <h3 style="text-align: center;">Dataset Statistics: </h3>
+       <p>
+        Building on the well-established advancements in object keypoint prediction, our proposed representation and the 
+        learning framework aims to tackle the challenge of effectively determining the appropriate actions for object hanging tasks.
+      </p>
       <table>
         <tr>
           <th> </th>
@@ -716,10 +723,7 @@
         </tr>
       </table>
     </div>
-      <p>
-        Building on the well-established advancements in object keypoint prediction, our proposed representation and the 
-        learning framework aims to tackle the challenge of effectively determining the appropriate actions for object hanging tasks.
-      </p>
+     
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/statistics.png">
