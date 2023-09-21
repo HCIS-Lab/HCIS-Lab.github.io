@@ -439,7 +439,7 @@
 
     <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h3 style="text-align: center;">Qualitative Results for Traffic Patterns Invovling Multiple Agents: </h3>
+      <h3 style="text-align: center;">We depict the learned attention maps for scenes with multiple agents performing the same trafficpattern. (upper) Three vehicles with the traffic pattern R4-R2: V; (lower) two pedestrians with C4-C1: P. Qualitatively, Action-Slot is able to (upper) identify the contextual regions containing objects and (lower) track the regions of interest, while MO [1] often misidentifies the objects or fails to differentiate the background. It is interesting noting that, the traffic pattern recognition results of both categories are correct for both methods. MO’s attention is not interpretable compared to Action-Slot’s attention maps. The ‡ denotes our re-implementation </h3>
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/q_v_p.gif">
@@ -608,7 +608,7 @@
         The results show that TACO can serve as a good pre-training dataset and is transferable to the real world. Action-slot also outperform others by a large margin in the ROAD dataset.
       </p>
     <div class="content hs-text-jstified">
-      <h3 style="text-align: center;">Table 1: </h3>
+      <!-- <h3 style="text-align: center;">Table 1: </h3> -->
       <table>
         <tr>
           <th ></th>
@@ -709,8 +709,7 @@
     <div class="content hs-text-jstified">
       <h3 style="text-align: center;">Dataset Statistics: </h3>
        <p>
-        Building on the well-established advancements in object keypoint prediction, our proposed representation and the 
-        learning framework aims to tackle the challenge of effectively determining the appropriate actions for object hanging tasks.
+        We manually annotate the our TACO dataset and ROAD dataset and compare the traffic pattern category distribution. We follow the same annotation strategy for labeling the both datasets. We find out that traffic patterns in the real-world dataset are rare, which results in a small sacle imbalanced dataset.
       </p>
       <table>
         <tr>
