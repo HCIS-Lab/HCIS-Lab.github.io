@@ -41,7 +41,122 @@
   <script src="./static/js/index.js"></script>
   <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+  </script>
+
+  <script>
+        let slideIndex = 1, slideIndex2 = 1, slideIndex3 = 1, slideIndex4 = 1;
+        showSlides(slideIndex);
+        showSlides2(slideIndex2);
+        showSlides3(slideIndex3);
+        showSlides4(slideIndex4);
+
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        function currentSlide2(n) {
+          showSlides2(slideIndex2 = n);
+        }
+        function currentSlide3(n) {
+          showSlides3(slideIndex3 = n);
+        }
+        function currentSlide4(n) {
+          showSlides4(slideIndex4 = n);
+        }
+
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+
+        function showSlides2(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides2");
+          let dots = document.getElementsByClassName("dot2");
+          if (n > slides.length) {slideIndex2 = 1}
+          if (n < 1) {slideIndex2 = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex2-1].style.display = "block";
+          dots[slideIndex2-1].className += " active";
+        }
+
+        function showSlides3(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides3");
+          let dots = document.getElementsByClassName("dot3");
+          if (n > slides.length) {slideIndex3 = 1}
+          if (n < 1) {slideIndex3 = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex3-1].style.display = "block";
+          dots[slideIndex3-1].className += " active";
+        }
+        
+        function showSlides4(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides4");
+          let dots = document.getElementsByClassName("dot4");
+          if (n > slides.length) {slideIndex4 = 1}
+          if (n < 1) {slideIndex4 = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex4-1].style.display = "block";
+          dots[slideIndex4-1].className += " active";
+        }
+      </script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+          dataLayer.push(arguments);
+          }
+
+          gtag('js', new Date());
+
+          gtag('config', 'G-PYVRSFMDRL');
+      </script>
+
+      <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+          dataLayer.push(arguments);
+          }
+
+          gtag('js', new Date());
+
+          gtag('config', 'G-PYVRSFMDRL');
+      </script>
 </head>
 <body>
 
@@ -51,109 +166,7 @@
   showSlides3(slideIndex3);
   showSlides4(slideIndex4);
 </script>
-
-<script>
-      let slideIndex = 1, slideIndex2 = 1, slideIndex3 = 1, slideIndex4 = 1;
-      showSlides(slideIndex);
-      showSlides2(slideIndex2);
-      showSlides3(slideIndex3);
-      showSlides4(slideIndex4);
-
-      // Next/previous controls
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-
-      // Thumbnail image controls
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-      function currentSlide2(n) {
-        showSlides2(slideIndex2 = n);
-      }
-      function currentSlide3(n) {
-        showSlides3(slideIndex3 = n);
-      }
-      function currentSlide4(n) {
-        showSlides4(slideIndex4 = n);
-      }
-
-
-      function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-      }
-
-      function showSlides2(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides2");
-        let dots = document.getElementsByClassName("dot2");
-        if (n > slides.length) {slideIndex2 = 1}
-        if (n < 1) {slideIndex2 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex2-1].style.display = "block";
-        dots[slideIndex2-1].className += " active";
-      }
-
-      function showSlides3(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides3");
-        let dots = document.getElementsByClassName("dot3");
-        if (n > slides.length) {slideIndex3 = 1}
-        if (n < 1) {slideIndex3 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex3-1].style.display = "block";
-        dots[slideIndex3-1].className += " active";
-      }
       
-      function showSlides4(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides4");
-        let dots = document.getElementsByClassName("dot4");
-        if (n > slides.length) {slideIndex4 = 1}
-        if (n < 1) {slideIndex4 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex4-1].style.display = "block";
-        dots[slideIndex4-1].className += " active";
-      }
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-        dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'G-PYVRSFMDRL');
-    </script>
 
 
 <section class="hero">
@@ -321,7 +334,7 @@
 <hr>
 
 
-<section class="section is-small">
+<section class="section is-max-desktop">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-five-fifths">
@@ -351,13 +364,13 @@
               <div class="slideshow-container">
 
                 <!-- Full-width images with number and caption text -->
-                <div class="mySlides3 fade">                
+                <div class="mySlides4 fade">                
                   <img src="./static/images/carla_3.gif" style="width:60%">
                 </div>
-                <div class="mySlides3 fade">                
+                <div class="mySlides4 fade">                
                   <img src="./static/images/carla_4.gif" style="width:60%">
                 </div>
-                <div class="mySlides3 fade">                
+                <div class="mySlides4 fade">                
                   <img src="./static/images/carla_5.gif" style="width:60%">
                 </div>
               </div>
@@ -365,9 +378,9 @@
 
               <!-- The dots/circles -->
               <div style="text-align:center">
-                <span class="dot3" onclick="currentSlide3(1)"></span>
-                <span class="dot3" onclick="currentSlide3(2)"></span>
-                <span class="dot3" onclick="currentSlide3(3)"></span>
+                <span class="dot4" onclick="currentSlide4(1)"></span>
+                <span class="dot4" onclick="currentSlide4(2)"></span>
+                <span class="dot4" onclick="currentSlide4(3)"></span>
               </div>
             </div>
           </div>
@@ -411,6 +424,9 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+</section>
 
 <hr>
 
@@ -423,7 +439,7 @@
 
     <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h3 style="text-align: center;">Qualitative Results for Traffic Patterns Invovling Multiple Agents: </h3>
+      <h3 style="text-align: center;">We depict the learned attention maps for scenes with multiple agents performing the same trafficpattern. (upper) Three vehicles with the traffic pattern R4-R2: V; (lower) two pedestrians with C4-C1: P. Qualitatively, Action-Slot is able to (upper) identify the contextual regions containing objects and (lower) track the regions of interest, while MO [1] often misidentifies the objects or fails to differentiate the background. It is interesting noting that, the traffic pattern recognition results of both categories are correct for both methods. MO’s attention is not interpretable compared to Action-Slot’s attention maps.</h3>
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/q_v_p.gif">
@@ -435,7 +451,8 @@
   </div>
 
     <div class="content hs-text-jstified">
-      <h3 style="text-align: center;">Quantitative Results on the TACO Dataset: </h3>
+      <<h2 class="title is-3">Quantitative Results on the TACO Dataset: </h2>
+      <p>Experimental Results on the TACO dataset. Seq, V, and P denote input sequence length, vehicle classes, and pedestrian classes, respectively. For individual action categories, we report their performance using AP. * denotes the use of ground truth object tracklets. ‡ denotes the re-implementation of slot-based methods, where the slots are allocated to specific action classes to achieve reasonable performance.</p>
       <table>
         <tr>
           <th></th>
@@ -498,8 +515,8 @@
           <td>12.2</td>
           <td>16</td>
           <td>54.6</td>
-          <td><44.1</td>
-          <td><50.4</td>
+          <td>44.1</td>
+          <td>50.4</td>
         </tr>
         <tr>
           <td>ARG*</td>
@@ -526,15 +543,15 @@
           <td>51.5</td>
         </tr>
         <tr class="middle-border">
-          <td>SAVi</td>
+          <td>SAVi‡</td>
           <td>2.3</td>
           <td>16</td>
           <td>53.9</td>
-          <td><47.1</td>
-          <td><51.0</td>
+          <td>47.1</td>
+          <td>51.0</td>
         </tr>
         <tr>
-          <td>MO</td>
+          <td>MO‡</td>
           <td>2.3</td>
           <td>16</td>
           <td>50.7</td>
@@ -542,7 +559,7 @@
           <td>51.8</td>
         </tr>
         <tr>
-          <td>Slot-VPS</td>
+          <td>Slot-VPS‡</td>
           <td>2.3</td>
           <td>16</td>
           <td>67.0</td>
@@ -592,7 +609,7 @@
         The results show that TACO can serve as a good pre-training dataset and is transferable to the real world. Action-slot also outperform others by a large margin in the ROAD dataset.
       </p>
     <div class="content hs-text-jstified">
-      <h3 style="text-align: center;">Table 1: </h3>
+      <!-- <h3 style="text-align: center;">Table 1: </h3> -->
       <table>
         <tr>
           <th ></th>
@@ -691,10 +708,8 @@
       <h3 style="text-align: center;">The Shape-Conditioned Trajectory Deformation Network (SCTDN)</h3>
     </div> -->
     <div class="content hs-text-jstified">
-      <h3 style="text-align: center;">Dataset Statistics: </h3>
        <p>
-        Building on the well-established advancements in object keypoint prediction, our proposed representation and the 
-        learning framework aims to tackle the challenge of effectively determining the appropriate actions for object hanging tasks.
+        We manually annotate the our TACO dataset and ROAD dataset and compare the traffic pattern category distribution. We follow the same annotation strategy for labeling the both datasets. We find out that traffic patterns in the real-world dataset are rare, which results in a small scale imbalanced dataset.
       </p>
       <table>
         <tr>
@@ -723,10 +738,9 @@
         </tr>
       </table>
     </div>
-     
-    </div>
-    <div class="content has-text-justified">
+     <div class="content has-text-justified">
       <img src="./static/images/statistics.png">
+    </div>
     </div>
   </div>
 </section>
@@ -746,6 +760,17 @@
     </code></pre>
   </div>
 </section>
+
+<div class="container is-max-desktop content">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <p>
+        [1] Bao et al., "Discorying Object that Can Move". CVPR 2022
+      </p>
+    </div>
+  </div>
+</div>
+
 
 
 <footer class="footer">
