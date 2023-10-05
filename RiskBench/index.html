@@ -11,6 +11,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
     <script>
+      var id1 = 0, id2 = 0, id3 = 0, id4 = 0;
       let slideIndex = 1, slideIndex2 = 1, slideIndex3 = 1, slideIndex4 = 1;
       showSlides(slideIndex);
       showSlides2(slideIndex2);
@@ -18,21 +19,39 @@
       showSlides4(slideIndex4);
 
       // Next/previous controls
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
+      function nextSlide() {
+        showSlides(slideIndex += 1);
       }
+      function nextSlide2() {
+        showSlides2(slideIndex2 += 1);
+      }
+      function nextSlide3() {
+        showSlides3(slideIndex3 += 1);
+      }
+      function nextSlide4() {
+        showSlides4(slideIndex4 += 1);
+      }
+
 
       // Thumbnail image controls
       function currentSlide(n) {
+        clearInterval(id1);
+        id1 = setInterval(nextSlide, 5000);
         showSlides(slideIndex = n);
       }
       function currentSlide2(n) {
+        clearInterval(id2);
+        id2 = setInterval(nextSlide2, 5000);
         showSlides2(slideIndex2 = n);
       }
       function currentSlide3(n) {
+        clearInterval(id3);
+        id3 = setInterval(nextSlide3, 5000);
         showSlides3(slideIndex3 = n);
       }
       function currentSlide4(n) {
+        clearInterval(id4);
+        id4 = setInterval(nextSlide4, 5000);
         showSlides4(slideIndex4 = n);
       }
 
@@ -138,6 +157,11 @@
   showSlides2(slideIndex2);
   showSlides3(slideIndex3);
   showSlides4(slideIndex4);
+
+  id1 = setInterval(nextSlide, 4000);
+  id2 = setInterval(nextSlide2, 4000);
+  id3 = setInterval(nextSlide3, 10000);
+  id4 = setInterval(nextSlide4, 4000);
 </script>
 <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -412,7 +436,6 @@
     </section>
     <!-- /Data Collection. -->
 
-
     <!-- Experiment Setups. -->
     <section class="section is-small">
       <div class="container is-max-desktop">
@@ -681,6 +704,76 @@
       </div>
     </section>
     <!-- /Planning-aware. -->
+
+    <!-- Temporal Consistency -->
+    <section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Temporal Consistency</h2>
+        </div>
+        <br/>
+        <div class="content has-text-justified">
+          We study the temporal consistency of models’ predictions, as shown 
+          in the following table. To evaluate temporal consistency, we determine
+          if a risk is predicted accurately and consistently within a
+          specified time frame, leading up to the critical/collision point.
+        </div>
+        
+        <div class="content is-centered">
+          <table style="border-top:3px #cccccc solid;border-bottom:3px #cccccc solid;" cellpadding="10" border='0'>
+            <thead>
+              <tr>
+                <th></th>
+                <th>1s</th>
+                <th>2s</th>
+                <th>3s</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <tr>
+                <td><b>QCNet</b> [4]</td>
+                <td>50.2%</td>
+                <td>26.9%</td>
+                <td>18.5%</td>
+              </tr>
+            
+              <tr>
+                <td><b>DSA</b> [5]</td>
+                <td>14.0%</td>
+                <td>4.6%</td>
+                <td>3.8%</td>
+              </tr>
+            </tbody>
+            <tr>
+              <td><b>RRL</b> [6]</td>
+              <td>19.0%</td>
+              <td>8.5%</td>
+              <td>4.7%</td>
+            </tr>
+
+            <tr>
+              <td><b>BP</b> [7]</td>
+              <td>4.2%</td>
+              <td>2.4%</td>
+              <td>1.9%</td>
+            </tr>
+
+            <tbody>
+              <tr>
+                <td><b>BCP</b> [8]</td>
+                <td>6.9%</td>
+                <td>3.9%</td>
+                <td>3.4%</td>
+              </tr>
+            </tbody>
+            
+          </table>
+        </div>
+        
+
+      </div>
+    </section>
 
     <!-- Dataset Details. -->
     <section class="section is-small">
