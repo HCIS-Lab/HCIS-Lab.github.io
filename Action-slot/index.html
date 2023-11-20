@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Action-Slot: Visual Action-centric Representation for Traffic Pattern Recognition"> 
+        content="Action-slot: Visual Action-centric Representation for Atomic Activity Recognition in Traffic Scenes"> 
   <meta name="keywords" content="Slot Attention, Traffic Pattern, Action Recognition">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Action-Slot: Visual Action-centric Representation for Traffic Pattern Recognition</title>
@@ -334,23 +334,23 @@
 <hr>
 
 
-<section class="section is-max-desktop">
+<!-- <section class="section is-max-desktop">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-five-fifths">
             <h2 class="title is-3">Dataset and Annotation Samples</h2>
             <div class="content has-text-justified">
-              <!-- <p>
+               <p>
                 description
               </p> -->
-            </div>
+            <!-- </div>
           </div>
         </div>
-      
-        <div class="columns is-centered has-text-centered">
+       -->
+<!--         <div class="columns is-centered has-text-centered">
           <div class="column is-five-fifths">
             <h2 class="title is-4">TACO Dataset</h2>
-            <div class="content has-text-centered">
+            <div class="content has-text-centered"> -->
               <!-- <video id="replay-video"
                       controls
                       muted
@@ -361,10 +361,10 @@
                         type="video/webm">
               </video> -->
               <!-- Slideshow container -->
-              <div class="slideshow-container">
+              <!-- <div class="slideshow-container"> -->
 
                 <!-- Full-width images with number and caption text -->
-                <div class="mySlides4 fade">                
+                <!-- <div class="mySlides4 fade">                
                   <img src="./static/images/carla_3.gif" style="width:60%">
                 </div>
                 <div class="mySlides4 fade">                
@@ -373,23 +373,23 @@
                 <div class="mySlides4 fade">                
                   <img src="./static/images/carla_5.gif" style="width:60%">
                 </div>
-              </div>
+              </div> -->
               <!-- <br> -->
 
               <!-- The dots/circles -->
-              <div style="text-align:center">
+              <!-- <div style="text-align:center">
                 <span class="dot4" onclick="currentSlide4(1)"></span>
                 <span class="dot4" onclick="currentSlide4(2)"></span>
                 <span class="dot4" onclick="currentSlide4(3)"></span>
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="columns is-centered has-text-centered">
+        <!-- <div class="columns is-centered has-text-centered">
           <div class="column is-five-fifths">
             <h2 class="title is-4">ROAD Dataset</h2>
-            <div class="content has-text-centered">
+            <div class="content has-text-centered"> -->
               <!-- <video id="replay-video"
                       controls
                       muted
@@ -400,10 +400,10 @@
                         type="video/webm">
               </video> -->
               <!-- Slideshow container -->
-              <div class="slideshow-container">
+              <!-- <div class="slideshow-container"> -->
 
                 <!-- Full-width images with number and caption text -->
-                <div class="mySlides3 fade">                
+                <!-- <div class="mySlides3 fade">                
                   <img src="./static/images/road_1.gif" style="width:60%">
                 </div>
                 <div class="mySlides3 fade">                
@@ -412,11 +412,11 @@
                 <div class="mySlides3 fade">                
                   <img src="./static/images/road_3.gif" style="width:60%">
                 </div>
-              </div>
+              </div> -->
               <!-- <br> -->
 
               <!-- The dots/circles -->
-              <div style="text-align:center">
+              <!-- <div style="text-align:center">
                 <span class="dot3" onclick="currentSlide3(1)"></span>
                 <span class="dot3" onclick="currentSlide3(2)"></span>
                 <span class="dot3" onclick="currentSlide3(3)"></span>
@@ -426,7 +426,7 @@
         </div>
       </div>
     </div>
-</section>
+</sectio >  -->
 
 <hr>
 
@@ -438,11 +438,11 @@
     </div>
 
     <div class="content hs-text-jstified">
-      <h2 class="title is-3">Qauntitative Results: </h2>
-      <p style="text-align: center;">We depict the learned attention maps for scenes with multiple agents performing the same trafficpattern. (upper) Three vehicles with the traffic pattern R4-R2: V; (lower) two pedestrians with C4-C1: P. Qualitatively, Action-Slot is able to (upper) identify the contextual regions containing objects and (lower) track the regions of interest, while MO [1] often misidentifies the objects or fails to differentiate the background. It is interesting noting that, the traffic pattern recognition results of both categories are correct for both methods. MO’s attention is not interpretable compared to Action-Slot’s attention maps.</p>
+      <h2 class="title is-3">Qualitative Results: </h2>
+      <p style="text-align: center;">We depict the learned attention maps from Action-slot on the OATS dataset. Different colored masks denote the attention on distinct atomic activities.</p>
     </div>
     <div class="content has-text-justified">
-      <img src="./static/images/q_v_p.gif">
+      <img src="./static/images/oats_web.gif">
     </div>
     <div class="content has-text-justified">
       <p>
