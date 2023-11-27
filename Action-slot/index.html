@@ -434,11 +434,11 @@
 <section class="section is-max-desktop">
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Experimental Results</h2>
+      <h2 class="title is-3">Qualitative Results</h2>
     </div>
 
     <div class="content hs-text-jstified">
-      <h2 class="title is-3">Qualitative Results: </h2>
+      <h2 class="title is-3">Attention maps on OATS[1]: </h2>
       <p style="text-align: center;">We depict the learned attention maps from Action-slot on the OATS dataset. Different colored masks denote the attention on distinct atomic activities.</p>
     </div>
     <div class="content has-text-justified">
@@ -465,153 +465,7 @@
 </section>
 
 
-<section class="section is-max-desktop">
-  <div class="container is-max-desktop">
-    <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Qauntitative Results on the ROAD Dataset</h2>
-    </div>
-     <p>
-        The results show that TACO can serve as a good pre-training dataset and is transferable to the real world. Action-slot also outperform others by a large margin in the ROAD dataset.
-      </p>
-    <div class="content hs-text-jstified">
-      <!-- <h3 style="text-align: center;">Table 1: </h3> -->
-      <table>
-        <tr>
-          <th ></th>
-          <th>pretrained on TACO</th>
-          <th>trained from scratch on ROAD</th>
-          <th>pretrained on TACO + fine-tune on ROAD</th>
-        </tr>
-        <tr class="middle-border">
-          <td>I3D</td>
-          <td>19.5</td>
-          <td>33.4</td>
-          <td>40.5</td>
-        </tr>
-        <tr>
-          <td>X3D</td>
-          <td>20.0</td>
-          <td>41.8</td>
-          <td>43.3</td>
-        </tr>
-        <tr>
-          <td>SlowFast</td>
-          <td>27.2</td>
-          <td>40.7</td>
-          <td>56.4</td>
-        </tr>
-        <tr>
-          <td>VideoMAE</td>
-          <td>24.7</td>
-          <td>26.8</td>
-          <td>29.2</td>
-        </tr>
-        <tr class="middle-border">
-        <tr>
-          <td>MO</td>
-          <td>33.8</td>
-          <td>40.6</td>
-          <td>46.0</td>
-        </tr>
-        <tr>
-          <td>Slot-VPS</td>
-          <td>30.8</td>
-          <td>36.7</td>
-          <td>52.1</td>
-        </tr>
-        <tr class="middle-border">
-          <td>Action-Slot (I3D)</td>
-          <td>24.6</td>
-          <td>35.6</td>
-          <td>46.3 (+5.8%)</td>
-        </tr>
-        <tr>
-          <td>Action-slot (X3D)</td>
-          <td>31.3</td>
-          <td>40.1</td>
-          <td>54.4 (+11.1%)</td>
-        </tr>
-        <tr>
-          <td>Action-slot (SlowFast)</td>
-          <td>36.8</td>
-          <td>37.5</td>
-          <td>62.5 (+6.1%)</td>
-        </tr>
-      </table>
 
-      </p>
-    </div>
-  </div> 
-</section>
-
-<hr>
-
-<section class="section is-max-desktop">
-  <div class="container is-max-desktop">
-    <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Limitation</h2>
-      <div class="content has-text-justified">
-      <p>
-        We find the ability of Action-Slot in the following challenging case is less effective. We show a scenario where there are two pedestrians walking toward each other on the right-hand side crosswalk. We show the attention maps of the C1-C2: P and C2-C1: P slots. Although the learned attention maps are able to localize the region of interest, we find Action-Slot may have confusion to recognize the two patterns. Note that, in this case, Action-Slot fails to recognize one of the patterns, i.e., C2-C1: P.
-      </p>
-    </div>
-    </div>
-    <div class="content has-text-justified">
-      <img src="./static/images/confusion.gif">
-    </div>
-  </div>
-</section>
-
-<hr>
-
-<section class="section is-max-desktop">
-  <div class="container is-max-desktop">
-    <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Dataset Details</h2>
-    </div>
-<!--     <div class="content has-text-justified">
-      <h3 style="text-align: center;">The Shape-Conditioned Trajectory Deformation Network (SCTDN)</h3>
-    </div> -->
-    <div class="content hs-text-jstified">
-       <p>
-        We manually annotate the our TACO dataset and ROAD dataset and compare the traffic pattern category distribution. We follow the same annotation strategy for labeling the both datasets. We find out that traffic patterns in the real-world dataset are rare, which results in a small scale imbalanced dataset.
-      </p>
-      <table>
-        <tr>
-          <th> </th>
-          <th>size (minutes)</th>
-          <th># of clips</th>
-          <th># of labels</th>
-        </tr>
-        <tr class="middle-border">
-          <td>ROAD</td>
-          <td>134</td>
-          <td>N/A</td>
-          <td>N/A</td>
-        </tr>
-        <tr>
-          <td>annotated ROAD</td>
-          <td>27</td>
-          <td>127</td>
-          <td>338</td>
-        </tr>
-        <tr class="middle-border">
-          <td>TACO</td>
-          <td>284</td>
-          <td>3130</td>
-          <td>7584</td>
-        </tr>
-      </table>
-    </div>
-     <div class="content has-text-justified">
-      <img src="./static/images/statistics.png">
-    </div>
-    </div>
-  </div>
-</section>
-
-
-<hr>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
