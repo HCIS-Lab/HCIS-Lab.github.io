@@ -302,7 +302,7 @@
     </div>
 
     <div class="content has-text-justified has-text-left">
-      <h3>The OATS Dataset [1]</h3>
+      <h3 style="margin-bottom: 5px;">The OATS Dataset [1]</h3>
       <div style="border-bottom: 1px solid #333; margin-bottom: 10px;"></div>
 
     </div>
@@ -311,7 +311,7 @@
     </div>
 
     <div class="content has-text-justified has-text-left">
-      <h3>The nuScenes Dataset [2]</h3>
+      <h3 style="margin-bottom: 5px;">The nuScenes Dataset [2]</h3>
       <div style="border-bottom: 1px solid #333; margin-bottom: 10px;"></div>
     </div>
     <div class="content has-text-justified">
@@ -319,7 +319,7 @@
     </div>
 
     <div class="content has-text-justified has-text-left">
-      <h3 >Our TACO Dataset</h3>
+      <h3 style="margin-bottom: 5px;">Our TACO Dataset</h3>
       <div style="border-bottom: 1px solid #333; margin-bottom: 10px;"></div>
     </div>
     <div class="content has-text-justified">
@@ -337,22 +337,22 @@
     </div>
 
     <div class="content has-text-justified has-text-left">
-      <h3>Occluded Road Topology</h3>
-      <p class="has-text-left">
-        <b>(Left)<b> The intersection is partially occluded by the traffic cones. <b>(Right) The Corner Z4 is entirely covered by the construction.
+      <h3 >Occluded Road Topology</h3>
+      <p class="has-text-left" style="margin-bottom: 5px;">
+        <b>(Left)</b> The intersection is partially occluded by the traffic cones. <b>(Right)</b> The Corner Z4 is entirely covered by the construction.
       </p>
     </div>
-    <div class="content has-text-justified">
+    <div class="content has-text-justified" style="margin-top: -10px;">
       <img src="./static/images/construction.gif">
     </div>
 
     <div class="content has-text-justified has-text-left">
       <h3>Road User with Multiple Actions</h3>
-      <p class="has-text-left">
+      <p class="has-text-left" style="margin-bottom: 5px;">
         The pedestrian perform two actions consecutively. Action-slot can recognize the transition of actions.
       </p>
     </div>
-    <div class="content has-text-justified">
+    <div class="content has-text-justified" style="margin-top: -10px;">
       <img src="./static/images/action_transition.gif" >
     </div>
 
@@ -366,7 +366,7 @@
     <div class="column is-centered has-text-centered">
       <h2 class="title is-3">Object Guidance vs. The Proposed Guidance</h2>
       <p class="has-text-left">
-        We visualize the attention from the any slot that predicts false positive in scenarios presenting many staic road users, to demonstrate the object guidance can lead to misleading signal on static objects. Note that there is not atomic activity presented in the scenarios. The object-guided model is trained with using object instance masks to guide slots. The object-guided model is confused by the static road users and makes false positive predictions. While our Action-slot show strong robustness.
+        We compare object instance mask guidance with Action-slot that is guided with L_{bg} and L_{neg} mentioned in Sec. 3.3. . We hpothesize that the object guidance can mislead the model because not all road users are involved in an activity. To verify it, we first create scenarios where presents many static pedestrians. Then we visualize the attention from the any slot that predicts false positive. Note that there is no atomic activity presented in the scenarios. The object-guided model is confused by the static road users and makes false positive predictions. While our Action-slot show strong robustness in the scenarios.
       </p>
     </div>
     <div class="content has-text-justified">
