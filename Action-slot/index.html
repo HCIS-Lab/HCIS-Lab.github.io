@@ -375,25 +375,6 @@
 
 <hr>
 
-<section class="section is-max-desktop">
-  <div class="container is-max-desktop">
-    <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Action-slot Architecture</h2>
-    </div>
-    <!-- <div class="content has-text-justified">
-      <h3 style="text-align: center;">The Shape-Conditioned Trajectory Deformation Network (SCTDN)</h3>
-    </div> -->
-    <div class="content has-text-justified">
-      <img src="./static/images/architecture.png">
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        The top of the figure illustrates the proposed framework. Action-Slot first takes video as input and uses a 3D-CNN encoder to extract spatial-temporal feature patches. All patches are then processed with individual slots simultaneously to find the most relevant spatial-temporal patches corresponding to each action slot. After updating the action slots, all action slots are fed into a fully-connected layer to predict the probability of the corresponding action category, except for the background slot. The bottom of the figure depicts the attention maps of action and background slots. In addition, we propose to incorporate a background mask Mbg to supervise the background slot and facilitate the other slots to capture action signals. Moreover, we regularize slots allocated to negative classes (e.g., R3-R4: V) with an all-zero mask \(Mneg\).
-      </p>
-    </div>
-  </div>
-</section>
-
 
 <div class="container is-max-desktop content">
   <div class="columns is-centered">
