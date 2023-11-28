@@ -296,31 +296,31 @@
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
       <h2 class="title is-3">Visualization of Attention from Action-slot on Various Datasets</h2>
-      <p>
+      <p class="has-text-left">
         We visualize attention from action slots. Distinct color masks represent the corresponding classes of atomic activitiy that the slots pay attention to.
       </p>
     </div>
 
-    <div class="content has-text-justified">
+    <div class="content has-text-justified has-text-left">
       <h3 style="text-align: center;">The OATS Dataset [1]</h3>
-      <div style="border-bottom: 2px solid #333; margin-bottom: 10px;"></div>
+      <div style="border-bottom: 1px solid #333; margin-bottom: 10px;"></div>
 
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/oats_web.gif">
     </div>
 
-    <div class="content has-text-justified">
+    <div class="content has-text-justified has-text-left">
       <h3 style="text-align: center;">The nuScenes Dataset [2]</h3>
-      <div style="border-bottom: 2px solid #333; margin-bottom: 10px;"></div>
+      <div style="border-bottom: 1px solid #333; margin-bottom: 10px;"></div>
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/nuscenes.gif" >
     </div>
 
-    <div class="content has-text-justified">
+    <div class="content has-text-justified has-text-left">
       <h3 style="text-align: center;">Our TACO Dataset</h3>
-      <div style="border-bottom: 2px solid #333; margin-bottom: 10px;"></div>
+      <div style="border-bottom: 1px solid #333; margin-bottom: 10px;"></div>
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/taco_q.gif">
@@ -332,13 +332,13 @@
 
 <section class="section is-max-desktop">
   <div class="container is-max-desktop">
-    <div class="column is-centered has-text-left">
-      <h2 class="title is-3">Attention Visualization from Action-slot in Challenging Scenarios</h2>
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-3">Attention Visualization in Challenging Scenarios</h2>
     </div>
 
     <div class="content has-text-justified">
       <h3 style="text-align: center;">Occluded Road Topology</h3>
-      <p>
+      <p class="has-text-left">
         (Left) The intersection is partially occluded by the traffic cones. (Right) The Corner Z4 is entirely covered by the construction.
       </p>
     </div>
@@ -346,9 +346,9 @@
       <img src="./static/images/construction.gif">
     </div>
 
-    <div class="column is-centered has-text-left">
+    <div class="content has-text-justified">
       <h3 style="text-align: center;">Road User with Multiple Actions</h3>
-      <p>
+      <p class="has-text-left">
         The pedestrian first perform two actions consecutively. Action-slot can recognize the transition of actions.
       </p>
     </div>
@@ -364,7 +364,7 @@
 <section class="section is-max-desktop">
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Comparison with Object-guided and The Proposed Guidance</h2>
+      <h2 class="title is-3">Comparison with Object Guidance and The Proposed Guidance</h2>
       <p class="has-text-left">
         We visualize the attention from the any slot that predicts false positive in scenarios presenting many staic road users, to demonstrate the object guidance can lead to misleading signal on static objects. Note that there is not atomic activity presented in the scenarios. The object-guided model is trained with using object instance masks to guide slots. The object-guided model is confused by the static road users and makes false positive predictions. While our Action-slot show strong robustness.
       </p>
