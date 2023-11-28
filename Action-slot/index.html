@@ -261,7 +261,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
+          <p class="has-text-left">
           In this paper, we study multi-label atomic activity recognition. Despite the notable progress in action recognition, it is still challenging to recognize atomic activities due to a deficiency in holistic understanding of both multiple road users’ motions and their contextual information. In this paper, we introduce Action-slot, a slot attention-based approach that learns visual action-centric representations, capturing both motion and contextual information. Our key idea is to design action slots that are capable of paying attention to regions where atomic activities occur, without the need for explicit perception guidance. To further enhance slot attention, we introduce a background slot that competes with action slots, aiding the training process in avoiding unnecessary focus on background regions devoid of activities. Yet, the imbalanced class distribution in the existing dataset hampers the assessment of rare activities. To address the limitation, we collect a synthetic dataset called TACO, which is four times larger than OATS and features a balanced distribution of atomic activities. To validate the effectiveness of our method, we conduct comprehensive experiments and ablation studies against various action recognition baselines. We also show that the performance of multi-label atomic activity recognition on real-world datasets can be improved by pretraining representations on TACO. We will release our source code and dataset.
           </p>
         </div>
@@ -280,7 +280,7 @@
       <img src="./static/images/teaser.png">
     </div>
     <div class="content has-text-justified">
-      <p>
+      <p class="has-text-left">
         Illustration of the concept of multi-label atomic activity recognition and our proposed Action-slot. In the scene, three atomic activities are presented and depicted by colored arrows. For example, the red arrow represents the <strong>Z1-Z4: C+</strong> atomic activity, indicating a group of vehicles turning left. Atomic activities are defined based on road user's type and their motion patterns grounded in the underlying road structure. We introduce Action-slot to learn visual action-centric representations that enable decomposing multiple atomic activities in videos. We demonstrate that our framework can effectively recognize multiple atomic activities via learned representations.
       </p>
     </div>
@@ -297,13 +297,13 @@
     <div class="column is-centered has-text-centered">
       <h2 class="title is-3">Visualization of Attention from Action-slot on Various Datasets</h2>
       <p class="has-text-left">
-        We visualize attention from action slots. Distinct colored masks represent the classes of atomic activitiy that the corresponding action slots pay attention to.
+        We visualize attention from action slots. Distinct colored masks represent the classes of atomic activitiy that the corresponding action slots pay attention to. Action-slot can localize atomic activities without using any perception module (e.g., object detector).
       </p>
     </div>
 
     <div class="content has-text-justified has-text-left">
       <h3 style="margin-bottom: 5px;">The OATS Dataset [1]</h3>
-      <div style="border-bottom: 1px solid #333; margin-bottom: 10px;"></div>
+      <div style="border-bottom: 1px solid #333; margin-bottom: -30px;"></div>
 
     </div>
     <div class="content has-text-justified">
@@ -312,7 +312,7 @@
 
     <div class="content has-text-justified has-text-left">
       <h3 style="margin-bottom: 5px;">The nuScenes Dataset [2]</h3>
-      <div style="border-bottom: 1px solid #333; margin-bottom: 10px;"></div>
+      <div style="border-bottom: 1px solid #333; margin-bottom: -30px;"></div>
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/nuscenes.gif" >
@@ -320,7 +320,7 @@
 
     <div class="content has-text-justified has-text-left">
       <h3 style="margin-bottom: 5px;">Our TACO Dataset</h3>
-      <div style="border-bottom: 1px solid #333; margin-bottom: 10px;"></div>
+      <div style="border-bottom: 1px solid #333; margin-bottom: -30px;"></div>
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/taco_q.gif">
@@ -342,7 +342,7 @@
         <b>(Left)</b> The intersection is partially occluded by the traffic cones. <b>(Right)</b> The Corner Z4 is entirely covered by the construction.
       </p>
     </div>
-    <div class="content has-text-justified" style="margin-top: -10px;">
+    <div class="content has-text-justified" style="margin-top: -30px;">
       <img src="./static/images/construction.gif">
     </div>
 
@@ -352,7 +352,7 @@
         The pedestrian perform two actions consecutively. Action-slot can recognize the transition of actions.
       </p>
     </div>
-    <div class="content has-text-justified" style="margin-top: -10px;">
+    <div class="content has-text-justified" style="margin-top: -30px;">
       <img src="./static/images/action_transition.gif" >
     </div>
 
