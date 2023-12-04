@@ -366,7 +366,7 @@
     <div class="column is-centered has-text-centered">
       <h2 class="title is-3">Object Guidance vs. The Proposed Guidance</h2>
       <p class="has-text-left">
-        We compare object instance mask guidance with Action-slot that is guided with L_{bg} and L_{neg} mentioned in Sec. 3.3. . We hpothesize that the object guidance can mislead the model because not all road users are involved in an activity. To verify it, we first create scenarios where presents many static pedestrians. <b>Note that there is no atomic activity presented in the scenarios</b>. Then we visualize the attention from the any slot that predicts false positive. The object-guided model is confused by the static road users and makes false positive predictions. While our Action-slot show strong robustness in the scenarios.
+        We compare object instance mask guidance with Action-slot that is guided with L_{bg} and L_{neg} mentioned in Sec. 3.3. . We hpothesize that the object guidance can mislead the model because not all road users are involved in an activity. To verify it, we first create scenarios where presents many static pedestrians. <b>Note that there is no atomic activity presented in the scenarios</b>. Then we visualize the attention from the any slot that predicts <b>false positive.</b> The object-guided model is confused by the static road users and makes false positive predictions. While our Action-slot show strong robustness in the scenarios.
       </p>
     </div>
     <div class="content has-text-justified">
