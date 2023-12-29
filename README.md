@@ -1,2 +1,2 @@
 # HCIS-Lab.github.io
-Project pages for HICS Lab
+Project pages for HCIS Lab
