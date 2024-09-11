@@ -298,11 +298,25 @@
       <div class="column is-five-fifths">
         <h2 class="title is-3">Experiments</h2>
         <div class="content has-text-justified">
+          <p>We evaluate the synthesized human grasps based on their physical plausibility, stability, and diversity, following prior works. We propose a new metric called <strong>Task Score (TS)</strong> to evaluate the quality of task-oriented human grasp synthesis.</p>
+
+          <p><strong>Penetration Volume (PV):</strong> We calculate the penetration volume by converting the meshes into 1mm cubes and calculating the overlap of these voxels.</p>
+
+          <p><strong>Simulation Displacement (SD):</strong> We simulate the object and predicted grasps in PyBullet [14] for 1 sec. and then compute the object's center of mass displacement.</p>
+
+          <p><strong>Contact Ratio (CR):</strong> Contact percentage of predicted grasps with objects.</p>
+
+          <p><strong>Qualified Ratio (QR):</strong> The metric jointly considers both penetration volume and simulation displacement. Note that, a higher penetration volume generally leads to a lower simulation displacement, which is not satisfactory. We set thresholds at 3 × 10<sup>-6</sup> cm<sup>3</sup> and 2 cm for penetration volume and simulation displacement, respectively. We calculate the percentage of predicted grasps that satisfy both criteria.</p>
+
+          <p><strong>Diversity Score (DS):</strong> We follow FLEX to compute the average L<sub>2</sub> pairwise distance to evaluate the diversity of predicted grasps.</p>
+
+          <p><strong>Obstacle Penetration Percentage (OPP):</strong> We compute the penetration percentage of human grasp vertices in obstacles for initial and goal scenes [44].</p>
+
+          <p><strong>Task Score (TS):</strong> A proper metric for task-oriented human grasp synthesis should take grasp physically-plausibility, stability, and collision avoidance in both initial and goal scenes. Thus, we propose a new metric and define it as TS = QR × (1 - Init OPP) × (1 - Goal OPP).</p>
         </div>
       </div>
     </div>
 
-    
 
     <div class="content is-centered">
       <h2 class="title is-4" style="text-align: center;">Table 1: Main Table</h2>
@@ -341,14 +355,14 @@
             <td style="padding: 8px; text-align: right;">3.85</td>
             <td style="padding: 8px; text-align: right;">92.64</td>
             <td style="padding: 8px; text-align: right;">46.84</td>
-            <td style="padding: 8px; text-align: right;">90.14</td>
+            <td style="padding: 8px; text-align: right;"><b>90.14</td>
             <td style="padding: 8px; text-align: right;">5.56</td>
             <td style="padding: 8px; text-align: right;">17.26</td>
             <td style="padding: 8px; text-align: right;">0.366</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px;">SceneDiffuser [21]</td>
-            <td style="padding: 8px; text-align: right;">1.37</td>
+            <td style="padding: 8px; text-align: right;"><b>1.37</td>
             <td style="padding: 8px; text-align: right;">3.19</td>
             <td style="padding: 8px; text-align: right;">97.52</td>
             <td style="padding: 8px; text-align: right;">53.12</td>
@@ -361,30 +375,30 @@
             <td style="padding: 8px;">FLEX [44]</td>
             <td style="padding: 8px; text-align: right;">2.50</td>
             <td style="padding: 8px; text-align: right;">1.62</td>
-            <td style="padding: 8px; text-align: right;">99.94</td>
+            <td style="padding: 8px; text-align: right;"><b>99.94</td>
             <td style="padding: 8px; text-align: right;">59.10</td>
             <td style="padding: 8px; text-align: right;">33.59</td>
-            <td style="padding: 8px; text-align: right;">6.74</td>
-            <td style="padding: 8px; text-align: right;">5.61</td>
+            <td style="padding: 8px; text-align: right;"><b>6.74</td>
+            <td style="padding: 8px; text-align: right;"><b>5.61</td>
             <td style="padding: 8px; text-align: right;">0.520</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px;">Ours</td>
             <td style="padding: 8px; text-align: right;">2.40</td>
-            <td style="padding: 8px; text-align: right;">1.42</td>
+            <td style="padding: 8px; text-align: right;"><b>1.42</td>
             <td style="padding: 8px; text-align: right;">99.31</td>
-            <td style="padding: 8px; text-align: right;">65.29</td>
+            <td style="padding: 8px; text-align: right;"><b>65.29</td>
             <td style="padding: 8px; text-align: right;">43.12</td>
             <td style="padding: 8px; text-align: right;">7.27</td>
             <td style="padding: 8px; text-align: right;">5.79</td>
-            <td style="padding: 8px; text-align: right;">0.570</td>
+            <td style="padding: 8px; text-align: right;"><b>0.570</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px; vertical-align: middle;" rowspan="5">Stacking</td>
             <td style="padding: 8px;">GraspTTA [23]</td>
             <td style="padding: 8px; text-align: right;">4.30</td>
-            <td style="padding: 8px; text-align: right;">0.28</td>
-            <td style="padding: 8px; text-align: right;">100.00</td>
+            <td style="padding: 8px; text-align: right;"><b>0.28</td>
+            <td style="padding: 8px; text-align: right;"><b>100.00</td>
             <td style="padding: 8px; text-align: right;">35.00</td>
             <td style="padding: 8px; text-align: right;">0.30</td>
             <td style="padding: 8px; text-align: right;">26.04</td>
@@ -415,13 +429,13 @@
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px;">FLEX [44]</td>
-            <td style="padding: 8px; text-align: right;">0</td>
+            <td style="padding: 8px; text-align: right;"><b>0</td>
             <td style="padding: 8px; text-align: right;">10.65</td>
             <td style="padding: 8px; text-align: right;">0</td>
             <td style="padding: 8px; text-align: right;">0.00</td>
-            <td style="padding: 8px; text-align: right;">107.87</td>
-            <td style="padding: 8px; text-align: right;">0</td>
-            <td style="padding: 8px; text-align: right;">0</td>
+            <td style="padding: 8px; text-align: right;"><b>107.87</td>
+            <td style="padding: 8px; text-align: right;"><b>0</td>
+            <td style="padding: 8px; text-align: right;"><b>0</td>
             <td style="padding: 8px; text-align: right;">0</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
@@ -429,11 +443,11 @@
             <td style="padding: 8px; text-align: right;">1.09</td>
             <td style="padding: 8px; text-align: right;">1.03</td>
             <td style="padding: 8px; text-align: right;">94.97</td>
-            <td style="padding: 8px; text-align: right;">84.31</td>
+            <td style="padding: 8px; text-align: right;"><b>84.31</td>
             <td style="padding: 8px; text-align: right;">48.59</td>
             <td style="padding: 8px; text-align: right;">14.94</td>
             <td style="padding: 8px; text-align: right;">4.51</td>
-            <td style="padding: 8px; text-align: right;">0.684</td>
+            <td style="padding: 8px; text-align: right;"><b>0.684</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px; vertical-align: middle;" rowspan="5">Shelving</td>
@@ -453,14 +467,14 @@
             <td style="padding: 8px; text-align: right;">3.90</td>
             <td style="padding: 8px; text-align: right;">93.13</td>
             <td style="padding: 8px; text-align: right;">46.32</td>
-            <td style="padding: 8px; text-align: right;">89.79</td>
+            <td style="padding: 8px; text-align: right;"><b>89.79</td>
             <td style="padding: 8px; text-align: right;">6.42</td>
             <td style="padding: 8px; text-align: right;">13.17</td>
             <td style="padding: 8px; text-align: right;">0.376</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px;">SceneDiffuser [21]</td>
-            <td style="padding: 8px; text-align: right;">1.38</td>
+            <td style="padding: 8px; text-align: right;"><b>1.38</td>
             <td style="padding: 8px; text-align: right;">3.31</td>
             <td style="padding: 8px; text-align: right;">96.43</td>
             <td style="padding: 8px; text-align: right;">51.48</td>
@@ -472,12 +486,12 @@
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px;">FLEX [44]</td>
             <td style="padding: 8px; text-align: right;">2.81</td>
-            <td style="padding: 8px; text-align: right;">1.54</td>
-            <td style="padding: 8px; text-align: right;">99.90</td>
+            <td style="padding: 8px; text-align: right;"><b>1.54</td>
+            <td style="padding: 8px; text-align: right;"><b>99.90</td>
             <td style="padding: 8px; text-align: right;">57.26</td>
             <td style="padding: 8px; text-align: right;">28.72</td>
-            <td style="padding: 8px; text-align: right;">4.39</td>
-            <td style="padding: 8px; text-align: right;">4.47</td>
+            <td style="padding: 8px; text-align: right;"><b>4.39</td>
+            <td style="padding: 8px; text-align: right;"><b>4.47</td>
             <td style="padding: 8px; text-align: right;">0.522</td>
           </tr>
           <tr>
@@ -485,11 +499,11 @@
             <td style="padding: 8px; text-align: right;">2.12</td>
             <td style="padding: 8px; text-align: right;">1.62</td>
             <td style="padding: 8px; text-align: right;">99.47</td>
-            <td style="padding: 8px; text-align: right;">67.49</td>
+            <td style="padding: 8px; text-align: right;"><b>67.49</td>
             <td style="padding: 8px; text-align: right;">52.81</td>
             <td style="padding: 8px; text-align: right;">8.72</td>
             <td style="padding: 8px; text-align: right;">10.31</td>
-            <td style="padding: 8px; text-align: right;">0.552</td>
+            <td style="padding: 8px; text-align: right;"><b>0.552</td>
           </tr>
         </tbody>
       </table>
