@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description"
+		content="Potential Field as Scene Affordance for Behavior Change-Based Risk Object Identification.">
+	<meta name="keywords" content="Autonomous driving, Dataset, Risk identification">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Potential Field as Scene Affordance for Behavior Change-Based Risk Object Identification</title>
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+
+	<script>
+		var id = 0;
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function nextSlide() {
+			slideIndex++
+			showSlides(slideIndex);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+			slideIndex = n
+			showSlides(slideIndex);
+		}
+
+		function showSlides(n) {
+			let i;
+			let gifDurations = [2500, 3800, 5400, 4400];
+			let git_repeat = 2
+			let slides = document.getElementsByClassName("mySlides");
+			let dots = document.getElementsByClassName("dot4");
+
+			if (n > slides.length) { slideIndex = 1 }
+			if (n < 1) { slideIndex = slides.length }
+
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+
+			let gif = slides[slideIndex - 1].getElementsByTagName('img')[0];
+			let currentSrc = gif.src;
+			gif.src = '';
+			gif.src = currentSrc;
+
+			clearTimeout(id);
+			id = setTimeout(nextSlide, gifDurations[slideIndex - 1] * git_repeat);
+		}
+	</script>
+
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+
+		gtag('js', new Date());
+		gtag('config', 'G-PYVRSFMDRL');
+	</script>
+
+	<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+	<link rel="stylesheet" href="./static/css/bulma.min.css">
+	<link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+	<link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+	<link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	<link rel="stylesheet" href="./static/css/index.css">
+	<link rel="icon" href="./static/images/favicon.svg">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script defer src="./static/js/fontawesome.all.min.js"></script>
+	<script src="./static/js/bulma-carousel.min.js"></script>
+	<script src="./static/js/bulma-slider.min.js"></script>
+	<script src="./static/js/index.js"></script>
+
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"
+		onload="renderMathInElement(document.body);"></script>
+
+</head>
+
+<body>
+	<script type="module">
+		showSlides(slideIndex);
+	</script>
+
+
+	<section class="hero">
+		<div class="hero-body">
+			<div class="container is-max-desktop">
+				<div class="columns is-centered">
+					<div class="column has-text-centered">
+						<h1 class="title is-2 publication-title">Potential Field as Scene Affordance
+							for <br> Behavior Change-Based Risk Object Identification</h1>
+						<div class="is-size-5 publication-authors">
+							<span class="author-block">
+								<a href="https://github.com/">Pang-Yuan Pao</a>,
+							</span>
+							<span class="author-block">
+								Shu-Wei Lu,
+							</span>
+							<span class="author-block">
+								Ze-Yan Lu,
+							</span>
+							<span class="author-block">
+								<a href="https://sites.google.com/site/yitingchen0524/">Yi-Ting Chen</a>
+							</span>
+						</div>
+
+						<div class="is-size-5 publication-authors">
+							<span class="author-block">National Yang Ming Chiao Tung University</span>
+						</div>
+
+						<!-- <div class="is-size-5 publication-authors">
+							<span class="author-block">2024 IEEE RAL</span>
+						</div> -->
+
+						<div class="column has-text-centered">
+							<div class="publication-links">
+								<!-- PDF Link. -->
+								<span class="link-block">
+									<a href="https://arxiv.org/abs/"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fas fa-file-pdf"></i>
+										</span>
+										<span>Paper</span>
+									</a>
+								</span>
+								<!-- <span class="link-block">
+									<a href="https://arxiv.org/abs/2011.12948"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="ai ai-arxiv"></i>
+										</span>
+										<span>arXiv</span>
+									</a>
+								</span> -->
+
+								<!-- Video Link. -->
+								<span class="link-block">
+									<a href="https://www.youtube.com/"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fab fa-youtube"></i>
+										</span>
+										<span>Video</span>
+									</a>
+								</span>
+
+								<!-- Code Link. -->
+								<span class="link-block">
+									<a href="https://github.com/WaywayPao/RAL-ROI"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fab fa-github"></i>
+										</span>
+										<span>Code</span>
+									</a>
+								</span>
+
+								<!-- Dataset Link. -->
+								<span class="link-block">
+									<a href="https://nycu1-my.sharepoint.com/:f:/g/personal/ychen_m365_nycu_edu_tw/EviA5ovlh6hPo_ZXEPQjxAQB2R3vNubk3HM1u4ib1VdPFA?e=WHEWdm"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="far fa-images"></i>
+										</span>
+										<span>Dataset</span>
+									</a>
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Teaser. -->
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-four-fifths">
+						<img src="./static/img/teaser.png" alt="teaser" />
+					</div>
+				</div>
+				<!-- / Teaser. -->
+
+				<!-- Paper Video. -->
+				<!-- <div class="columns is-centered has-text-centered">
+					<div class="column is-four-fifths">
+						<div class="publication-video">
+							<iframe src="https://www.youtube.com/embed/9VQV7TRmwl4?rel=0&amp;showinfo=0" frameborder="0"
+								allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							<video id="replay-video" controls muted preload playsinline width="75%">
+								<source src="./static/Video/riskbench_icra_video.m4v" type="video/mp4">
+						</div>
+					</div>
+				</div> -->
+				<!--/ Paper Video. -->
+
+			</div>
+		</div>
+	</section>
+
+
+	<section class="section" id="abstract">
+		<div class="container is-max-desktop">
+			<!-- Abstract. -->
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<h2 class="title is-3">Abstract</h2>
+					<div class="content has-text-justified">
+						<p>
+							We study vision-based behavior change-based risk object identification (Vision-ROI), a
+							crucial formulation for Vision-based ROI that aims to detect potential hazards for
+							intelligent driving systems.
+
+							Existing methods often show significant limitations in spatial and temporal consistency,
+							stemming from an incomplete understanding of scene affordance.
+
+							For example, these methods frequently misidentify vehicles that do not impact the ego
+							vehicle as risk objects.
+
+							Furthermore, existing behavior change-based methods are inefficient because they implement
+							causal inference in the perspective image space.
+						</p>
+
+						<p>
+							We propose a new framework with a Bird's Eye View (BEV) representation to overcome the above
+							challenges.
+
+							Specifically, we utilize potential fields as scene affordance, involving repulsive forces
+							derived from road infrastructure and traffic participants, along with attractive forces
+							sourced from target destinations.
+
+							In this work, we compute potential fields from perspective images by assigning different
+							energy levels based on the semantic labels acquired through BEV semantic segmentation.
+
+							We conduct comprehensive experiments and ablation studies, comparing the proposed method
+							with various state-of-the-art algorithms on both synthetic and real-world datasets.
+
+							<!-- Our results show a notable increase in spatial and temporal consistency, with enhancements
+							of 20.3% and 11.6% on the RiskBench dataset, respectively.
+
+							Additionally, causal inference is accelerated by 88%.
+
+							Similarly, on the nuScenes dataset, we achieve improvements of 5.4% and 7.2% in spatial
+							and temporal consistency. -->
+
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--/ Abstract. -->
+
+			<!-- Teaser. -->
+			<!-- <div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<img src="./static/img/teaser.png" alt="teaser" />
+				</div>
+			</div> -->
+			<!--/ Teaser. -->
+
+	</section>
+
+
+	<section class="section">
+		<div class="container is-max-desktop">
+
+			<!-- Framework. -->
+			<section class="section is-small">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-four-fifths">
+							<h2 class="title is-3">Framework</h2>
+							<div class="content has-text-justified">
+								<p>
+									Existing work (left) utilizes perspective images to estimate risk scores
+									through behavior change prediction (BCP).
+
+									The proposed method (right) enhances this by converting perspective images into
+									bird's-eye view segmentation (BEV-SEG) maps, predicting target points, and
+									employing potential field modules for causal inference.
+								</p>
+								<p>
+									The risk score is then estimated through three downstream methods: <b>final
+										displacement error (FDE), average displacement error (ADE)</b>, and <b>BCP</b>.
+								</p>
+
+							</div>
+
+							<div class="columns is-centered has-text-centered">
+								<img src="./static/img/framework.png" alt="framework"
+									style="width: 150%; max-width: 150%; height: auto;" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- / Framework. -->
+
+
+			<!-- Experiment. -->
+			<section class="section is-small">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-five-fifths">
+							<h2 class="title is-3">Experiment</h2>
+						</div>
+					</div>
+
+					<div class="content is-centered">
+
+						<br />
+						<h2 class="title is-4" style="text-align: center;">Target Point Predictor</h2>
+						<div class="columns is-centered has-text-centered">
+							<figure>
+								<br />
+								<img src="./static/img/TP_model.png" alt="TP_model"
+									style="width: 100%; max-width: 100%; height: auto;" />
+								<figcaption>
+									Our architecture is adapted from AIM-BEV [13]. The Target Point Predictor receives a
+									sequence of current BEV-SEG images with a length of N=5.
+									The output is a 2-dimensional representation of the target point \( T_p \) in BEV
+									space.
+								</figcaption>
+							</figure>
+						</div>
+
+
+						<br />
+						<h2 class="title is-4" style="text-align: center;">Potential Field Rendering</h2>
+						<div class="columns is-centered has-text-centered">
+							<figure>
+								<br />
+								<img src="./static/img/render_PF.png" alt="render_PF"
+									style="width: 100%; max-width: 100%; height: auto;" />
+								<figcaption>
+									The complete potential field \( F \) ensures a balanced model strategy, leveraging
+									both repulsive forces \( F_r \) to avoid obstacles and attractive forces \( F_a \)
+									to guide towards the target.
+								</figcaption>
+							</figure>
+						</div>
+
+						<br />
+						<h2 class="title is-4" style="text-align: center;">Displacement Error from Two Observations
+							(PF+FDE & PF+ADE)</h2>
+						<div class="columns is-centered has-text-centered">
+							<figure>
+								<br />
+								<img src="./static/img/OIECR.png" alt="OIECR"
+									style="width: 100%; max-width: 100%; height: auto;" />
+								<figcaption>
+									The risk score for a removed object is calculated using the average L2 distance
+									between waypoints from actual and counterfactual observations, as defined in
+									OIECR [4].
+
+									The path starts at the ego vehicle and, if possible, ends at the predicted target
+									point, following the gradient of the potential field from high to low without any
+									reversals.
+								</figcaption>
+							</figure>
+						</div>
+
+
+						<br />
+						<h2 class="title is-4" style="text-align: center;">Behavior Change Prediction with Potential
+							Field (PF+BCP)</h2>
+						<div class="columns is-centered has-text-centered">
+							<figure>
+								<br />
+								<img src="./static/img/PF+BCP.png" alt="PF+BCP"
+									style="width: 90%; max-width: 90%; height: auto;" />
+								<figcaption>
+									Following the approaches of BCP [3] and RiskBench [9], we classify driver
+									behavior into two categories: <b>Go</b> and <b>Stop</b>.
+
+									A removed object is considered a risk object if it causes the driver's behavior to
+									change from <b>Stop</b> to <b>Go</b>.
+								</figcaption>
+							</figure>
+						</div>
+
+
+						<br />
+						<h2 class="title is-4" style="text-align: center;">Dataset Distribution</h2>
+						<table
+							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
+							cellpadding="10" border='0' cellspacing="0">
+							<caption style="padding: 10px; font-size: 16px; text-align: left;line-height: 1.5;">
+								The <b>Driver Behavior</b> column shows the number of frames used for training,
+								while the <b>Traffic Participants</b> column shows the number of objects used for
+								testing.
+								<b>Positive%</b> indicates the percentage of positive samples in each category.
+							</caption>
+							<tr>
+								<th class="rowhead-border" rowspan="2"> </th>
+								<th class="rowhead-border" colspan="3">Driver Behavior</th>
+								<th colspan="3">Traffic Participants</th>
+							</tr>
+							<tr>
+								<th>Go</th>
+								<th>Stop</th>
+								<th class="rowhead-border">Positive%</th>
+								<th>Non-Risk</th>
+								<th>Risk</th>
+								<th>Positive%</th>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">RiskBench [9]</td>
+								<td>75,633</td>
+								<td>44,877</td>
+								<td class="rowhead-border">37.2%</td>
+								<td>158,369</td>
+								<td>17,434</td>
+								<td>9.9%</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">nuScenes [11]</td>
+								<td>29,446</td>
+								<td>4,554</td>
+								<td class="rowhead-border">13.4%</td>
+								<td>15,280</td>
+								<td>1,040</td>
+								<td>6.3%</td>
+							</tr>
+						</table>
+
+
+						<br />
+						<h2 class="title is-4" style="text-align: center;">Vision-Based ROI Baselines</h2>
+						<div class="content has-text-justified">
+							<p>
+								We evaluate seven baselines within our framework.
+
+								These baselines take a sequence of images as input and output a risk score for each road
+								user (e.g., vehicle or pedestrian).
+
+								A road user is considered a risk object if the raw score exceeds a predefined threshold.
+								<br>
+								It is important to note that all the following baselines rely on vision-based methods.
+							</p>
+							<ul class="nav pull-right">
+								<li>
+									<b>Cost Map:</b> &thinsp; <b>FF</b> [5].
+								</li>
+								<li>
+									<b>Collision Anticipation:</b> &thinsp; <b>DSA</b> [6] and <b>RRL</b> [7].
+								</li>
+								<li>
+									<b>Behavior Prediction-based:</b> &thinsp; <b>BP</b> [8], <b>BCP</b> [3],
+									<b>TP+BCP</b> (BCP w/ Target Point) and <b>BS+BCP</b> (BCP w/ BEV-SEG).
+								</li>
+							</ul>
+							<p>
+								For training details, please refer to our <a
+									href="https://github.com/WaywayPao/RAL-ROI">github</a>.
+							</p>
+						</div>
+
+
+						<br />
+						<h2 class="title is-4" style="text-align: center;">Evaluation Metrics</h2>
+						<div class="content has-text-justified">
+							<p>
+								We evaluate the performance of our model using two main categories of metrics:
+								<b>Riskiness</b> and <b>Temporal Consistency</b>.
+
+								Riskiness metrics include the Optimal F1 Score (OT-F1) and the Optimal F1 Score in T
+								Seconds (OT-F1-T), which measure the model's ability to accurately identify risks.
+
+								Temporal Consistency metrics consist of the Progressive Increasing Cost (PIC) and
+								the Weighted Multi-Object Tracking Accuracy (wMOTA), which assess the consistency
+								and accuracy of the model over time.
+							</p>
+							<ul class="nav pull-right">
+								<LI>
+									<b>Optimal F1 Score (OT-F1) : </b> The optimal F1 score is the highest score
+									achieved across various thresholds.
+
+									This metric balances precision and recall, ensuring neither false positives nor
+									false negatives dominate performance.
+								</LI>
+								<br />
+
+								<LI>
+									<b>Optimal F1 Score in T Seconds (OT-F1-T) : </b> The OT-F1-T metric focuses
+									specifically on the prediction outcomes within the first T seconds near the critical
+									point.
+
+									Similar to PIC, it specifically evaluates a model's ability to detect risks as it
+									approaches this critical point.
+
+									The criteria for defining a critical point are consistent with
+									those established in RiskBench [9].
+								</LI>
+								<br />
+
+								<LI>
+									<b>Progressive Increasing Cost (PIC) : </b> This metric is introduced in RiskBench
+									[9]. To prevent the potential issue of penalty weights declining too sharply
+									and approaching zero (Fig. 1), we made refined adjustments to ensure they are
+									appropriately proportioned.
+
+									The new PIC formula is given by:
+									\[
+									\textrm{PIC} = -\sum^{T}_{t=1} e^{-(T-t)/T}\log(\textrm{F1}_{t})
+									\]
+									Here, \( \textrm{F1}_t \) denotes the F1 score at a specific time frame \( t \),
+									while \( T \) stands for the total number of frames within a scenario.
+
+									We establish \( T \) as 60, equivalent to 3 seconds.
+									We then sum the PIC for all scenarios and ensure that the outcomes are normalized to
+									a scale ranging from 0 to 1.
+								</LI>
+								<br />
+
+								<LI>
+									<b>Weighted Multi-Object Tracking Accuracy (wMOTA) : </b>
+									Inspired by the metrics used in MOT16 [10], we use wMOTA to comprehensively evaluate
+									temporal consistency.
+
+									To address the imbalance between positive (risky) and negative (non-risky) samples,
+									we have refined MOTA into a weighted version, termed wMOTA, by introducing specific
+									weights.
+
+									We denote number of positive miss at time \(t\) as \(\textrm{PM}_t\).
+
+									The number of negative miss at time \(t\) as \(\textrm{NM}_t\).
+									The parameter \(\textrm{PM}_t\) as \(w_p\cdot(\textrm{FN}_t+\textrm{IDsw}^{p}_t)\).
+									The parameter \(\textrm{NM}_t\) as \(w_n\cdot(\textrm{FP}_t+\textrm{IDsw}^{n}_t)\).
+
+									In these definitions : \(\textrm{FN}_t\) and \(\textrm{FP}_t\) represent the numbers
+									of false negatives and false positives at time \(t\), respectively.
+
+									\(\textrm{IDsw}^p_t\) and \(\textrm{IDsw}^n_t\) represent the number of identity
+									switches for positive and negative samples, respectively, between times \(t-1\) and
+									\(t\).
+									\(w_p\) and \(w_n\) are the weights assigned to positive and negative samples,
+									respectively.
+
+									wMOTA is then calculated as follows:
+									\[
+									\textrm{wMOTA}=1-\frac{\sum_t(\textrm{PM}_t+\textrm{NM}_t)}{\sum_t(w_p{\cdot}\textrm{GT}^{p}_t+w_n{\cdot}\textrm{GT}^{n}_t)}
+									\]
+									where \(\textrm{GT}^{p}_t\) and \(\textrm{GT}^{n}_t\) are the counts of ground truth
+									positives and negatives samples at time \(t\), respectively.
+								</LI>
+
+							</ul>
+						</div>
+
+
+
+					</div>
+				</div>
+			</section>
+			<!-- / Experiment. -->
+
+
+
+
+			<!-- Qualitative Results. -->
+			<section class="section is-small">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-five-fifths">
+							<h2 class="title is-3">Visualizations</h2>
+							<div class="content has-text-justified">
+							</div>
+						</div>
+					</div>
+
+
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-four-fifths">
+							<h2 class="title is-4">ROI Demo on the RiskBench</h2>
+
+							<!-- Slideshow container -->
+							<div class="slideshow-container">
+
+								<!-- Full-width images with number and caption text -->
+								<div class="mySlides fade">
+									<img src="./static/gif/1x6_10_s-2_0_c_sr_sl_1_0_WetSunset_high_.gif"
+										alt="Wet Sunset" class="scaled-image">
+								</div>
+								<div class="mySlides fade">
+									<img src="./static/gif/1x6_10_t2-2_0_c_l_r_1_0_CloudySunset_low_.gif"
+										alt="Cloudy Sunset" class="scaled-image">
+								</div>
+								<div class="mySlides fade">
+									<img src="./static/gif/1x6_10_t2-4_1_t_u_r_1_rl_HardRainNoon_mid_.gif"
+										alt="Hard Rain Noon" class="scaled-image">
+								</div>
+								<div class="mySlides fade">
+									<img src="./static/gif/1x6_10_s-6_0_p_j_f_1_j_MidRainSunset_low_.gif"
+										alt="Mid Rain Sunset" class="scaled-image">
+								</div>
+							</div>
+
+							<div class="content has-text-centered">
+								<b>BEV-SEG</b>, <b>PF</b> refer to Bird's-Eye-View Segmentation and Potential Field
+								respectively.
+
+								All detected risk objects are shown with green bounding boxes, while ground truth risks
+								are masked in red.
+							</div>
+
+							<!-- The dots/circles -->
+							<div style="text-align:center">
+								<span class="dot4" onclick="currentSlide(1)"></span>
+								<span class="dot4" onclick="currentSlide(2)"></span>
+								<span class="dot4" onclick="currentSlide(3)"></span>
+								<span class="dot4" onclick="currentSlide(4)"></span>
+							</div>
+						</div>
+					</div>
+
+
+					<br />
+					<br />
+					<div class="content is-centered">
+						<h2 class="title is-4" style="text-align: center;">Fine-grained Scenario-based Analysis</h2>
+						<div class="columns is-centered has-text-centered">
+							<figure>
+								<br />
+								<img src="./static/gif/demo-ROI.gif" alt="demo-ROI.gif" />
+								<figcaption>
+									We have developed a user-friendly interface for scenario-based ROI analysis.
+									<br />
+									For further exploration, please visit our <a
+										href="https://github.com/WaywayPao/RAL-ROI">GitHub page</a>.
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+
+
+					<br />
+					<br />
+					<div class="content is-centered">
+						<h2 class="title is-4" style="text-align: center;">OT-F1 for the Vision-ROI Methods Over Time
+						</h2>
+						<div class="columns is-half has-text-centered">
+							<figure>
+								<br />
+								<img src="./static/img/f1_trend_in_60frames.png" alt="f1_trend_in_60frames.png"
+									width="80%" height="80%" />
+								<figcaption>
+									We analyze the 60 frames closest to the critical frame across all scenarios.
+
+									The figure shows that all methods improve as they get closer to the critical
+									frame.
+
+									Notably, <b>PF+BCP</b> (the red line) performs better than the other methods for
+									most of the time.
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+
+				<br />
+				<br />
+				<div class="columns is-vcentered">
+					<div class="column is-half">
+						<h2 class="title is-6" style="text-align: center;">Figure 1: PIC Weight Trend</h2>
+						<!-- <div class="columns is-half has-text-centered"> -->
+						<figure class="has-text-centered">
+							<img src="./static/img/PIC_weight_trend.png" alt="tasks" width="120%" height="120%" />
+							<figcaption>
+								The term <b>src PIC</b> refers to the RiskBench version, while <b>adj PIC</b>
+								denotes the version with adjustments.
+							</figcaption>
+						</figure>
+						<!-- </div> -->
+					</div>
+
+
+					<div class="column is-half">
+						<h2 class="title is-6" style="text-align: center;">Figure 2: Performance Comparison of
+							Vision-ROI</h2>
+						<!-- <div class="columns is-centered has-text-centered"> -->
+						<figure class="has-text-centered">
+							<img src="./static/img/plot.png" alt="tasks" width="120%" height="120%" />
+							<figcaption>
+								Each point's size represents the normalized PIC score, with larger circles
+								indicating better results.
+							</figcaption>
+						</figure>
+						<!-- </div> -->
+					</div>
+				</div>
+		</div>
+	</section>
+	<!-- / Qualitative Results. -->
+
+
+	<!-- Quautitative Results. -->
+	<section class="section is-small">
+		<div class="container is-max-desktop">
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-five-fifths">
+					<h2 class="title is-3">Quautitative Results</h2>
+					<div class="content has-text-justified">
+					</div>
+				</div>
+			</div>
+
+			<div class="content is-centered">
+				<h2 class="title is-4" style="text-align: center;">Table 1: Riskiness and Temporal Consistency
+					on RiskBench</h2>
+				<table style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
+					cellpadding="10" border='0' cellspacing="0">
+					<tr>
+						<th class="rowhead-border" rowspan="2"> </th>
+						<th class="rowhead-border" colspan="3">Riskiness</th>
+						<th class="rowhead-border" colspan="2">Temporal Consistency</th>
+						<th rowspan="1">Inference Time</th>
+					</tr>
+					<tr>
+						<th>OT-P (%)↑</th>
+						<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OT-R (%)↑</th>
+						<th class="rowhead-border">OT-F1 (%)↑</th>
+						<th>&nbsp;&nbsp;PIC (%)↓</th>
+						<th class="rowhead-border">wMOTA (%)↑</th>
+						<th>Avg (sec)↓</th>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">FF [5]</td>
+						<td>22.2</td>
+						<td>27.9</td>
+						<td class="rowhead-border">24.7</td>
+						<td>39.3</td>
+						<td class="rowhead-border">55.0</td>
+						<td><b>0.027</b></td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">DSA [6]</td>
+						<td>54.7</td>
+						<td>19.7</td>
+						<td class="rowhead-border">29.0</td>
+						<td>29.8</td>
+						<td class="rowhead-border">53.3</td>
+						<td>0.269</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">RRL [7]</td>
+						<td>49.4</td>
+						<td>15.4</td>
+						<td class="rowhead-border">23.5</td>
+						<td>28.9</td>
+						<td class="rowhead-border">52.3</td>
+						<td>0.280</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BP [8]</td>
+						<td>24.2</td>
+						<td>35.1</td>
+						<td class="rowhead-border">28.7</td>
+						<td>39.0</td>
+						<td class="rowhead-border">57.5</td>
+						<td>0.119</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BCP [3]</td>
+						<td>38.6</td>
+						<td>43.7</td>
+						<td class="rowhead-border">41.0</td>
+						<td>29.3</td>
+						<td class="rowhead-border">63.2</td>
+						<td>0.431</td>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">TP+BCP</td>
+						<td>47.4</td>
+						<td>51.7</td>
+						<td class="rowhead-border">49.5</td>
+						<td>28.0</td>
+						<td class="rowhead-border">67.2</td>
+						<td>0.437</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BS+BCP</td>
+						<td>56.8</td>
+						<td>60.7</td>
+						<td class="rowhead-border">58.7</td>
+						<td>24.0</td>
+						<td class="rowhead-border">72.5</td>
+						<td>0.049</td>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">PF+FDE</td>
+						<td>50.8</td>
+						<td>56.7</td>
+						<td class="rowhead-border">53.6</td>
+						<td>26.7</td>
+						<td class="rowhead-border">65.4</td>
+						<td>0.062</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">PF+ADE</td>
+						<td>52.7</td>
+						<td>57.9</td>
+						<td class="rowhead-border">55.2</td>
+						<td>25.7</td>
+						<td class="rowhead-border">66.9</td>
+						<td>0.061</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">PF+BCP</td>
+						<td><b>60.2</b></td>
+						<td><b>62.4</b></td>
+						<td class="rowhead-border"><b>61.3</b></td>
+						<td><b>23.0</b></td>
+						<td class="rowhead-border"><b>74.8</b></td>
+						<td>0.049</td>
+					</tr>
+				</table>
+
+				<div class="content has-text-justified">
+					The notations <b>P</b>, <b>R</b> denote precision and recall respectively.
+
+					<b>TP, BS, PF</b> refer to Target Point, BEV-SEG and potential field respectively.
+					Best results are highlighted in bold.
+					<br>
+					<br>
+					Using scene affordance (PF) as intermediate inputs enhances behavior change-based methods,
+					leading to improved riskness and temporal consistency in Vision-ROI tasks.
+
+					We also demonstrate that employing BEV representations for causal inference
+					significantly enhances inference speed, achieving an 88% improvement compared to the use of
+					perspective views.
+				</div>
+
+
+				<h2 class="title is-4" style="text-align: center;">Table 2: Ablation Studies</h2>
+				<table border="0" cellspacing="0" cellpadding="0"
+					style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center; width: 100%;">
+					<tr>
+						<th class="rowhead-border">Method</th>
+						<th style="width: 120px;">BEV-SEG</th>
+						<th style="width: 100px;">\( F_r \)</th>
+						<th style="width: 100px;" class="rowhead-border">\( F_a \)</th>
+						<th>OT-F1 (%)↑</th>
+						<th>PIC ↓</th>
+						<th>wMOTA (%)↑</th>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">FDE</td>
+						<td>✓</td>
+						<td>✓</td>
+						<td class="rowhead-border"></td>
+						<td>51.1</td>
+						<td>26.7</td>
+						<td>63.7</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">FDE</td>
+						<td>✓</td>
+						<td>✓</td>
+						<td class="rowhead-border">✓</td>
+						<td>53.6</td>
+						<td>26.7</td>
+						<td>65.4</td>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">ADE</td>
+						<td>✓</td>
+						<td>✓</td>
+						<td class="rowhead-border"></td>
+						<td>53.4</td>
+						<td>25.7</td>
+						<td>64.5</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">ADE</td>
+						<td>✓</td>
+						<td>✓</td>
+						<td class="rowhead-border">✓</td>
+						<td>55.0</td>
+						<td>25.7</td>
+						<td>66.9</td>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">BCP</td>
+						<td></td>
+						<td></td>
+						<td class="rowhead-border"></td>
+						<td>41.0</td>
+						<td>29.3</td>
+						<td>63.2</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BCP</td>
+						<td></td>
+						<td></td>
+						<td class="rowhead-border">✓</td>
+						<td>49.5</td>
+						<td>28.0</td>
+						<td>67.2</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BCP</td>
+						<td>✓</td>
+						<td></td>
+						<td class="rowhead-border">✓</td>
+						<td>58.7</td>
+						<td>24.0</td>
+						<td>72.5</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BCP</td>
+						<td>✓</td>
+						<td>✓</td>
+						<td class="rowhead-border"></td>
+						<td>59.0</td>
+						<td>24.4</td>
+						<td>72.9</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BCP</td>
+						<td>✓</td>
+						<td>✓</td>
+						<td class="rowhead-border">✓</td>
+						<td><b>61.3</b></td>
+						<td><b>23.0</b></td>
+						<td><b>74.8</b></td>
+					</tr>
+					</tbody>
+				</table>
+
+				<div class="content has-text-justified">
+					Results of ROI under different constraints on the RiskBench Dataset. The table
+					shows the performance of different methods (FDE, ADE, and BCP) with various combinations of
+					Bird's Eye View Segmentation (BEV-SEG), repulsive force \( F_r \), and attractive force (or
+					target point) \( F_a \).
+				</div>
+
+
+				<h2 class="title is-4" style="text-align: center;">Table 3: OT-F1 in T secs</h2>
+				<table border="0" cellspacing="0" cellpadding="10"
+					style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center; width: 100%;">
+					<tr>
+						<th class=" rowhead-border">Method</th>
+						<th>1s (%)↑</th>
+						<th>2s (%)↑</th>
+						<th>3s (%)↑</th>
+						<th>Overall (%)↑</th>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">FF [5]</td>
+						<td>28.7</td>
+						<td>24.4</td>
+						<td>21.5</td>
+						<td>24.7</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">DSA [6]</td>
+						<td>36.8</td>
+						<td>31.6</td>
+						<td>29.7</td>
+						<td>29.0</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">RRL [7]</td>
+						<td>35.0</td>
+						<td>32.2</td>
+						<td>31.9</td>
+						<td>23.5</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BP [8]</td>
+						<td>33.8</td>
+						<td>32.8</td>
+						<td>30.8</td>
+						<td>28.7</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BCP [3]</td>
+						<td>49.3</td>
+						<td>47.2</td>
+						<td>44.2</td>
+						<td>41.0</td>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">TP+BCP</td>
+						<td>52.8</td>
+						<td>49.8</td>
+						<td>46.9</td>
+						<td>49.5</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BS+BCP</td>
+						<td>60.7</td>
+						<td>58.8</td>
+						<td>56.5</td>
+						<td>58.7</td>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">PF+FDE</td>
+						<td>56.4</td>
+						<td>53.0</td>
+						<td>50.3</td>
+						<td>53.6</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">PF+ADE</td>
+						<td>57.9</td>
+						<td>55.0</td>
+						<td>52.7</td>
+						<td>55.2</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">PF+BCP</td>
+						<td><b>62.5</b></td>
+						<td><b>61.0</b></td>
+						<td><b>59.3</b></td>
+						<td><b>61.3</b></td>
+					</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+		</div>
+	</section>
+	<!-- / Quautitative Results. -->
+
+
+	<!-- Real-Word Evaluation. -->
+	<section class="section is-small">
+		<div class="container is-max-desktop">
+			<div class="columns is-centered has-text-centered">
+				<h2 class="title is-3">Real-Word Evaluation</h2>
+			</div>
+			<br />
+
+			<div class="columns is-vcentered is-centered has-text-centered">
+				<div class="column is-half">
+
+					<h2 class="title is-4" style="text-align: center;">nuScenes-ROI Dataset</h2>
+					<div class="content has-text-justified">
+						<p>
+							We use the nuScenes [11] dataset for real-world experiments.
+
+							Following the methodologies described in RiskBench [9] and BCP [3], we categorize
+							driver behavior into two classes: <b>Go</b> and <b>Stop</b>.
+
+							Objects that influence driver behavior are labeled as risky, particularly when they
+							cause a change from <b>Stop</b> to <b>Go</b>.
+
+							During the testing phase, we use YOLOv8 [12] to generate object bounding
+							boxes.
+						</p>
+					</div>
+				</div>
+
+				<div class="column is-half">
+					<img src="./static/gif/nuscene-ROI.gif" alt="nuscene-ROI.gif" width="150%" height=auto />
+				</div>
+			</div>
+
+			<br />
+			<div class="content is-centered">
+				<h2 class="title is-4" style="text-align: center;">Table 4: nuScenes-ROI Evaluation</h2>
+				<table style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
+					cellpadding="10" border='0' cellspacing="0">
+					<th class="rowhead-border"></th>
+					<th>OT-P (%)↑</th>
+					<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OT-R (%)↑</th>
+					<th class="rowhead-border">OT-F1 (%)↑</th>
+					<th>&nbsp;&nbsp;PIC (%)↓</th>
+					<th>wMOTA (%)↑</th>
+					</tr>
+					<tr class="middle-border">
+						<td class="rowhead-border">BP [8]</td>
+						<td>21.1</td>
+						<td>38.0</td>
+						<td class="rowhead-border">27.1</td>
+						<td>19.0</td>
+						<td>58.3</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BCP [3]</td>
+						<td><b>50.8</b></td>
+						<td>50.6</td>
+						<td class="rowhead-border">50.7</td>
+						<td>15.2</td>
+						<td>69.0</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">BS+BCP</td>
+						<td>39.2</td>
+						<td>56.2</td>
+						<td class="rowhead-border">46.2</td>
+						<td>10.7</td>
+						<td>65.3</td>
+					</tr>
+					<tr>
+						<td class="rowhead-border">PF+BCP</td>
+						<td>45.5</td>
+						<td><b>73.2</b></td>
+						<td class="rowhead-border"><b>56.1</b></td>
+						<td><b>8.9</b></td>
+						<td><b>76.2</b></td>
+					</tr>
+
+				</table>
+			</div>
+
+			<br />
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<h2 class="title is-4" style="text-align: center;">ROI on the nuScenes Dataset</h2>
+					<img src="./static/img/qualitative_nuscenes.png" alt="qualitative_nuscenes" />
+
+					<div class="content has-text-justified">
+						ROI results on sample scenarios selected from the nuScenes dataset with rows
+						representing different behavior change-based methods.
+
+						All detected risk objects are shown with green bounding boxes, while ground truth
+						risks are masked in red.
+					</div>
+				</div>
+
+
+
+	</section>
+	<!-- / Real-Word Evaluation. -->
+
+	</div>
+	</section>
+
+
+	<section class="section" id="BibTeX">
+		<div class="container is-max-desktop content">
+			<div class="columns is-centered">
+				<div class="column is-four-fifths">
+					<div class="column has-text-centered">
+						<h2 class="title is-3">Citation</h2>
+					</div>
+
+					<div class="content has-text-justified">
+						<pre><code>@article{pao2024PFBCP,
+	title={{Potential Field as Scene Affordance for Behavior Change-Based Risk Object Identification}},
+	author={Pang-Yuan Pao, Shu-Wei Lu, Ze-Yan Lu and Yi-Ting Chen},
+	journal={arXiv preprint arXiv:2312.XXXXX},
+	year={2024}
+}</code></pre>
+						<p>
+							If you have any questions, please contact <a
+								href="https://github.com/WaywayPao/RAL-ROI">Pang-Yuan Pao</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<div class="container is-max-desktop content">
+		<div class="columns is-centered">
+			<div class="column is-four-fifths">
+				<p>
+					[1] H. Wu, B. Xiao, N. Codella, M. Liu, X. Dai, L. Yuan, and L. Zhang, "CVT: Introducing
+					Convolutions to Vision Transformers," in ICCV, 2021.
+				</p>
+				<p>
+					[2] O. Khatib, "Real-Time Obstacle Avoidance for Manipulators and Mobile Robots," in Proceedings.
+					1985 IEEE International Conference on Robotics and Automation, vol. 2, 1985, pp. 500-505.
+				</p>
+				<p>
+					[3] C. Li, S. H. Chan, and Y.-T. Chen, "Who Make Drivers Stop? Towards Driver-centric Risk
+					Assessment: Risk Object Identification via Causal Inference," in IROS, 2020.
+				</p>
+				<p>
+					[4] P. Gupta, A. Biswas, H. Admoni, and D. Held, "Object Importance Estimation using Counterfactual
+					Reasoning for Intelligent Driving," IEEE RA-L, 2024.
+				</p>
+				<p>
+					[5] Hu, A. Huang, J. Dolan, D. Held, and D. Ramanan, "Safe Local Motion Planning with
+					Self-Supervised Freespace Forecasting," in CVPR, 2021.
+				</p>
+				<p>
+					[6] F.-H. Chan, Y.-T. Chen, Y. Xiang, and M. Sun, "Anticipating Accidents in Dashcam Videos," in
+					ACCV, 2016.
+				</p>
+				<p>
+					[7] K.-H. Zeng, S.-H. Chou, F.-H. Chan, J. Carlos Niebles, and M. Sun, "Agent-centric Risk
+					Assessment: Accident Anticipation and Risky Region Localization," in CVPR, 2017.
+				</p>
+				<p>
+					[8] C. Li, Y. Meng, S. H. Chan, and Y.-T. Chen, "Learning 3D-Aware Egocentric Spatial-Temporal
+					Interaction via Graph Convolutional Networks," in ICRA, 2020.
+				</p>
+				<p>
+					[9] C.-H. Kung, C.-C. Yang, P.-Y. Pao, S.-W. Lu, P.-L. Chen, H.-C. Lu, and Y.-T. Chen, "RiskBench: A
+					Scenario-based Benchmark for Risk Identification," in ICRA, 2024.
+				</p>
+				<p>
+					[10] A. Milan, L. Leal-Taixe, I. Reid, S. Roth, and K. Schindler, "MOT16: A Benchmark for
+					Multi-Object Tracking," arXiv, 2016.
+				</p>
+				<p>
+					[11] H. Caesar, V. Bankiti, A. H. Lang, S. Vora, V. E. Liong, Q. Xu, A. Krishnan, Y. Pan, G. Baldan,
+					and
+					O.Beijbom, "nuScenes: A Multimodal Dataset for Autonomous Driving," in CVPR, 2020.
+				</p>
+				<p>
+					[12] G. Jocher, A. Chaurasia, and J. Qiu, "Ultralytics YOLO," 2023. Available:
+					<a href="https://github.com/ultralytics/ultralytics">https://github.com/ultralytics/ultralytics</a>
+				</p>
+				<p>
+					[13] N. Hanselmann, K. Renz, K. Chitta, A. Bhattacharyya, and A. Geiger, "KING: Generating
+					Safety-Critical Driving Scenarios for Robust Imitation via Kinematics Gradients," in ECCV, 2022.
+				</p>
+
+
+			</div>
+		</div>
+	</div>
+
+
+	<footer class="footer">
+		<div class="container">
+			<div class="content has-text-centered">
+				<!-- <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+					<i class="fas fa-file-pdf"></i>
+				</a> -->
+				<a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+			<div class="columns is-centered">
+				<div class="column is-8">
+					<div class="content">
+						<p>
+							This website is licensed under a <a rel="license"
+								href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+								Commons Attribution-ShareAlike 4.0 International License</a>.
+						</p>
+						<p>
+							This means you are free to borrow the <a
+								href="https://github.com/nerfies/nerfies.github.io">source
+								code</a> of this website,
+							we just ask that you link back to this page in the footer.
+							Please remember to remove the analytics code included in the header of the website which
+							you do not want on your website.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>
