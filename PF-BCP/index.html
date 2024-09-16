@@ -4,10 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="description"
-		content="Potential Field as Scene Affordance for Behavior Change-Based Risk Object Identification.">
+		content="Potential Field as Scene Affordance for Behavior Change-Based Visual Risk Object Identification.">
 	<meta name="keywords" content="Autonomous driving, Dataset, Risk identification">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Potential Field as Scene Affordance for Behavior Change-Based Risk Object Identification</title>
+	<title>Potential Field as Scene Affordance for Behavior Change-Based Visual Risk Object Identification</title>
 
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -110,13 +110,13 @@
 				<div class="columns is-centered">
 					<div class="column has-text-centered">
 						<h1 class="title is-2 publication-title">Potential Field as Scene Affordance
-							for <br> Behavior Change-Based Risk Object Identification</h1>
+							for <br> Behavior Change-Based <br> Visual Risk Object Identification</h1>
 						<div class="is-size-5 publication-authors">
 							<span class="author-block">
-								<a href="https://github.com/">Pang-Yuan Pao</a>,
+								<a href="https://github.com/WaywayPao/">Pang-Yuan Pao</a>,
 							</span>
 							<span class="author-block">
-								Shu-Wei Lu,
+								<a href="https://www.linkedin.com/in/shu-wei-lu/">Shu-Wei Lu</a>,
 							</span>
 							<span class="author-block">
 								Ze-Yan Lu,
@@ -228,9 +228,9 @@
 					<h2 class="title is-3">Abstract</h2>
 					<div class="content has-text-justified">
 						<p>
-							We study vision-based behavior change-based risk object identification (Vision-ROI), a
-							crucial formulation for Vision-based ROI that aims to detect potential hazards for
-							intelligent driving systems.
+							We study behavior change-based visual risk object identification (Visual-ROI), a crucial
+							formulation for Visual-ROI that aims to detect potential hazards for intelligent driving
+							systems.
 
 							Existing methods often show significant limitations in spatial and temporal consistency,
 							stemming from an incomplete understanding of scene affordance.
@@ -239,7 +239,7 @@
 							vehicle as risk objects.
 
 							Furthermore, existing behavior change-based methods are inefficient because they implement
-							causal inference in the perspective image space.
+							causal inference in the perspective image.
 						</p>
 
 						<p>
@@ -258,11 +258,9 @@
 
 							<!-- Our results show a notable increase in spatial and temporal consistency, with enhancements
 							of 20.3% and 11.6% on the RiskBench dataset, respectively.
-
-							Additionally, causal inference is accelerated by 88%.
-
-							Similarly, on the nuScenes dataset, we achieve improvements of 5.4% and 7.2% in spatial
-							and temporal consistency. -->
+							Additionally, we can improve computational efficiency by 88%.
+							Similarly, on the nuScenes dataset, we achieve improvements of 5.4% and 7.2% in spatial and
+							temporal consistency. -->
 
 						</p>
 					</div>
@@ -470,10 +468,10 @@
 									<b>TP+BCP</b> (BCP w/ Target Point) and <b>BS+BCP</b> (BCP w/ BEV-SEG).
 								</li>
 							</ul>
-							<p>
+							<!-- <p>
 								For training details, please refer to our <a
 									href="https://github.com/WaywayPao/RAL-ROI">github</a>.
-							</p>
+							</p> -->
 						</div>
 
 
@@ -599,25 +597,25 @@
 
 								<!-- Full-width images with number and caption text -->
 								<div class="mySlides fade">
-									<img src="./static/gif/1x6_10_s-2_0_c_sr_sl_1_0_WetSunset_high_.gif"
-										alt="Wet Sunset" class="scaled-image">
+									<img src="./static/gif/10_s-2_0_c_sr_sl_1_0_WetSunset_high_.gif" alt="Wet Sunset"
+										class="scaled-image">
 								</div>
 								<div class="mySlides fade">
-									<img src="./static/gif/1x6_10_t2-2_0_c_l_r_1_0_CloudySunset_low_.gif"
+									<img src="./static/gif/10_t2-2_0_c_l_r_1_0_CloudySunset_low_.gif"
 										alt="Cloudy Sunset" class="scaled-image">
 								</div>
 								<div class="mySlides fade">
-									<img src="./static/gif/1x6_10_t2-4_1_t_u_r_1_rl_HardRainNoon_mid_.gif"
+									<img src="./static/gif/10_t2-4_1_t_u_r_1_rl_HardRainNoon_mid_.gif"
 										alt="Hard Rain Noon" class="scaled-image">
 								</div>
 								<div class="mySlides fade">
-									<img src="./static/gif/1x6_10_s-6_0_p_j_f_1_j_MidRainSunset_low_.gif"
+									<img src="./static/gif/10_s-6_0_p_j_f_1_j_MidRainSunset_low_.gif"
 										alt="Mid Rain Sunset" class="scaled-image">
 								</div>
 							</div>
 
 							<div class="content has-text-centered">
-								<b>BEV-SEG</b>, <b>PF</b> refer to Bird's-Eye-View Segmentation and Potential Field
+								<b>BS</b>, <b>PF</b> refer to Bird's-Eye-View Segmentation and Potential Field
 								respectively.
 
 								All detected risk objects are shown with green bounding boxes, while ground truth risks
@@ -647,7 +645,8 @@
 									We have developed a user-friendly interface for scenario-based ROI analysis.
 									<br />
 									For further exploration, please visit our <a
-										href="https://github.com/WaywayPao/RAL-ROI">GitHub page</a>.
+										href="https://github.com/WaywayPao/PF-SA-BC-Based-Visual-ROI/tree/main/ROI_demo">GitHub
+										page</a>.
 								</figcaption>
 							</figure>
 						</div>
@@ -1161,10 +1160,10 @@
 
 					<div class="content has-text-justified">
 						<pre><code>@article{pao2024PFBCP,
-	title={{Potential Field as Scene Affordance for Behavior Change-Based Risk Object Identification}},
-	author={Pang-Yuan Pao, Shu-Wei Lu, Ze-Yan Lu and Yi-Ting Chen},
-	journal={arXiv preprint arXiv:2312.XXXXX},
-	year={2024}
+    title   = {{Potential Field as Scene Affordance for Behavior Change-Based Visual Risk Object Identification}},
+    author  = {Pang-Yuan Pao, Shu-Wei Lu, Ze-Yan Lu and Yi-Ting Chen},
+    journal = {arXiv preprint arXiv:2312.XXXXX},
+    year    = {2024}
 }</code></pre>
 						<p>
 							If you have any questions, please contact <a
@@ -1243,9 +1242,9 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="content has-text-centered">
-				<!-- <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+				<a class="icon-link" href="https://arxiv.org/pdf/2011.12948">
 					<i class="fas fa-file-pdf"></i>
-				</a> -->
+				</a>
 				<a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
 					<i class="fab fa-github"></i>
 				</a>
