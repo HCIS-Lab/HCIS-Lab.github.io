@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Task-Oriented Human Grasp Synthesis via Context- and Task-Aware Diffusers.">
+        content="Task-Oriented Human Grasp Synthesis via Context- and Task-Aware Diffusers">
   <meta name="keywords" content="Task-Oriented Human grasp Synthesis, Human Grasp Synthesis, Diffusion Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Task-Oriented Human Grasp Synthesis via Context- and Task-Aware Diffusers</title>
@@ -217,7 +217,7 @@
 <section class="section is-max-desktop"></section>
   <div class="container is-max-desktop">
     <div class="column is-centered has-text-centered">
-      <h2 class="title is-3">Two-stages diffusion-based framwork</h2>
+      <h2 class="title is-3">Two-stages Diffusion-based Framwork</h2>
     </div>
     <div class="content has-text-justified">
       <img src="./static/images/overview.png">
@@ -298,20 +298,14 @@
       <div class="column is-five-fifths">
         <h2 class="title is-3">Experiments</h2>
         <div class="content has-text-justified">
-          <p>We evaluate the synthesized human grasps based on their physical plausibility, stability, and diversity, following prior works. We propose a new metric called <strong>Task Score (TS)</strong> to evaluate the quality of task-oriented human grasp synthesis.</p>
-
+          <p>We evaluate the synthesized human grasps based on their physical plausibility, stability, and diversity, following prior works [1,2,3,4]. We propose a new metric called <strong>Task Score (TS)</strong> to evaluate the quality of task-oriented human grasp synthesis.</p>
+          <h3 class="title is-4">Metrics</h3>
           <p><strong>Penetration Volume (PV):</strong> We calculate the penetration volume by converting the meshes into 1mm cubes and calculating the overlap of these voxels.</p>
-
           <p><strong>Simulation Displacement (SD):</strong> We simulate the object and predicted grasps in PyBullet [14] for 1 sec. and then compute the object's center of mass displacement.</p>
-
           <p><strong>Contact Ratio (CR):</strong> Contact percentage of predicted grasps with objects.</p>
-
           <p><strong>Qualified Ratio (QR):</strong> The metric jointly considers both penetration volume and simulation displacement. Note that, a higher penetration volume generally leads to a lower simulation displacement, which is not satisfactory. We set thresholds at 3 × 10<sup>-6</sup> cm<sup>3</sup> and 2 cm for penetration volume and simulation displacement, respectively. We calculate the percentage of predicted grasps that satisfy both criteria.</p>
-
-          <p><strong>Diversity Score (DS):</strong> We follow FLEX to compute the average L<sub>2</sub> pairwise distance to evaluate the diversity of predicted grasps.</p>
-
-          <p><strong>Obstacle Penetration Percentage (OPP):</strong> We compute the penetration percentage of human grasp vertices in obstacles for initial and goal scenes [44].</p>
-
+          <p><strong>Diversity Score (DS):</strong> We follow Flex [4] to compute the average L<sub>2</sub> pairwise distance to evaluate the diversity of predicted grasps.</p>
+          <p><strong>Obstacle Penetration Percentage (OPP):</strong> We compute the penetration percentage of human grasp vertices in obstacles for initial and goal scenes.</p>
           <p><strong>Task Score (TS):</strong> A proper metric for task-oriented human grasp synthesis should take grasp physically-plausibility, stability, and collision avoidance in both initial and goal scenes. Thus, we propose a new metric and define it as TS = QR × (1 - Init OPP) × (1 - Goal OPP).</p>
         </div>
       </div>
@@ -319,7 +313,7 @@
 
 
     <div class="content is-centered">
-      <h2 class="title is-4" style="text-align: center;">Table 1: Main Table</h2>
+      <h3 class="title is-4" style="text-align: center;">Table 1  </h3>
       <table style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
         cellpadding="10" border='0' cellspacing="0">
         <thead>
@@ -339,7 +333,7 @@
         <tbody>
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px; vertical-align: middle;" rowspan="5" >Placing</td>
-            <td style="padding: 8px;">GraspTTA [23]</td>
+            <td style="padding: 8px;">GraspTTA [1]</td>
             <td style="padding: 8px; text-align: right;">1.85</td>
             <td style="padding: 8px; text-align: right;">2.60</td>
             <td style="padding: 8px; text-align: right;">98.86</td>
@@ -350,7 +344,7 @@
             <td style="padding: 8px; text-align: right;">0.376</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px;">ContactGen [32]</td>
+            <td style="padding: 8px;">ContactGen [1]</td>
             <td style="padding: 8px; text-align: right;">1.40</td>
             <td style="padding: 8px; text-align: right;">3.85</td>
             <td style="padding: 8px; text-align: right;">92.64</td>
@@ -361,7 +355,7 @@
             <td style="padding: 8px; text-align: right;">0.366</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px;">SceneDiffuser [21]</td>
+            <td style="padding: 8px;">SceneDiffuser [3]</td>
             <td style="padding: 8px; text-align: right;"><b>1.37</td>
             <td style="padding: 8px; text-align: right;">3.19</td>
             <td style="padding: 8px; text-align: right;">97.52</td>
@@ -372,7 +366,7 @@
             <td style="padding: 8px; text-align: right;">0.353</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px;">FLEX [44]</td>
+            <td style="padding: 8px;">Flex [4]</td>
             <td style="padding: 8px; text-align: right;">2.50</td>
             <td style="padding: 8px; text-align: right;">1.62</td>
             <td style="padding: 8px; text-align: right;"><b>99.94</td>
@@ -395,7 +389,7 @@
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px; vertical-align: middle;" rowspan="5">Stacking</td>
-            <td style="padding: 8px;">GraspTTA [23]</td>
+            <td style="padding: 8px;">GraspTTA [1]</td>
             <td style="padding: 8px; text-align: right;">4.30</td>
             <td style="padding: 8px; text-align: right;"><b>0.28</td>
             <td style="padding: 8px; text-align: right;"><b>100.00</td>
@@ -406,7 +400,7 @@
             <td style="padding: 8px; text-align: right;">0.237</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px;">ContactGen [32]</td>
+            <td style="padding: 8px;">ContactGen [1]</td>
             <td style="padding: 8px; text-align: right;">0.66</td>
             <td style="padding: 8px; text-align: right;">1.87</td>
             <td style="padding: 8px; text-align: right;">96.77</td>
@@ -417,7 +411,7 @@
             <td style="padding: 8px; text-align: right;">0.631</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px;">SceneDiffuser [21]</td>
+            <td style="padding: 8px;">SceneDiffuser [3]</td>
             <td style="padding: 8px; text-align: right;">0.53</td>
             <td style="padding: 8px; text-align: right;">1.64</td>
             <td style="padding: 8px; text-align: right;">94.89</td>
@@ -428,7 +422,7 @@
             <td style="padding: 8px; text-align: right;">0.523</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px;">FLEX [44]</td>
+            <td style="padding: 8px;">Flex [4]</td>
             <td style="padding: 8px; text-align: right;"><b>0</td>
             <td style="padding: 8px; text-align: right;">10.65</td>
             <td style="padding: 8px; text-align: right;">0</td>
@@ -451,7 +445,7 @@
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 8px; vertical-align: middle;" rowspan="5">Shelving</td>
-            <td style="padding: 8px;">GraspTTA [23]</td>
+            <td style="padding: 8px;">GraspTTA [1]</td>
             <td style="padding: 8px; text-align: right;">1.78</td>
             <td style="padding: 8px; text-align: right;">2.56</td>
             <td style="padding: 8px; text-align: right;">99.13</td>
@@ -462,7 +456,7 @@
             <td style="padding: 8px; text-align: right;">0.431</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px;">ContactGen [32]</td>
+            <td style="padding: 8px;">ContactGen [1]</td>
             <td style="padding: 8px; text-align: right;">1.43</td>
             <td style="padding: 8px; text-align: right;">3.90</td>
             <td style="padding: 8px; text-align: right;">93.13</td>
@@ -473,7 +467,7 @@
             <td style="padding: 8px; text-align: right;">0.376</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px;">SceneDiffuser [21]</td>
+            <td style="padding: 8px;">SceneDiffuser [3]</td>
             <td style="padding: 8px; text-align: right;"><b>1.38</td>
             <td style="padding: 8px; text-align: right;">3.31</td>
             <td style="padding: 8px; text-align: right;">96.43</td>
@@ -484,7 +478,7 @@
             <td style="padding: 8px; text-align: right;">0.380</td>
           </tr>
           <tr style="border-bottom: 1px solid #ddd;">
-            <td style="padding: 8px;">FLEX [44]</td>
+            <td style="padding: 8px;">Flex [4]</td>
             <td style="padding: 8px; text-align: right;">2.81</td>
             <td style="padding: 8px; text-align: right;"><b>1.54</td>
             <td style="padding: 8px; text-align: right;"><b>99.90</td>
@@ -515,8 +509,7 @@
         <strong>QR:</strong> Qualified Ratio, 
         <strong>OPP:</strong> Obstacle Penetration Percentage, and 
         <strong>TS:</strong> Task Score. The table reports the proposed method can synthesize favorable task-oriented human grasp synthesis, compared to strong baselines.
-        FLEX struggles to synthesize stable grasps in <strong>Stacking</strong> due to its inability to handle small bricks.
-        Please see Followinf section for qualitative results.
+        Flex [4] struggles to synthesize stable grasps in <strong>Stacking</strong> due to its inability to handle small bricks.
       </div>
     </div>
 
@@ -526,18 +519,62 @@
 
 
 
+<section class="section"></section>
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Result</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Task-oriented Human Grasp Prediction</h3>
+          <img src="./static/images/qualitative_grasp.png">
+        </div>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Contact Map Prediction</h3>
+          <img src="./static/images/qualitative_cmap.png">
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <!-- <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre> -->
+    <pre><code>@article{liu2024tohgs,
+      author  = {An-Lun Liu, Yu-Wei Chao and Yi-Ting Chen},
+      title     = {Task-Oriented Human Grasp Synthesis via Context- and Task-Aware Diffusers},
+      journal   = {},
+      year      = {2024},
+    }</code></pre>
   </div>
 </section>
+
+<div class="container is-max-desktop content">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <p>
+        [1] Jiang et al. Hand-Object Contact Consistency Reasoning for Human Grasps Generation. ICCV 2021
+      </p>
+      <p>
+        [2] Liu et al. ContactGen: Generative Contact Modeling for Grasp Generation. ICCV 2023
+      </p>
+      <p>
+        [3] Huang et al. Diffusion-based Generation, Optimization, and Planning in 3D Scenes. CVPR 2023
+      </p>
+      <p>
+        [4] Tendulkar et al. FLEX: Full-Body Grasping Without Full-Body Grasps. CVPR 2023
+      </p>
+      
+    </div>
+  </div>
+</div>
+
 
 
 <footer class="footer">
