@@ -127,11 +127,12 @@
 						</div>
 
 						<div class="is-size-5 publication-authors">
-							<span class="author-block">National Yang Ming Chiao Tung University</span>
+							<span class="author-block">Department of Computer Science <br> National Yang Ming Chiao Tung
+								University</span>
 						</div>
 
 						<!-- <div class="is-size-5 publication-authors">
-							<span class="author-block">2024 IEEE RAL</span>
+							<span class="author-block">2025 ICRA</span>
 						</div> -->
 
 						<div class="column has-text-centered">
@@ -228,18 +229,18 @@
 					<h2 class="title is-3">Abstract</h2>
 					<div class="content has-text-justified">
 						<p>
-							We study behavior change-based visual risk object identification (Visual-ROI), a crucial
-							formulation for Visual-ROI that aims to detect potential hazards for intelligent driving
-							systems.
+							We study behavior change-based visual risk object identification (Visual-ROI), a critical
+							framework designed to detect potential hazards for intelligent driving systems.
 
-							Existing methods often show significant limitations in spatial and temporal consistency,
-							stemming from an incomplete understanding of scene affordance.
+							Existing methods often show significant limitations in spatial accuracy and temporal
+							consistency, stemming from an incomplete understanding of scene affordance.
 
 							For example, these methods frequently misidentify vehicles that do not impact the ego
 							vehicle as risk objects.
 
 							Furthermore, existing behavior change-based methods are inefficient because they implement
-							causal inference in the perspective image.
+							causal inference in the perspective image space.
+
 						</p>
 
 						<p>
@@ -250,17 +251,18 @@
 							derived from road infrastructure and traffic participants, along with attractive forces
 							sourced from target destinations.
 
-							In this work, we compute potential fields from perspective images by assigning different
-							energy levels based on the semantic labels acquired through BEV semantic segmentation.
+							In this work, we compute potential fields by assigning different energy levels according to
+							the semantic labels obtained from BEV semantic segmentation.
 
-							We conduct comprehensive experiments and ablation studies, comparing the proposed method
-							with various state-of-the-art algorithms on both synthetic and real-world datasets.
+							We conduct thorough experiments and ablation studies, comparing the proposed method with
+							various state-of-the-art algorithms on both synthetic and real-world datasets.
 
-							<!-- Our results show a notable increase in spatial and temporal consistency, with enhancements
-							of 20.3% and 11.6% on the RiskBench dataset, respectively.
+							<!-- Our results show a notable increase in spatial accuracy and temporal consistency, with
+							enhancements of 20.3% and 11.6% on the RiskBench dataset, respectively.
+
 							Additionally, we can improve computational efficiency by 88%.
-							Similarly, on the nuScenes dataset, we achieve improvements of 5.4% and 7.2% in spatial and
-							temporal consistency. -->
+							We achieve improvements of 5.4\% in spatial accuracy and 7.2% in temporal consistency on
+							the nuScenes dataset. -->
 
 						</p>
 					</div>
@@ -282,49 +284,45 @@
 	<section class="section">
 		<div class="container is-max-desktop">
 
-			<!-- Framework. -->
+			<!-- Methodology. -->
 			<section class="section is-small">
 				<div class="container is-max-desktop">
 					<div class="columns is-centered has-text-centered">
 						<div class="column is-four-fifths">
-							<h2 class="title is-3">Framework</h2>
-							<div class="content has-text-justified">
-								<p>
-									Existing work (left) utilizes perspective images to estimate risk scores
-									through behavior change prediction (BCP).
-
-									The proposed method (right) enhances this by converting perspective images into
-									bird's-eye view segmentation (BEV-SEG) maps, predicting target points, and
-									employing potential field modules for causal inference.
-								</p>
-								<p>
-									The risk score is then estimated through three downstream methods: <b>final
-										displacement error (FDE), average displacement error (ADE)</b>, and <b>BCP</b>.
-								</p>
-
-							</div>
-
-							<div class="columns is-centered has-text-centered">
-								<img src="./static/img/framework.png" alt="framework"
-									style="width: 150%; max-width: 150%; height: auto;" />
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- / Framework. -->
-
-
-			<!-- Experiment. -->
-			<section class="section is-small">
-				<div class="container is-max-desktop">
-					<div class="columns is-centered has-text-centered">
-						<div class="column is-five-fifths">
-							<h2 class="title is-3">Experiment</h2>
+							<h2 class="title is-3">Methodology</h2>
 						</div>
 					</div>
 
+
+					<br />
 					<div class="content is-centered">
+						<h2 class="title is-4" style="text-align: center;">Framework</h2>
+						<div class="columns is-centered has-text-centered">
+							<figure style="display: flex; flex-direction: column; align-items: center;">
+								<img src="./static/img/framework.png" alt="framework"
+									style="width: 120%; max-width: 120%; height: auto;" />
+								<figcaption>
+									<!-- <p>
+										Existing works (left) [3] conduct causal inference via image inpainting in
+										perspective-view images and estimate risk scores through behavior change
+										prediction.
+
+										However, inpainting in perspective-view images is time-consuming because we
+										must recompute the corresponding image features when removing an object
+										tracklet.
+
+										Moreover, they do not model scene affordance, resulting in inferior
+										spatial accuracy and temporal consistency.
+									</p> -->
+									<p>
+										Our proposed method (right) conducts causal inference in the
+										bird's-eye view, enabling a parallel object removal process and using potential
+										field as a new representation of scene affordance.
+									</p>
+								</figcaption>
+							</figure>
+						</div>
+
 
 						<br />
 						<h2 class="title is-4" style="text-align: center;">Target Point Predictor</h2>
@@ -335,7 +333,7 @@
 									style="width: 100%; max-width: 100%; height: auto;" />
 								<figcaption>
 									Our architecture is adapted from AIM-BEV [13]. The Target Point Predictor receives a
-									sequence of current BEV-SEG images with a length of N=5.
+									sequence of predicted BEV-SEG with a length of N=5.
 									The output is a 2-dimensional representation of the target point \( T_p \) in BEV
 									space.
 								</figcaption>
@@ -360,7 +358,7 @@
 
 						<br />
 						<h2 class="title is-4" style="text-align: center;">Displacement Error from Two Observations
-							(PF+FDE & PF+ADE)</h2>
+							(OFDE & OADE)</h2>
 						<div class="columns is-centered has-text-centered">
 							<figure>
 								<br />
@@ -386,7 +384,7 @@
 							<figure>
 								<br />
 								<img src="./static/img/PF+BCP.png" alt="PF+BCP"
-									style="width: 90%; max-width: 90%; height: auto;" />
+									style="width: 100%; max-width: 100%; height: auto;" />
 								<figcaption>
 									Following the approaches of BCP [3] and RiskBench [9], we classify driver
 									behavior into two categories: <b>Go</b> and <b>Stop</b>.
@@ -398,12 +396,28 @@
 						</div>
 
 
-						<br />
-						<h2 class="title is-4" style="text-align: center;">Dataset Distribution</h2>
+					</div>
+			</section>
+			<!-- / Methodology. -->
+
+
+			<!-- Experiment. -->
+			<section class="section is-small">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-five-fifths">
+							<h2 class="title is-3">Experimental Setting</h2>
+						</div>
+					</div>
+
+					<br />
+					<h2 class="title is-4" style="text-align: center;">Datasets</h2>
+					<div class="content has-text-justified">
 						<table
 							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
 							cellpadding="10" border='0' cellspacing="0">
-							<caption style="padding: 10px; font-size: 16px; text-align: left;line-height: 1.5;">
+
+							<caption style="padding: 10px; text-align: left;line-height: 1.5;">
 								The <b>Driver Behavior</b> column shows the number of frames used for training,
 								while the <b>Traffic Participants</b> column shows the number of objects used for
 								testing.
@@ -441,138 +455,146 @@
 								<td>6.3%</td>
 							</tr>
 						</table>
+					</div>
 
 
-						<br />
-						<h2 class="title is-4" style="text-align: center;">Vision-Based ROI Baselines</h2>
-						<div class="content has-text-justified">
-							<p>
-								We evaluate seven baselines within our framework.
+					<br />
+					<h2 class="title is-4" style="text-align: center;">Visual-Based ROI Baselines</h2>
+					<div class="content has-text-justified">
+						<p>
+							We evaluate seven baselines within our framework.
 
-								These baselines take a sequence of images as input and output a risk score for each road
-								user (e.g., vehicle or pedestrian).
+							These baselines take a sequence of images as input and output a risk score for each road
+							user (e.g., vehicle or pedestrian).
 
-								A road user is considered a risk object if the raw score exceeds a predefined threshold.
-								<br>
-								It is important to note that all the following baselines rely on vision-based methods.
-							</p>
-							<ul class="nav pull-right">
-								<li>
-									<b>Cost Map:</b> &thinsp; <b>FF</b> [5].
-								</li>
-								<li>
-									<b>Collision Anticipation:</b> &thinsp; <b>DSA</b> [6] and <b>RRL</b> [7].
-								</li>
-								<li>
-									<b>Behavior Prediction-based:</b> &thinsp; <b>BP</b> [8], <b>BCP</b> [3],
-									<b>TP+BCP</b> (BCP w/ Target Point) and <b>BS+BCP</b> (BCP w/ BEV-SEG).
-								</li>
-							</ul>
-							<!-- <p>
+							A road user is considered a risk object if the raw score exceeds a predefined threshold.
+							<br>
+							It is important to note that all the following baselines rely on Visual-ROI methods.
+						</p>
+						<ul class="nav pull-right">
+							<li>
+								<b>Cost Map:</b> &thinsp; <b>FF</b> [5].
+							</li>
+							<li>
+								<b>Collision Anticipation:</b> &thinsp; <b>DSA</b> [6] and <b>RRL</b> [7].
+							</li>
+							<li>
+								<b>Behavior Prediction-based:</b> &thinsp; <b>BP</b> [8], <b>BCP</b> [3],
+								<b>TP+BCP</b> (BCP w/ Target Point) and <b>BS+BCP</b> (BCP w/ BEV-SEG).
+							</li>
+							<li>
+								<b>Planning-based:</b> &thinsp; <b>OFDE</b> and <b>OADE</b>.
+							</li>
+						</ul>
+						<!-- <p>
 								For training details, please refer to our <a
 									href="https://github.com/WaywayPao/RAL-ROI">github</a>.
 							</p> -->
-						</div>
-
-
-						<br />
-						<h2 class="title is-4" style="text-align: center;">Evaluation Metrics</h2>
-						<div class="content has-text-justified">
-							<p>
-								We evaluate the performance of our model using two main categories of metrics:
-								<b>Riskiness</b> and <b>Temporal Consistency</b>.
-
-								Riskiness metrics include the Optimal F1 Score (OT-F1) and the Optimal F1 Score in T
-								Seconds (OT-F1-T), which measure the model's ability to accurately identify risks.
-
-								Temporal Consistency metrics consist of the Progressive Increasing Cost (PIC) and
-								the Weighted Multi-Object Tracking Accuracy (wMOTA), which assess the consistency
-								and accuracy of the model over time.
-							</p>
-							<ul class="nav pull-right">
-								<LI>
-									<b>Optimal F1 Score (OT-F1) : </b> The optimal F1 score is the highest score
-									achieved across various thresholds.
-
-									This metric balances precision and recall, ensuring neither false positives nor
-									false negatives dominate performance.
-								</LI>
-								<br />
-
-								<LI>
-									<b>Optimal F1 Score in T Seconds (OT-F1-T) : </b> The OT-F1-T metric focuses
-									specifically on the prediction outcomes within the first T seconds near the critical
-									point.
-
-									Similar to PIC, it specifically evaluates a model's ability to detect risks as it
-									approaches this critical point.
-
-									The criteria for defining a critical point are consistent with
-									those established in RiskBench [9].
-								</LI>
-								<br />
-
-								<LI>
-									<b>Progressive Increasing Cost (PIC) : </b> This metric is introduced in RiskBench
-									[9]. To prevent the potential issue of penalty weights declining too sharply
-									and approaching zero (Fig. 1), we made refined adjustments to ensure they are
-									appropriately proportioned.
-
-									The new PIC formula is given by:
-									\[
-									\textrm{PIC} = -\sum^{T}_{t=1} e^{-(T-t)/T}\log(\textrm{F1}_{t})
-									\]
-									Here, \( \textrm{F1}_t \) denotes the F1 score at a specific time frame \( t \),
-									while \( T \) stands for the total number of frames within a scenario.
-
-									We establish \( T \) as 60, equivalent to 3 seconds.
-									We then sum the PIC for all scenarios and ensure that the outcomes are normalized to
-									a scale ranging from 0 to 1.
-								</LI>
-								<br />
-
-								<LI>
-									<b>Weighted Multi-Object Tracking Accuracy (wMOTA) : </b>
-									Inspired by the metrics used in MOT16 [10], we use wMOTA to comprehensively evaluate
-									temporal consistency.
-
-									To address the imbalance between positive (risky) and negative (non-risky) samples,
-									we have refined MOTA into a weighted version, termed wMOTA, by introducing specific
-									weights.
-
-									We denote number of positive miss at time \(t\) as \(\textrm{PM}_t\).
-
-									The number of negative miss at time \(t\) as \(\textrm{NM}_t\).
-									The parameter \(\textrm{PM}_t\) as \(w_p\cdot(\textrm{FN}_t+\textrm{IDsw}^{p}_t)\).
-									The parameter \(\textrm{NM}_t\) as \(w_n\cdot(\textrm{FP}_t+\textrm{IDsw}^{n}_t)\).
-
-									In these definitions : \(\textrm{FN}_t\) and \(\textrm{FP}_t\) represent the numbers
-									of false negatives and false positives at time \(t\), respectively.
-
-									\(\textrm{IDsw}^p_t\) and \(\textrm{IDsw}^n_t\) represent the number of identity
-									switches for positive and negative samples, respectively, between times \(t-1\) and
-									\(t\).
-									\(w_p\) and \(w_n\) are the weights assigned to positive and negative samples,
-									respectively.
-
-									wMOTA is then calculated as follows:
-									\[
-									\textrm{wMOTA}=1-\frac{\sum_t(\textrm{PM}_t+\textrm{NM}_t)}{\sum_t(w_p{\cdot}\textrm{GT}^{p}_t+w_n{\cdot}\textrm{GT}^{n}_t)}
-									\]
-									where \(\textrm{GT}^{p}_t\) and \(\textrm{GT}^{n}_t\) are the counts of ground truth
-									positives and negatives samples at time \(t\), respectively.
-								</LI>
-
-							</ul>
-						</div>
-
-
-
 					</div>
+
+
+					<br />
+					<h2 class="title is-4" style="text-align: center;">Evaluation Metrics</h2>
+					<div class="content has-text-justified">
+						<p>
+							We evaluate the performance of Visual-ROI models with two types of metrics: <b>Spatial
+								Accuracy</b> and <b>Temporal Consistency</b>.
+
+							Spatial Accuracy include the Optimal F1 Score (OT-F1) and the Optimal F1 Score in T
+							Seconds (OT-F1-T), which measure the model's ability to accurately identify risks.
+
+							Temporal Consistency metrics consist of the Progressive Increasing Cost (PIC) and
+							the Weighted Multi-Object Tracking Accuracy (wMOTA), which assess the consistency
+							and accuracy of the model over time.
+						</p>
+						<ul class="nav pull-right">
+							<LI>
+								<b>Optimal F1 Score (OT-F1) : </b>
+								An object is a risk object if its raw risk score exceeds a certain threshold.
+
+								The optimal threshold is selected by maximizing the F1 score through a sweeping
+								analysis.
+
+								This process serves as an upper-bound performance benchmark for each model.
+							</LI>
+							<br />
+
+							<LI>
+								<b>Optimal F1 Score in T Seconds (OT-F1-T) : </b>
+								OT-F1-T evaluates the OT-F1 prediction outcomes during the T seconds preceding the
+								critical point.
+
+								A critical point is defined as the moment when the ego vehicle is both influenced by the
+								risk object and is at its closest proximity to it [9].
+							</LI>
+							<br />
+
+							<LI>
+								<b>Progressive Increasing Cost (PIC) : </b>
+								This metric is introduced in RiskBench [9].
+								To address the issue of penalty weights decreasing too quickly and approaching zero
+								(Fig. 1), we adjust PIC as
+
+								\[
+								\textrm{PIC} = -\sum^{T}_{t=1} e^{-(T-t)/T}\log(\textrm{F1}_{t})
+								\]
+
+								Here, \( \textrm{F1}_t \) denotes the F1 score at a specific time frame \( t \),
+								while \( T \) represents the total number of frames within a scenario.
+
+								We establish \( T \) as 60, equivalent to 3 seconds.
+
+								We scale PIC to a range between 0 and 1 for improved interpretability by aggregating the
+								PIC values across all scenarios and normalizing the total PIC to fit within this scale.
+							</LI>
+							<br />
+
+							<LI>
+								<b>Weighted Multi-Object Tracking Accuracy (wMOTA) : </b>
+								Inspired by MOT16 [10], we use MOTA to evaluate the temporal consistency of a Visual-ROI
+								model.
+
+								To address the imbalance between positive (risky) and negative (non-risky) samples, we
+								propose a weighted version of MOTA called wMOTA.
+
+								We denote number of positive miss at time \(t\) as \(\textrm{PM}_t\).
+								The number of negative miss at time \(t\) as \(\textrm{NM}_t\).
+
+								The value \(\textrm{PM}_t\) is defined as
+								\(w_p\cdot(\textrm{FN}_t+\textrm{IDsw}^{p}_t)\).
+								The value \(\textrm{NM}_t\) is defined as
+								\(w_n\cdot(\textrm{FP}_t+\textrm{IDsw}^{n}_t)\).
+
+
+								In the above two equations, the notations \(\textrm{FN}_t\) and \(\textrm{FP}_t\)
+								represent the numbers of false negatives and false positives at time \(t\),
+								respectively.
+
+
+								In addition, the notations \(\textrm{IDsw}^p_t\) and \(\textrm{IDsw}^n_t\) represent the
+								number of identity switches for positive and negative samples, respectively, between
+								times \(t-1\) and \(t\).
+								The parameters \(w_p\) and \(w_n\) are the weights assigned to positive and negative
+								samples.
+
+								The wMOTA is defined as
+
+								\[
+								\textrm{wMOTA}=1-\frac{\sum_t(\textrm{PM}_t+\textrm{NM}_t)}{\sum_t(w_p{\cdot}\textrm{GT}^{p}_t+w_n{\cdot}\textrm{GT}^{n}_t)}
+								\]
+
+								where \(\textrm{GT}^{p}_t\) and \(\textrm{GT}^{n}_t\) represent the counts of ground
+								truth positive and negative samples at time \(t\), respectively.
+							</LI>
+
+						</ul>
+					</div>
+
+
+
 				</div>
 			</section>
 			<!-- / Experiment. -->
-
 
 
 
@@ -581,13 +603,12 @@
 				<div class="container is-max-desktop">
 					<div class="columns is-centered has-text-centered">
 						<div class="column is-five-fifths">
-							<h2 class="title is-3">Visualizations</h2>
-							<div class="content has-text-justified">
-							</div>
+							<h2 class="title is-3">Qualitative Results</h2>
 						</div>
 					</div>
 
 
+					<br />
 					<div class="columns is-centered has-text-centered">
 						<div class="column is-four-fifths">
 							<h2 class="title is-4">ROI Demo on the RiskBench</h2>
@@ -656,7 +677,7 @@
 					<br />
 					<br />
 					<div class="content is-centered">
-						<h2 class="title is-4" style="text-align: center;">OT-F1 for the Vision-ROI Methods Over Time
+						<h2 class="title is-4" style="text-align: center;">OT-F1 for the Visual-ROI Methods Over Time
 						</h2>
 						<div class="columns is-half has-text-centered">
 							<figure>
@@ -696,7 +717,7 @@
 
 					<div class="column is-half">
 						<h2 class="title is-6" style="text-align: center;">Figure 2: Performance Comparison of
-							Vision-ROI</h2>
+							Visual-ROI</h2>
 						<!-- <div class="columns is-centered has-text-centered"> -->
 						<figure class="has-text-centered">
 							<img src="./static/img/plot.png" alt="tasks" width="120%" height="120%" />
@@ -708,445 +729,444 @@
 						<!-- </div> -->
 					</div>
 				</div>
+			</section>
+			<!-- / Qualitative Results. -->
+
+
+			<!-- Quautitative Results. -->
+			<section class="section is-small">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-five-fifths">
+							<h2 class="title is-3">Quautitative Results</h2>
+						</div>
+					</div>
+
+					<br />
+					<div class="content is-centered">
+						<h2 class="title is-4" style="text-align: center;">Table 1: Spatial Accuracy and Temporal
+							Consistency
+							on RiskBench</h2>
+						<table
+							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
+							cellpadding="10" border='0' cellspacing="0">
+							<tr>
+								<th class="rowhead-border" rowspan="2"> </th>
+								<th class="rowhead-border" colspan="3">Spatial Accuracy</th>
+								<th class="rowhead-border" colspan="2">Temporal Consistency</th>
+								<th rowspan="1">Inference Time</th>
+							</tr>
+							<tr>
+								<th>OT-P (%)↑</th>
+								<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OT-R (%)↑</th>
+								<th class="rowhead-border">OT-F1 (%)↑</th>
+								<th>&nbsp;&nbsp;PIC (%)↓</th>
+								<th class="rowhead-border">wMOTA (%)↑</th>
+								<th>Avg (sec)↓</th>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">FF [5]</td>
+								<td>22.2</td>
+								<td>27.9</td>
+								<td class="rowhead-border">24.7</td>
+								<td>39.3</td>
+								<td class="rowhead-border">55.0</td>
+								<td><b>0.027</b></td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">DSA [6]</td>
+								<td>54.7</td>
+								<td>19.7</td>
+								<td class="rowhead-border">29.0</td>
+								<td>29.8</td>
+								<td class="rowhead-border">53.3</td>
+								<td>0.269</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">RRL [7]</td>
+								<td>49.4</td>
+								<td>15.4</td>
+								<td class="rowhead-border">23.5</td>
+								<td>28.9</td>
+								<td class="rowhead-border">52.3</td>
+								<td>0.280</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">BP [8]</td>
+								<td>24.2</td>
+								<td>35.1</td>
+								<td class="rowhead-border">28.7</td>
+								<td>39.0</td>
+								<td class="rowhead-border">57.5</td>
+								<td>0.119</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">BCP [3]</td>
+								<td>38.6</td>
+								<td>43.7</td>
+								<td class="rowhead-border">41.0</td>
+								<td>29.3</td>
+								<td class="rowhead-border">63.2</td>
+								<td>0.431</td>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">TP+BCP</td>
+								<td>47.4</td>
+								<td>51.7</td>
+								<td class="rowhead-border">49.5</td>
+								<td>28.0</td>
+								<td class="rowhead-border">67.2</td>
+								<td>0.437</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">BS+BCP</td>
+								<td>56.8</td>
+								<td>60.7</td>
+								<td class="rowhead-border">58.7</td>
+								<td>24.0</td>
+								<td class="rowhead-border">72.5</td>
+								<td>0.049</td>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">OFDE</td>
+								<td>50.8</td>
+								<td>56.7</td>
+								<td class="rowhead-border">53.6</td>
+								<td>26.7</td>
+								<td class="rowhead-border">65.4</td>
+								<td>0.062</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">OADE</td>
+								<td>52.7</td>
+								<td>57.9</td>
+								<td class="rowhead-border">55.2</td>
+								<td>25.7</td>
+								<td class="rowhead-border">66.9</td>
+								<td>0.061</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">PF+BCP</td>
+								<td><b>60.2</b></td>
+								<td><b>62.4</b></td>
+								<td class="rowhead-border"><b>61.3</b></td>
+								<td><b>23.0</b></td>
+								<td class="rowhead-border"><b>74.8</b></td>
+								<td>0.049</td>
+							</tr>
+						</table>
+
+						<div class="content has-text-justified">
+							The notations <b>P</b>, <b>R</b> denote precision and recall respectively.
+
+							<b>TP, BS, PF</b> refer to Target Point, BEV-SEG and potential field respectively.
+							Best results are highlighted in bold.
+							<br>
+							<br>
+							Using scene affordance (PF) as intermediate inputs enhances behavior change-based methods,
+							leading to improved riskness and temporal consistency in Visual-ROI tasks.
+
+							We also demonstrate that employing BEV representations for causal inference
+							significantly enhances inference speed, achieving an 88% improvement compared to the use of
+							perspective views.
+						</div>
+
+
+						<h2 class="title is-4" style="text-align: center;">Table 2: Ablation Studies</h2>
+						<table border="0" cellspacing="0" cellpadding="0"
+							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center; width: 100%;">
+							<tr>
+								<th class="rowhead-border">Method</th>
+								<th style="width: 120px;">BEV-SEG</th>
+								<th style="width: 100px;">\( F_r \)</th>
+								<th style="width: 100px;" class="rowhead-border">\( F_a \)</th>
+								<th>OT-F1 (%)↑</th>
+								<th>PIC ↓</th>
+								<th>wMOTA (%)↑</th>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">FDE</td>
+								<td>✓</td>
+								<td>✓</td>
+								<td class="rowhead-border"></td>
+								<td>51.1</td>
+								<td>26.7</td>
+								<td>63.7</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">FDE</td>
+								<td>✓</td>
+								<td>✓</td>
+								<td class="rowhead-border">✓</td>
+								<td>53.6</td>
+								<td>26.7</td>
+								<td>65.4</td>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">ADE</td>
+								<td>✓</td>
+								<td>✓</td>
+								<td class="rowhead-border"></td>
+								<td>53.4</td>
+								<td>25.7</td>
+								<td>64.5</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">ADE</td>
+								<td>✓</td>
+								<td>✓</td>
+								<td class="rowhead-border">✓</td>
+								<td>55.0</td>
+								<td>25.7</td>
+								<td>66.9</td>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">1</td>
+								<td></td>
+								<td></td>
+								<td class="rowhead-border"></td>
+								<td>41.0</td>
+								<td>29.3</td>
+								<td>63.2</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">2</td>
+								<td></td>
+								<td></td>
+								<td class="rowhead-border">✓</td>
+								<td>49.5</td>
+								<td>28.0</td>
+								<td>67.2</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">3</td>
+								<td>✓</td>
+								<td></td>
+								<td class="rowhead-border">✓</td>
+								<td>58.7</td>
+								<td>24.0</td>
+								<td>72.5</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">4</td>
+								<td>✓</td>
+								<td>✓</td>
+								<td class="rowhead-border"></td>
+								<td>59.0</td>
+								<td>24.4</td>
+								<td>72.9</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">5</td>
+								<td>✓</td>
+								<td>✓</td>
+								<td class="rowhead-border">✓</td>
+								<td><b>61.3</b></td>
+								<td><b>23.0</b></td>
+								<td><b>74.8</b></td>
+							</tr>
+							</tbody>
+						</table>
+
+						<div class="content has-text-justified">
+							Results of ROI under different constraints on the RiskBench Dataset. The table
+							shows the performance of different methods (FDE, ADE, and BCP) with various combinations of
+							Bird's Eye View Segmentation (BEV-SEG), repulsive force \( F_r \), and attractive force (or
+							target point) \( F_a \).
+						</div>
+
+
+						<h2 class="title is-4" style="text-align: center;">Table 3: OT-F1 in T secs</h2>
+						<table border="0" cellspacing="0" cellpadding="10"
+							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center; width: 100%;">
+							<tr>
+								<th class=" rowhead-border">Method</th>
+								<th>1s (%)↑</th>
+								<th>2s (%)↑</th>
+								<th>3s (%)↑</th>
+								<th>Overall (%)↑</th>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">FF [5]</td>
+								<td>28.7</td>
+								<td>24.4</td>
+								<td>21.5</td>
+								<td>24.7</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">DSA [6]</td>
+								<td>36.8</td>
+								<td>31.6</td>
+								<td>29.7</td>
+								<td>29.0</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">RRL [7]</td>
+								<td>35.0</td>
+								<td>32.2</td>
+								<td>31.9</td>
+								<td>23.5</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">BP [8]</td>
+								<td>33.8</td>
+								<td>32.8</td>
+								<td>30.8</td>
+								<td>28.7</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">BCP [3]</td>
+								<td>49.3</td>
+								<td>47.2</td>
+								<td>44.2</td>
+								<td>41.0</td>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">TP+BCP</td>
+								<td>52.8</td>
+								<td>49.8</td>
+								<td>46.9</td>
+								<td>49.5</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">BS+BCP</td>
+								<td>60.7</td>
+								<td>58.8</td>
+								<td>56.5</td>
+								<td>58.7</td>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">OFDE</td>
+								<td>56.4</td>
+								<td>53.0</td>
+								<td>50.3</td>
+								<td>53.6</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">OADE</td>
+								<td>57.9</td>
+								<td>55.0</td>
+								<td>52.7</td>
+								<td>55.2</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">PF+BCP</td>
+								<td><b>62.5</b></td>
+								<td><b>61.0</b></td>
+								<td><b>59.3</b></td>
+								<td><b>61.3</b></td>
+							</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+				</div>
+			</section>
+			<!-- / Quautitative Results. -->
+
+
+			<!-- Real-Word Evaluation. -->
+			<section class="section is-small">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered has-text-centered">
+						<h2 class="title is-3">Real-Word Evaluation</h2>
+					</div>
+
+
+					<br />
+					<div class="columns is-vcentered is-centered has-text-centered">
+						<div class="column is-half">
+
+							<h2 class="title is-4" style="text-align: center;">nuScenes-ROI Dataset</h2>
+							<div class="content has-text-justified">
+								<p>
+									We use the nuScenes dataset [11] as the testbed to evaluate the effectiveness of
+									our method in the real world.
+
+									We label risk objects manually according to the protocol described in [20].
+
+									In the testing phase, we use YOLOv8 [12] to generate object bounding
+									boxes.
+								</p>
+							</div>
+						</div>
+
+						<div class="column is-half">
+							<img src="./static/gif/nuscene-ROI.gif" alt="nuscene-ROI.gif" width="150%" height=auto />
+						</div>
+					</div>
+
+					<br />
+					<div class="content is-centered">
+						<h2 class="title is-4" style="text-align: center;">Table 4: nuScenes-ROI Evaluation</h2>
+						<table
+							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
+							cellpadding="10" border='0' cellspacing="0">
+							<th class="rowhead-border"></th>
+							<th>OT-P (%)↑</th>
+							<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OT-R (%)↑</th>
+							<th class="rowhead-border">OT-F1 (%)↑</th>
+							<th>&nbsp;&nbsp;PIC (%)↓</th>
+							<th>wMOTA (%)↑</th>
+							</tr>
+							<tr class="middle-border">
+								<td class="rowhead-border">BP [8]</td>
+								<td>21.1</td>
+								<td>38.0</td>
+								<td class="rowhead-border">27.1</td>
+								<td>19.0</td>
+								<td>58.3</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">BCP [3]</td>
+								<td><b>50.8</b></td>
+								<td>50.6</td>
+								<td class="rowhead-border">50.7</td>
+								<td>15.2</td>
+								<td>69.0</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">BS+BCP</td>
+								<td>39.2</td>
+								<td>56.2</td>
+								<td class="rowhead-border">46.2</td>
+								<td>10.7</td>
+								<td>65.3</td>
+							</tr>
+							<tr>
+								<td class="rowhead-border">PF+BCP</td>
+								<td>45.5</td>
+								<td><b>73.2</b></td>
+								<td class="rowhead-border"><b>56.1</b></td>
+								<td><b>8.9</b></td>
+								<td><b>76.2</b></td>
+							</tr>
+
+						</table>
+					</div>
+
+					<br />
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-four-fifths">
+							<h2 class="title is-4" style="text-align: center;">ROI on the nuScenes Dataset</h2>
+							<img src="./static/img/qualitative_nuscenes.png" alt="qualitative_nuscenes" />
+
+							<div class="content has-text-justified">
+								ROI results on sample scenarios selected from the nuScenes dataset with rows
+								representing different behavior change-based methods.
+
+								All detected risk objects are shown with green bounding boxes, while ground truth
+								risks are masked in red.
+							</div>
+						</div>
+
+
+
+			</section>
+			<!-- / Real-Word Evaluation. -->
+
 		</div>
-	</section>
-	<!-- / Qualitative Results. -->
-
-
-	<!-- Quautitative Results. -->
-	<section class="section is-small">
-		<div class="container is-max-desktop">
-			<div class="columns is-centered has-text-centered">
-				<div class="column is-five-fifths">
-					<h2 class="title is-3">Quautitative Results</h2>
-					<div class="content has-text-justified">
-					</div>
-				</div>
-			</div>
-
-			<div class="content is-centered">
-				<h2 class="title is-4" style="text-align: center;">Table 1: Riskiness and Temporal Consistency
-					on RiskBench</h2>
-				<table style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
-					cellpadding="10" border='0' cellspacing="0">
-					<tr>
-						<th class="rowhead-border" rowspan="2"> </th>
-						<th class="rowhead-border" colspan="3">Riskiness</th>
-						<th class="rowhead-border" colspan="2">Temporal Consistency</th>
-						<th rowspan="1">Inference Time</th>
-					</tr>
-					<tr>
-						<th>OT-P (%)↑</th>
-						<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OT-R (%)↑</th>
-						<th class="rowhead-border">OT-F1 (%)↑</th>
-						<th>&nbsp;&nbsp;PIC (%)↓</th>
-						<th class="rowhead-border">wMOTA (%)↑</th>
-						<th>Avg (sec)↓</th>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">FF [5]</td>
-						<td>22.2</td>
-						<td>27.9</td>
-						<td class="rowhead-border">24.7</td>
-						<td>39.3</td>
-						<td class="rowhead-border">55.0</td>
-						<td><b>0.027</b></td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">DSA [6]</td>
-						<td>54.7</td>
-						<td>19.7</td>
-						<td class="rowhead-border">29.0</td>
-						<td>29.8</td>
-						<td class="rowhead-border">53.3</td>
-						<td>0.269</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">RRL [7]</td>
-						<td>49.4</td>
-						<td>15.4</td>
-						<td class="rowhead-border">23.5</td>
-						<td>28.9</td>
-						<td class="rowhead-border">52.3</td>
-						<td>0.280</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BP [8]</td>
-						<td>24.2</td>
-						<td>35.1</td>
-						<td class="rowhead-border">28.7</td>
-						<td>39.0</td>
-						<td class="rowhead-border">57.5</td>
-						<td>0.119</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BCP [3]</td>
-						<td>38.6</td>
-						<td>43.7</td>
-						<td class="rowhead-border">41.0</td>
-						<td>29.3</td>
-						<td class="rowhead-border">63.2</td>
-						<td>0.431</td>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">TP+BCP</td>
-						<td>47.4</td>
-						<td>51.7</td>
-						<td class="rowhead-border">49.5</td>
-						<td>28.0</td>
-						<td class="rowhead-border">67.2</td>
-						<td>0.437</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BS+BCP</td>
-						<td>56.8</td>
-						<td>60.7</td>
-						<td class="rowhead-border">58.7</td>
-						<td>24.0</td>
-						<td class="rowhead-border">72.5</td>
-						<td>0.049</td>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">PF+FDE</td>
-						<td>50.8</td>
-						<td>56.7</td>
-						<td class="rowhead-border">53.6</td>
-						<td>26.7</td>
-						<td class="rowhead-border">65.4</td>
-						<td>0.062</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">PF+ADE</td>
-						<td>52.7</td>
-						<td>57.9</td>
-						<td class="rowhead-border">55.2</td>
-						<td>25.7</td>
-						<td class="rowhead-border">66.9</td>
-						<td>0.061</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">PF+BCP</td>
-						<td><b>60.2</b></td>
-						<td><b>62.4</b></td>
-						<td class="rowhead-border"><b>61.3</b></td>
-						<td><b>23.0</b></td>
-						<td class="rowhead-border"><b>74.8</b></td>
-						<td>0.049</td>
-					</tr>
-				</table>
-
-				<div class="content has-text-justified">
-					The notations <b>P</b>, <b>R</b> denote precision and recall respectively.
-
-					<b>TP, BS, PF</b> refer to Target Point, BEV-SEG and potential field respectively.
-					Best results are highlighted in bold.
-					<br>
-					<br>
-					Using scene affordance (PF) as intermediate inputs enhances behavior change-based methods,
-					leading to improved riskness and temporal consistency in Vision-ROI tasks.
-
-					We also demonstrate that employing BEV representations for causal inference
-					significantly enhances inference speed, achieving an 88% improvement compared to the use of
-					perspective views.
-				</div>
-
-
-				<h2 class="title is-4" style="text-align: center;">Table 2: Ablation Studies</h2>
-				<table border="0" cellspacing="0" cellpadding="0"
-					style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center; width: 100%;">
-					<tr>
-						<th class="rowhead-border">Method</th>
-						<th style="width: 120px;">BEV-SEG</th>
-						<th style="width: 100px;">\( F_r \)</th>
-						<th style="width: 100px;" class="rowhead-border">\( F_a \)</th>
-						<th>OT-F1 (%)↑</th>
-						<th>PIC ↓</th>
-						<th>wMOTA (%)↑</th>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">FDE</td>
-						<td>✓</td>
-						<td>✓</td>
-						<td class="rowhead-border"></td>
-						<td>51.1</td>
-						<td>26.7</td>
-						<td>63.7</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">FDE</td>
-						<td>✓</td>
-						<td>✓</td>
-						<td class="rowhead-border">✓</td>
-						<td>53.6</td>
-						<td>26.7</td>
-						<td>65.4</td>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">ADE</td>
-						<td>✓</td>
-						<td>✓</td>
-						<td class="rowhead-border"></td>
-						<td>53.4</td>
-						<td>25.7</td>
-						<td>64.5</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">ADE</td>
-						<td>✓</td>
-						<td>✓</td>
-						<td class="rowhead-border">✓</td>
-						<td>55.0</td>
-						<td>25.7</td>
-						<td>66.9</td>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">BCP</td>
-						<td></td>
-						<td></td>
-						<td class="rowhead-border"></td>
-						<td>41.0</td>
-						<td>29.3</td>
-						<td>63.2</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BCP</td>
-						<td></td>
-						<td></td>
-						<td class="rowhead-border">✓</td>
-						<td>49.5</td>
-						<td>28.0</td>
-						<td>67.2</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BCP</td>
-						<td>✓</td>
-						<td></td>
-						<td class="rowhead-border">✓</td>
-						<td>58.7</td>
-						<td>24.0</td>
-						<td>72.5</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BCP</td>
-						<td>✓</td>
-						<td>✓</td>
-						<td class="rowhead-border"></td>
-						<td>59.0</td>
-						<td>24.4</td>
-						<td>72.9</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BCP</td>
-						<td>✓</td>
-						<td>✓</td>
-						<td class="rowhead-border">✓</td>
-						<td><b>61.3</b></td>
-						<td><b>23.0</b></td>
-						<td><b>74.8</b></td>
-					</tr>
-					</tbody>
-				</table>
-
-				<div class="content has-text-justified">
-					Results of ROI under different constraints on the RiskBench Dataset. The table
-					shows the performance of different methods (FDE, ADE, and BCP) with various combinations of
-					Bird's Eye View Segmentation (BEV-SEG), repulsive force \( F_r \), and attractive force (or
-					target point) \( F_a \).
-				</div>
-
-
-				<h2 class="title is-4" style="text-align: center;">Table 3: OT-F1 in T secs</h2>
-				<table border="0" cellspacing="0" cellpadding="10"
-					style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center; width: 100%;">
-					<tr>
-						<th class=" rowhead-border">Method</th>
-						<th>1s (%)↑</th>
-						<th>2s (%)↑</th>
-						<th>3s (%)↑</th>
-						<th>Overall (%)↑</th>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">FF [5]</td>
-						<td>28.7</td>
-						<td>24.4</td>
-						<td>21.5</td>
-						<td>24.7</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">DSA [6]</td>
-						<td>36.8</td>
-						<td>31.6</td>
-						<td>29.7</td>
-						<td>29.0</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">RRL [7]</td>
-						<td>35.0</td>
-						<td>32.2</td>
-						<td>31.9</td>
-						<td>23.5</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BP [8]</td>
-						<td>33.8</td>
-						<td>32.8</td>
-						<td>30.8</td>
-						<td>28.7</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BCP [3]</td>
-						<td>49.3</td>
-						<td>47.2</td>
-						<td>44.2</td>
-						<td>41.0</td>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">TP+BCP</td>
-						<td>52.8</td>
-						<td>49.8</td>
-						<td>46.9</td>
-						<td>49.5</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BS+BCP</td>
-						<td>60.7</td>
-						<td>58.8</td>
-						<td>56.5</td>
-						<td>58.7</td>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">PF+FDE</td>
-						<td>56.4</td>
-						<td>53.0</td>
-						<td>50.3</td>
-						<td>53.6</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">PF+ADE</td>
-						<td>57.9</td>
-						<td>55.0</td>
-						<td>52.7</td>
-						<td>55.2</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">PF+BCP</td>
-						<td><b>62.5</b></td>
-						<td><b>61.0</b></td>
-						<td><b>59.3</b></td>
-						<td><b>61.3</b></td>
-					</tr>
-					</tbody>
-				</table>
-
-
-			</div>
-		</div>
-	</section>
-	<!-- / Quautitative Results. -->
-
-
-	<!-- Real-Word Evaluation. -->
-	<section class="section is-small">
-		<div class="container is-max-desktop">
-			<div class="columns is-centered has-text-centered">
-				<h2 class="title is-3">Real-Word Evaluation</h2>
-			</div>
-			<br />
-
-			<div class="columns is-vcentered is-centered has-text-centered">
-				<div class="column is-half">
-
-					<h2 class="title is-4" style="text-align: center;">nuScenes-ROI Dataset</h2>
-					<div class="content has-text-justified">
-						<p>
-							We use the nuScenes [11] dataset for real-world experiments.
-
-							Following the methodologies described in RiskBench [9] and BCP [3], we categorize
-							driver behavior into two classes: <b>Go</b> and <b>Stop</b>.
-
-							Objects that influence driver behavior are labeled as risky, particularly when they
-							cause a change from <b>Stop</b> to <b>Go</b>.
-
-							During the testing phase, we use YOLOv8 [12] to generate object bounding
-							boxes.
-						</p>
-					</div>
-				</div>
-
-				<div class="column is-half">
-					<img src="./static/gif/nuscene-ROI.gif" alt="nuscene-ROI.gif" width="150%" height=auto />
-				</div>
-			</div>
-
-			<br />
-			<div class="content is-centered">
-				<h2 class="title is-4" style="text-align: center;">Table 4: nuScenes-ROI Evaluation</h2>
-				<table style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
-					cellpadding="10" border='0' cellspacing="0">
-					<th class="rowhead-border"></th>
-					<th>OT-P (%)↑</th>
-					<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OT-R (%)↑</th>
-					<th class="rowhead-border">OT-F1 (%)↑</th>
-					<th>&nbsp;&nbsp;PIC (%)↓</th>
-					<th>wMOTA (%)↑</th>
-					</tr>
-					<tr class="middle-border">
-						<td class="rowhead-border">BP [8]</td>
-						<td>21.1</td>
-						<td>38.0</td>
-						<td class="rowhead-border">27.1</td>
-						<td>19.0</td>
-						<td>58.3</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BCP [3]</td>
-						<td><b>50.8</b></td>
-						<td>50.6</td>
-						<td class="rowhead-border">50.7</td>
-						<td>15.2</td>
-						<td>69.0</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">BS+BCP</td>
-						<td>39.2</td>
-						<td>56.2</td>
-						<td class="rowhead-border">46.2</td>
-						<td>10.7</td>
-						<td>65.3</td>
-					</tr>
-					<tr>
-						<td class="rowhead-border">PF+BCP</td>
-						<td>45.5</td>
-						<td><b>73.2</b></td>
-						<td class="rowhead-border"><b>56.1</b></td>
-						<td><b>8.9</b></td>
-						<td><b>76.2</b></td>
-					</tr>
-
-				</table>
-			</div>
-
-			<br />
-			<div class="columns is-centered has-text-centered">
-				<div class="column is-four-fifths">
-					<h2 class="title is-4" style="text-align: center;">ROI on the nuScenes Dataset</h2>
-					<img src="./static/img/qualitative_nuscenes.png" alt="qualitative_nuscenes" />
-
-					<div class="content has-text-justified">
-						ROI results on sample scenarios selected from the nuScenes dataset with rows
-						representing different behavior change-based methods.
-
-						All detected risk objects are shown with green bounding boxes, while ground truth
-						risks are masked in red.
-					</div>
-				</div>
-
-
-
-	</section>
-	<!-- / Real-Word Evaluation. -->
-
-	</div>
 	</section>
 
 

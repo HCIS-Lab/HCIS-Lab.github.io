@@ -1,6 +1,6 @@
 from pdf2image import convert_from_path
 
-file_name = f"qualitative_nuscenes"
+file_name = f"Research Proposal_v2"
 
 # 設定PDF檔案路徑
 pdf_path = f'./{file_name}.pdf'
