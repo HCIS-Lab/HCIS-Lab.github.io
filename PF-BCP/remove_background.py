@@ -1,8 +1,8 @@
 import numpy as np
 import cv2
 
-input_path = "qualitative_nuscenes.png"
-output_path = "qualitative_nuscenes.png"
+input_path = "framework.png"
+output_path = "framework.png"
 
 
 def remove_background(image_path, output_path, threshold=254):

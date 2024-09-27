@@ -132,34 +132,34 @@
 						</div>
 
 						<!-- <div class="is-size-5 publication-authors">
-							<span class="author-block">2025 ICRA</span>
+							<span class="author-block">2025 IEEE International Conference on Robotics and Automation (ICRA)</span>
 						</div> -->
 
 						<div class="column has-text-centered">
 							<div class="publication-links">
 								<!-- PDF Link. -->
-								<span class="link-block">
-									<a href="https://arxiv.org/abs/"
+								<!-- <span class="link-block">
+									<a href="https://arxiv.org/abs/2409.15846"
 										class="external-link button is-normal is-rounded is-dark">
 										<span class="icon">
 											<i class="fas fa-file-pdf"></i>
 										</span>
-										<span>Paper</span>
+										<span>arXiv</span>
 									</a>
-								</span>
-								<!-- <span class="link-block">
-									<a href="https://arxiv.org/abs/2011.12948"
+								</span> -->
+								<span class="link-block">
+									<a href="https://arxiv.org/abs/2409.15846"
 										class="external-link button is-normal is-rounded is-dark">
 										<span class="icon">
 											<i class="ai ai-arxiv"></i>
 										</span>
 										<span>arXiv</span>
 									</a>
-								</span> -->
+								</span>
 
 								<!-- Video Link. -->
 								<span class="link-block">
-									<a href="https://www.youtube.com/"
+									<a href="https://youtu.be/7Een9DPa9ms?si=uifKbgEdeTYMm1q1"
 										class="external-link button is-normal is-rounded is-dark">
 										<span class="icon">
 											<i class="fab fa-youtube"></i>
@@ -170,7 +170,7 @@
 
 								<!-- Code Link. -->
 								<span class="link-block">
-									<a href="https://github.com/WaywayPao/RAL-ROI"
+									<a href="https://github.com/HCIS-Lab/PF-BCP"
 										class="external-link button is-normal is-rounded is-dark">
 										<span class="icon">
 											<i class="fab fa-github"></i>
@@ -394,8 +394,6 @@
 								</figcaption>
 							</figure>
 						</div>
-
-
 					</div>
 			</section>
 			<!-- / Methodology. -->
@@ -409,6 +407,7 @@
 							<h2 class="title is-3">Experimental Setting</h2>
 						</div>
 					</div>
+
 
 					<br />
 					<h2 class="title is-4" style="text-align: center;">Datasets</h2>
@@ -462,13 +461,13 @@
 					<h2 class="title is-4" style="text-align: center;">Visual-Based ROI Baselines</h2>
 					<div class="content has-text-justified">
 						<p>
-							We evaluate seven baselines within our framework.
+							We evaluate nine baselines within our framework.
 
 							These baselines take a sequence of images as input and output a risk score for each road
 							user (e.g., vehicle or pedestrian).
 
 							A road user is considered a risk object if the raw score exceeds a predefined threshold.
-							<br>
+
 							It is important to note that all the following baselines rely on Visual-ROI methods.
 						</p>
 						<ul class="nav pull-right">
@@ -488,7 +487,7 @@
 						</ul>
 						<!-- <p>
 								For training details, please refer to our <a
-									href="https://github.com/WaywayPao/RAL-ROI">github</a>.
+									href="https://github.com/HCIS-Lab/PF-BCP">github</a>.
 							</p> -->
 					</div>
 
@@ -591,11 +590,9 @@
 					</div>
 
 
-
 				</div>
 			</section>
 			<!-- / Experiment. -->
-
 
 
 			<!-- Qualitative Results. -->
@@ -608,6 +605,7 @@
 					</div>
 
 
+					<br />
 					<br />
 					<div class="columns is-centered has-text-centered">
 						<div class="column is-four-fifths">
@@ -666,7 +664,7 @@
 									We have developed a user-friendly interface for scenario-based ROI analysis.
 									<br />
 									For further exploration, please visit our <a
-										href="https://github.com/WaywayPao/PF-SA-BC-Based-Visual-ROI/tree/main/ROI_demo">GitHub
+										href="https://github.com/HCIS-Lab/PF-BCP/tree/main/ROI_demo">GitHub
 										page</a>.
 								</figcaption>
 							</figure>
@@ -745,8 +743,7 @@
 					<br />
 					<div class="content is-centered">
 						<h2 class="title is-4" style="text-align: center;">Table 1: Spatial Accuracy and Temporal
-							Consistency
-							on RiskBench</h2>
+							Consistency on RiskBench</h2>
 						<table
 							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
 							cellpadding="10" border='0' cellspacing="0">
@@ -856,22 +853,16 @@
 							</tr>
 						</table>
 
-						<div class="content has-text-justified">
-							The notations <b>P</b>, <b>R</b> denote precision and recall respectively.
+						<!-- <div class="content has-text-justified">
 
-							<b>TP, BS, PF</b> refer to Target Point, BEV-SEG and potential field respectively.
-							Best results are highlighted in bold.
-							<br>
-							<br>
-							Using scene affordance (PF) as intermediate inputs enhances behavior change-based methods,
-							leading to improved riskness and temporal consistency in Visual-ROI tasks.
+							The notations <b>P</b> and <b>R</b> denote precision and recall, respectively.
+							All units are presented as percentages, except for inference time.
+							The best results are highlighted in bold.
 
-							We also demonstrate that employing BEV representations for causal inference
-							significantly enhances inference speed, achieving an 88% improvement compared to the use of
-							perspective views.
-						</div>
+						</div> -->
 
 
+						<br />
 						<h2 class="title is-4" style="text-align: center;">Table 2: Ablation Studies</h2>
 						<table border="0" cellspacing="0" cellpadding="0"
 							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center; width: 100%;">
@@ -884,7 +875,7 @@
 								<th>PIC ↓</th>
 								<th>wMOTA (%)↑</th>
 							</tr>
-							<tr class="middle-border">
+							<!-- <tr class="middle-border">
 								<td class="rowhead-border">FDE</td>
 								<td>✓</td>
 								<td>✓</td>
@@ -919,7 +910,7 @@
 								<td>55.0</td>
 								<td>25.7</td>
 								<td>66.9</td>
-							</tr>
+							</tr> -->
 							<tr class="middle-border">
 								<td class="rowhead-border">1</td>
 								<td></td>
@@ -949,7 +940,7 @@
 							</tr>
 							<tr>
 								<td class="rowhead-border">4</td>
-								<td>✓</td>
+								<td></td>
 								<td>✓</td>
 								<td class="rowhead-border"></td>
 								<td>59.0</td>
@@ -958,7 +949,7 @@
 							</tr>
 							<tr>
 								<td class="rowhead-border">5</td>
-								<td>✓</td>
+								<td></td>
 								<td>✓</td>
 								<td class="rowhead-border">✓</td>
 								<td><b>61.3</b></td>
@@ -968,14 +959,30 @@
 							</tbody>
 						</table>
 
-						<div class="content has-text-justified">
-							Results of ROI under different constraints on the RiskBench Dataset. The table
-							shows the performance of different methods (FDE, ADE, and BCP) with various combinations of
-							Bird's Eye View Segmentation (BEV-SEG), repulsive force \( F_r \), and attractive force (or
-							target point) \( F_a \).
-						</div>
+
+						<!-- <div class="content has-text-justified">
+							We conduct extensive ablation studies to justify our design choices built upon BCP <b>(ID
+								1)</b> [3].
+
+							Adding a target point predictor to BCP <b>(ID 2)</b> improves OT-F1 by 8%, highlighting the
+							importance of modeling ego vehicle's intention.
+
+							Incorporating BEV semantic segmentation <b>(ID 3)</b> further enhances OT-F1 by nearly 10%,
+							demonstrating that rich semantic context aids in risk object identification.
+
+							In <b>ID 4</b>, we assess the importance of the repulsive force without a target point
+							predictor and find its performance comparable to <b>ID 3</b>.
+
+							We conjecture that the lack of attractive force may not be fully aware of the risk object
+							toward the target location, increasing the number of misidentifications.
+
+							Finally, combining all the designed modules <b>(ID 5)</b> yields the best results, i.e., an
+							20% improvement over BCP.
+
+						</div> -->
 
 
+						<br />
 						<h2 class="title is-4" style="text-align: center;">Table 3: OT-F1 in T secs</h2>
 						<table border="0" cellspacing="0" cellpadding="10"
 							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center; width: 100%;">
@@ -1059,6 +1066,9 @@
 							</tbody>
 						</table>
 
+						<!-- <div class="content has-text-justified">
+							OT-F1 Performance during the T seconds preceding the critical frame.
+						</div> -->
 
 					</div>
 				</div>
@@ -1075,19 +1085,22 @@
 
 
 					<br />
+					<br />
 					<div class="columns is-vcentered is-centered has-text-centered">
 						<div class="column is-half">
 
 							<h2 class="title is-4" style="text-align: center;">nuScenes-ROI Dataset</h2>
 							<div class="content has-text-justified">
 								<p>
-									We use the nuScenes dataset [11] as the testbed to evaluate the effectiveness of
-									our method in the real world.
 
-									We label risk objects manually according to the protocol described in [20].
+									We use the nuScenes dataset [9] as the testbed to evaluate the effectiveness of our
+									method in the real-world environments.
+
+									We label risk objects manually according to the protocol described in BCP [3].
 
 									In the testing phase, we use YOLOv8 [12] to generate object bounding
 									boxes.
+
 								</p>
 							</div>
 						</div>
@@ -1097,6 +1110,8 @@
 						</div>
 					</div>
 
+
+					<br />
 					<br />
 					<div class="content is-centered">
 						<h2 class="title is-4" style="text-align: center;">Table 4: nuScenes-ROI Evaluation</h2>
@@ -1146,22 +1161,22 @@
 						</table>
 					</div>
 
+
+					<br />
 					<br />
 					<div class="columns is-centered has-text-centered">
-						<div class="column is-four-fifths">
+
+						<figure class="has-text-centered">
 							<h2 class="title is-4" style="text-align: center;">ROI on the nuScenes Dataset</h2>
 							<img src="./static/img/qualitative_nuscenes.png" alt="qualitative_nuscenes" />
-
-							<div class="content has-text-justified">
+							<figcaption>
 								ROI results on sample scenarios selected from the nuScenes dataset with rows
 								representing different behavior change-based methods.
 
 								All detected risk objects are shown with green bounding boxes, while ground truth
 								risks are masked in red.
-							</div>
-						</div>
-
-
+							</figcaption>
+						</figure>
 
 			</section>
 			<!-- / Real-Word Evaluation. -->
@@ -1181,13 +1196,14 @@
 					<div class="content has-text-justified">
 						<pre><code>@article{pao2024PFBCP,
     title   = {{Potential Field as Scene Affordance for Behavior Change-Based Visual Risk Object Identification}},
-    author  = {Pang-Yuan Pao, Shu-Wei Lu, Ze-Yan Lu and Yi-Ting Chen},
-    journal = {arXiv preprint arXiv:2312.XXXXX},
-    year    = {2024}
+    author  = {Pang-Yuan Pao and Shu-Wei Lu and Ze-Yan Lu and Yi-Ting Chen},
+    year    = {2024},
+    eprint  = {2409.15846},
+    archivePrefix = {arXiv}
 }</code></pre>
 						<p>
 							If you have any questions, please contact <a
-								href="https://github.com/WaywayPao/RAL-ROI">Pang-Yuan Pao</a>.
+								href="https://github.com/HCIS-Lab/PF-BCP">Pang-Yuan Pao</a>.
 						</p>
 					</div>
 				</div>
@@ -1204,8 +1220,7 @@
 					Convolutions to Vision Transformers," in ICCV, 2021.
 				</p>
 				<p>
-					[2] O. Khatib, "Real-Time Obstacle Avoidance for Manipulators and Mobile Robots," in Proceedings.
-					1985 IEEE International Conference on Robotics and Automation, vol. 2, 1985, pp. 500-505.
+					[2] O. Khatib, "Real-Time Obstacle Avoidance for Manipulators and Mobile Robots," in ICRA, 1985.
 				</p>
 				<p>
 					[3] C. Li, S. H. Chan, and Y.-T. Chen, "Who Make Drivers Stop? Towards Driver-centric Risk
@@ -1213,7 +1228,8 @@
 				</p>
 				<p>
 					[4] P. Gupta, A. Biswas, H. Admoni, and D. Held, "Object Importance Estimation using Counterfactual
-					Reasoning for Intelligent Driving," IEEE RA-L, 2024.
+					Reasoning for Intelligent Driving," IEEE Robotics and Automation Letters, vol. 9, no. 4, pp.
+					3648-3655, 2024.
 				</p>
 				<p>
 					[5] Hu, A. Huang, J. Dolan, D. Held, and D. Ramanan, "Safe Local Motion Planning with
@@ -1237,7 +1253,7 @@
 				</p>
 				<p>
 					[10] A. Milan, L. Leal-Taixe, I. Reid, S. Roth, and K. Schindler, "MOT16: A Benchmark for
-					Multi-Object Tracking," arXiv, 2016.
+					Multi-Object Tracking," arXiv, vol. abs/1603.00831, 2016.
 				</p>
 				<p>
 					[11] H. Caesar, V. Bankiti, A. H. Lang, S. Vora, V. E. Liong, Q. Xu, A. Krishnan, Y. Pan, G. Baldan,
