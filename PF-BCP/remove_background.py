@@ -31,4 +31,5 @@ def remove_background(image_path, output_path, threshold=254):
 
     cv2.imwrite(output_path, result)
 
-remove_background(input_path, output_path)
+if __name__ == "__main__":
+    remove_background(input_path, output_path)
