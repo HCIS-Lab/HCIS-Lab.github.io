@@ -43,6 +43,10 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script type="text/javascript" async
+  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async
+    id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -66,7 +70,7 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">National Yang Ming Chiao Tung University<sup>1</sup> Atmanity<sup>2</sup><br>CVPR 2025</span>
+                    <span class="author-block">National Yang Ming Chiao Tung University<sup>1</sup> Atmanity Inc.<sup>2</sup><br>CVPR 2025</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>: Corresponding author</small></span>
                   </div>
 
@@ -96,7 +100,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/HCIS-Lab/GaussianLSS" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -128,11 +132,11 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
+        <!-- <source src="static/videos/banner_video.mp4" -->
+        <!-- type="video/mp4"> -->
+      <!-- </video> -->
       <h2 class="subtitle has-text-centered">
         <!-- Subtitle text  -->
       </h2>
@@ -147,16 +151,118 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content has-text-justified" style="font-size: 14px;">
           <p>
-            In this work, we introduce GaussianLSS, a novel uncertainty-aware BEV perception framework that revisits unprojection-based methods, specifically the Lift-Splat-Shoot (LSS) paradigm, and enhances them with depth uncertainty modeling. GaussianLSS represents spatial dispersion by learning a soft depth mean and computing the variance of the depth distribution, which implicitly captures object extents. We then transform the depth distribution into 3D Gaussians and rasterize them to construct uncertainty-aware BEV features.
-          </p>
+              Bird’s-eye view (BEV) perception has gained significant attention because it provides a unified representation to fuse
+              multiple view images and enables a wide range of down-stream autonomous driving tasks, such as forecasting and
+              planning. Recent state-of-the-art models utilize projection-based methods which formulate BEV perception as query
+              learning to bypass explicit depth estimation. While we observe promising advancements in this paradigm, they still
+              fall short of real-world applications because of the lack of
+              uncertainty modeling and expensive computational requirement. In this work, we introduce GaussianLSS, a novel
+              uncertainty-aware BEV perception framework that revisits unprojection-based methods, specifically the Lift-Splat-Shoot (LSS) paradigm, and enhances them with depth un-certainty modeling. GaussianLSS represents spatial dispersion by learning a soft depth mean and computing the variance of the depth distribution, which implicitly cap-
+              tures object extents. We then transform the depth distribution into 3D Gaussians and rasterize them to construct
+              uncertainty-aware BEV features. We evaluate GaussianLSS
+              on the nuScenes dataset, achieving state-of-the-art performance compared to unprojection-based methods. In particular, it provides significant advantages in speed, running
+              2x faster, and in memory efficiency, using 0.3x less memory compared to projection-based methods, while achieving competitive performance with only a 0.7% IoU difference.
+          </p>      
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- End paper abstract -->
+ 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Methodology. -->
+    <section class="section is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">GaussianLSS</h2>
+          </div>
+        </div>
+
+
+        <br />
+        <!-- Lifting -->
+        <div class="content is-centered">
+          <h2 class="title is-4" style="text-align: center;">Lifting</h2>
+          <div class="columns is-centered has-text-centered">
+            <figure style="display: flex; flex-direction: column; align-items: center;">
+              <img src="./static/images/Splatting.png" alt="splatting"
+                style="width: 110%; max-width: 140%; height: auto;" />
+              <figcaption>
+                <!-- <p>
+                  Comparison between the lifting method of Lift-Splat-Shoot and GaussianLSS. 
+                  (a) Lift-Splat-Shoot paradigm faces two key challenges in depth estimation. 
+                  Sparse BEV projection arises from discretized depth bins, leading to incomplete spatial coverage and reduced perception accuracy. 
+                  Additionally, unstable depth distribution occurs due to softmax-based probability assignment, where small depth variations cause inconsistent BEV features, disrupting spatial coherence. 
+                  (b) addresses these issues by introducing uncertainty-aware depth modeling, which provides a continuous depth representation to reduce sparsity in BEV projection. Instead of relying on discrete bins, our method models depth as a distribution with uncertainty, ensuring smoother and more consistent feature aggregation. This approach mitigates the instability caused by softmax, allowing similar depths to receive proportionate attention and improving spatial coherence in BEV representations.
+                </p> -->
+              </figcaption>
+            </figure>
+          </div>
+          <div class="content has-text-justified" style="font-size: 14px;">
+            <p>
+              (a) Lift-Splat-Shoot paradigm faces two key challenges in depth estimation. 
+              Sparse BEV projection arises from discretized depth bins, leading to incomplete spatial coverage and reduced perception accuracy. 
+              Additionally, unstable depth distribution occurs due to softmax-based probability assignment, where small depth variations cause inconsistent BEV features, disrupting spatial coherence. 
+              (b) GaussianLSS introduces uncertainty-aware depth modeling, using a continuous depth representation to reduce sparsity and improve feature consistency. 
+              Instead of relying on discrete bins, we compute the depth mean \( \mu \) and uncertainty \( \sigma \) from the predicted depth distribution, replacing softmax weighting with an uncertainty-aware range \([\mu - k\sigma, \mu + k\sigma]\). 
+              The parameter \(k\) serves as an error tolerance coefficient, controlling the spread around the mean depth, ensuring smoother BEV projections and better spatial coherence.
+            </p>      
+          </div>
+        </div>
+        <!-- Structure -->
+        <div class="content is-centered">
+          <h2 class="title is-4" style="text-align: center;">Method Overview</h2>
+          <div class="columns is-centered has-text-centered">
+            <figure style="display: flex; flex-direction: column; align-items: center;">
+              <img src="./static/images/Overview.png" alt="model"
+                style="width: 110%; max-width: 140%; height: auto;" />
+            </figure>
+          </div>
+          <div class="content has-text-justified" style="font-size: 14px;">
+            <p>
+              Multi-view images are first processed by a backbone network to extract features. 
+              They are then input to a simple CNN layer to obtain splat features \( F_i \), opacity \( \alpha_i \), and depth distribution \( P_i \). 
+              The predicted depth distribution undergoes an uncertainty transformation to produce a 3D uncertainty \( x_i \). 
+              Next, BEV features are obtained through a splatting process, integrating feature distributions across views. 
+              The resulting BEV features \( \mathbf{F}_{\text{BEV}} \), enriched with uncertainty awareness, are used as input to the task-specific head for prediction.
+            </p>      
+          </div>
+        </div>
+        <!-- Experiment -->
+        <div class="content is-centered">
+          <h2 class="title is-4" style="text-align: center;">Experiment</h2>
+          <div class="columns is-centered has-text-centered">
+            <figure style="display: flex; flex-direction: column; align-items: center;">
+              <img src="./static/images/Experiment.png" alt="experiment"
+                style="width: 80%; max-width: 90%; height: auto;" />
+              <figcaption>
+                <!-- <p>
+                  Comparison between the lifting method of Lift-Splat-Shoot and GaussianLSS. 
+                  (a) Lift-Splat-Shoot paradigm faces two key challenges in depth estimation. 
+                  Sparse BEV projection arises from discretized depth bins, leading to incomplete spatial coverage and reduced perception accuracy. 
+                  Additionally, unstable depth distribution occurs due to softmax-based probability assignment, where small depth variations cause inconsistent BEV features, disrupting spatial coherence. 
+                  (b) addresses these issues by introducing uncertainty-aware depth modeling, which provides a continuous depth representation to reduce sparsity in BEV projection. Instead of relying on discrete bins, our method models depth as a distribution with uncertainty, ensuring smoother and more consistent feature aggregation. This approach mitigates the instability caused by softmax, allowing similar depths to receive proportionate attention and improving spatial coherence in BEV representations.
+                </p> -->
+              </figcaption>
+            </figure>
+          </div>
+          <div class="content has-text-justified" style="font-size: 14px;">
+            <p>
+              GaussianLSS achieves state-of-the-art performance among 2D unprojection baselines. 
+              In addition, it also demonstrates competitive performance compared to 3D projection-based methods, while offering significant advantages in memory efficiency and inference speed.
+            </p>      
+          </div>
+        </div>
+      </div>
+    <section>
+  </div>
+</section>
+<!-- Image below the abstract -->
 
 <!-- Paper poster -->
  
@@ -182,7 +288,14 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>
+        @inproceedings{lu2025GaussianLSS,
+        author    = {Shu-Wei Lu and Yi-Hsuan Tsai and Yi-Ting Chen},
+        title     = {Toward Real-world BEV Perception: Depth Uncertainty Estimation via Gaussian Splatting},
+        booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+        year      = {2025}
+      }
+    </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
