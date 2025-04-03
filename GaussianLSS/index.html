@@ -56,7 +56,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-0.1 publication-title">GaussianLSS: Toward Real-world BEV Perception: Depth Uncertainty Estimation
+            <h1 class="title is-0.1 publication-title">GaussianLSS - Toward Real-world BEV Perception: Depth Uncertainty Estimation
               via Gaussian Splatting</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
@@ -65,20 +65,20 @@
                 <span class="author-block">
                   <a href="https://sites.google.com/site/yihsuantsai/" target="_blank">Yi-Hsuan Tsai</a><sup>2</sup>,</span>
                   <span class="author-block">
-                    <a href="https://sites.google.com/site/yitingchen0524/home" target="_blank">Yi-Ting Chen</a><sup>1*</sup>
+                    <a href="https://sites.google.com/site/yitingchen0524/home" target="_blank">Yi-Ting Chen</a><sup>1</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">National Yang Ming Chiao Tung University<sup>1</sup> Atmanity Inc.<sup>2</sup><br>CVPR 2025</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>: Corresponding author</small></span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>: Corresponding author</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/abs/2504.01957" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -88,7 +88,7 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -96,7 +96,7 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -110,7 +110,7 @@
                 </span>
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -118,13 +118,17 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <figure style="display: flex; flex-direction: column; align-items: center;">
+    <img src="./static/images/prediction.gif" alt="splatting"
+      style="width: 80%; max-width: 100%; height: auto;" />
+  </figure>
 </section>
 
 
@@ -159,11 +163,11 @@
               learning to bypass explicit depth estimation. While we observe promising advancements in this paradigm, they still
               fall short of real-world applications because of the lack of
               uncertainty modeling and expensive computational requirement. In this work, we introduce GaussianLSS, a novel
-              uncertainty-aware BEV perception framework that revisits unprojection-based methods, specifically the Lift-Splat-Shoot (LSS) paradigm, and enhances them with depth un-certainty modeling. GaussianLSS represents spatial dispersion by learning a soft depth mean and computing the variance of the depth distribution, which implicitly cap-
-              tures object extents. We then transform the depth distribution into 3D Gaussians and rasterize them to construct
+              uncertainty-aware BEV perception framework that revisits unprojection-based methods, specifically the Lift-Splat-Shoot (LSS) paradigm, and enhances them with depth un-certainty modeling. GaussianLSS represents spatial dispersion by learning a soft depth mean and computing the variance of the depth distribution, 
+              which implicitly captures object extents. We then transform the depth distribution into 3D Gaussians and rasterize them to construct
               uncertainty-aware BEV features. We evaluate GaussianLSS
               on the nuScenes dataset, achieving state-of-the-art performance compared to unprojection-based methods. In particular, it provides significant advantages in speed, running
-              2x faster, and in memory efficiency, using 0.3x less memory compared to projection-based methods, while achieving competitive performance with only a 0.7% IoU difference.
+              2.5x faster, and in memory efficiency, using 0.3x less memory compared to projection-based methods, while achieving competitive performance with only a 0.4% IoU difference.
           </p>      
         </div>
       </div>
@@ -219,7 +223,7 @@
           <h2 class="title is-4" style="text-align: center;">Method Overview</h2>
           <div class="columns is-centered has-text-centered">
             <figure style="display: flex; flex-direction: column; align-items: center;">
-              <img src="./static/images/Overview.png" alt="model"
+              <img src="./static/images/Overview.jpg" alt="model"
                 style="width: 110%; max-width: 140%; height: auto;" />
             </figure>
           </div>
@@ -238,7 +242,7 @@
           <h2 class="title is-4" style="text-align: center;">Experiment</h2>
           <div class="columns is-centered has-text-centered">
             <figure style="display: flex; flex-direction: column; align-items: center;">
-              <img src="./static/images/Experiment.png" alt="experiment"
+              <img src="./static/images/Experiment.jpg" alt="experiment"
                 style="width: 80%; max-width: 90%; height: auto;" />
               <figcaption>
                 <!-- <p>
