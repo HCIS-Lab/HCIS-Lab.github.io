@@ -1,6 +1,6 @@
 from pdf2image import convert_from_path
 
-file_name = f"teaser"
+file_name = f"framework"
 pdf_path = f'./{file_name}.pdf'
 
 if __name__ == "__main__":

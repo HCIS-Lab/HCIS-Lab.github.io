@@ -103,14 +103,32 @@
 		showSlides(slideIndex);
 	</script>
 
+	<!-- quick menu -->
+	<!-- <div class="quick-menu">
+		<strong>Quick Menu</strong>
+		<a href="#pagetop">Top</a>
+		<a href="#abstract">Abstract</a>
+		<a href="#method">Method</a>
+		<a href="#experiment">Experiment</a>
+		<a href="#qualitative_results">Qualitative Results</a>
+		<a href="#quantitative_results">Quantitative Results</a>
+		<a href="#realword_evaluation">Realword Evaluation</a>
+		<a href="#citation">Citation</a>
+	</div> -->
 
-	<section class="hero">
+	<section class="hero" id="pagetop">
 		<div class="hero-body">
 			<div class="container is-max-desktop">
 				<div class="columns is-centered">
 					<div class="column has-text-centered">
-						<h1 class="title is-2 publication-title">Potential Field as Scene Affordance
-							for <br> Behavior Change-Based <br> Visual Risk Object Identification</h1>
+						<h1 class="title is-3 publication-title" style="color: black !important;">
+							Potential Field as Scene Affordance for <br>
+							Behavior Change-Based <br>
+							Visual Risk Object Identification
+						</h1>
+						<!-- <h1 class="title is-2 publication-title">Potential Field as Scene Affordance
+							for <br> Behavior Change-Based <br> Visual Risk Object Identification</h1> -->
+
 						<div class="is-size-5 publication-authors">
 							<span class="author-block">
 								<a href="https://github.com/WaywayPao/">Pang-Yuan Pao</a>,
@@ -131,22 +149,26 @@
 								University</span>
 						</div>
 
-						<!-- <div class="is-size-5 publication-authors">
-							<span class="author-block">2025 IEEE International Conference on Robotics and Automation (ICRA)</span>
-						</div> -->
+						<div class="is-size-5 publication-authors">
+							<span class="author-block">2025 IEEE International Conference on Robotics and Automation
+								<b>(ICRA)</b></span>
+						</div>
 
 						<div class="column has-text-centered">
 							<div class="publication-links">
-								<!-- PDF Link. -->
+
+								<!-- IEEE(ICRA) Link. -->
 								<!-- <span class="link-block">
-									<a href="https://arxiv.org/abs/2409.15846"
+									<a href=""
 										class="external-link button is-normal is-rounded is-dark">
 										<span class="icon">
 											<i class="fas fa-file-pdf"></i>
 										</span>
-										<span>arXiv</span>
+										<span>IEEE</span>
 									</a>
 								</span> -->
+
+								<!-- arXiv Link. -->
 								<span class="link-block">
 									<a href="https://arxiv.org/abs/2409.15846"
 										class="external-link button is-normal is-rounded is-dark">
@@ -189,8 +211,19 @@
 										<span>Dataset</span>
 									</a>
 								</span>
-							</div>
 
+								<!-- Poster Link. -->
+								<span class="link-block">
+									<a href="https://drive.google.com/file/d/1ZRO-D6Zj5SBRgQkxpDyBdEwWe03KrX17/view?usp=sharing"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fas fa-file-pdf"></i>
+										</span>
+										<span>Poster</span>
+									</a>
+								</span>
+
+							</div>
 						</div>
 					</div>
 				</div>
@@ -285,7 +318,7 @@
 		<div class="container is-max-desktop">
 
 			<!-- Methodology. -->
-			<section class="section is-small">
+			<section class="section is-small" id="method">
 				<div class="container is-max-desktop">
 					<div class="columns is-centered has-text-centered">
 						<div class="column is-four-fifths">
@@ -400,7 +433,7 @@
 
 
 			<!-- Experiment. -->
-			<section class="section is-small">
+			<section class="section is-small" id="experiment">
 				<div class="container is-max-desktop">
 					<div class="columns is-centered has-text-centered">
 						<div class="column is-five-fifths">
@@ -416,7 +449,7 @@
 							style="border-top:3px #000000 solid; border-bottom:3px #000000 solid; text-align: center;"
 							cellpadding="10" border='0' cellspacing="0">
 
-							<caption style="padding: 10px; text-align: left;line-height: 1.5;">
+							<caption style="padding: 0px; text-align: left;line-height: 1.5; margin-bottom: 0.5em;">
 								The <b>Driver Behavior</b> column shows the number of frames used for training,
 								while the <b>Traffic Participants</b> column shows the number of objects used for
 								testing.
@@ -596,7 +629,7 @@
 
 
 			<!-- Qualitative Results. -->
-			<section class="section is-small">
+			<section class="section is-small" id="qualitative_results">
 				<div class="container is-max-desktop">
 					<div class="columns is-centered has-text-centered">
 						<div class="column is-five-fifths">
@@ -732,7 +765,7 @@
 
 
 			<!-- Quautitative Results. -->
-			<section class="section is-small">
+			<section class="section is-small" id="quantitative_results">
 				<div class="container is-max-desktop">
 					<div class="columns is-centered has-text-centered">
 						<div class="column is-five-fifths">
@@ -1077,7 +1110,7 @@
 
 
 			<!-- Real-Word Evaluation. -->
-			<section class="section is-small">
+			<section class="section is-small" id="realword_evaluation">
 				<div class="container is-max-desktop">
 					<div class="columns is-centered has-text-centered">
 						<h2 class="title is-3">Real-Word Evaluation</h2>
@@ -1185,7 +1218,7 @@
 	</section>
 
 
-	<section class="section" id="BibTeX">
+	<section class="section" id="citation">
 		<div class="container is-max-desktop content">
 			<div class="columns is-centered">
 				<div class="column is-four-fifths">
@@ -1194,12 +1227,11 @@
 					</div>
 
 					<div class="content has-text-justified">
-						<pre><code>@article{pao2024PFBCP,
-    title   = {{Potential Field as Scene Affordance for Behavior Change-Based Visual Risk Object Identification}},
-    author  = {Pang-Yuan Pao and Shu-Wei Lu and Ze-Yan Lu and Yi-Ting Chen},
-    year    = {2024},
-    eprint  = {2409.15846},
-    archivePrefix = {arXiv}
+						<pre><code>@inproceedings{pao2025pfbcp,
+	title   = {{Potential Field as Scene Affordance for Behavior Change-Based Visual Risk Object Identification}},
+	author  = {Pang-Yuan Pao and Shu-Wei Lu and Ze-Yan Lu and Yi-Ting Chen},
+	journal = {IEEE International Conference on Robotics and Automation (ICRA)},
+	year    = {2025}
 }</code></pre>
 						<p>
 							If you have any questions, please contact <a
