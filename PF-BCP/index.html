@@ -32,8 +32,8 @@
 
 		function showSlides(n) {
 			let i;
-			let gifDurations = [2500, 3800, 5400, 4400];
-			let git_repeat = 2
+			let gifDurations = [2550, 3800, 5500, 4900];
+			let gifRepeat = 2
 			let slides = document.getElementsByClassName("mySlides");
 			let dots = document.getElementsByClassName("dot4");
 
@@ -56,7 +56,7 @@
 			gif.src = currentSrc;
 
 			clearTimeout(id);
-			id = setTimeout(nextSlide, gifDurations[slideIndex - 1] * git_repeat);
+			id = setTimeout(nextSlide, gifDurations[slideIndex - 1] * gifRepeat);
 		}
 	</script>
 
@@ -131,7 +131,7 @@
 
 						<div class="is-size-5 publication-authors">
 							<span class="author-block">
-								<a href="https://github.com/WaywayPao/">Pang-Yuan Pao</a>,
+								<a href="https://sites.google.com/view/pang-yuan-pao/">Pang-Yuan Pao</a>,
 							</span>
 							<span class="author-block">
 								<a href="https://www.linkedin.com/in/shu-wei-lu/">Shu-Wei Lu</a>,
@@ -666,9 +666,9 @@
 								</div>
 							</div>
 
-							<div class="content has-text-centered">
-								<b>BS</b>, <b>PF</b> refer to Bird's-Eye-View Segmentation and Potential Field
-								respectively.
+							<div class="content has-text-centered" style="font-style: italic;">
+								The terms <b>GT</b>, <b>BS</b>, and <b>PF</b> refer to Ground Truth, Bird's-Eye-View
+								Segmentation, and Potential Field, respectively.
 
 								All detected risk objects are shown with green bounding boxes, while ground truth risks
 								are masked in red.
@@ -1203,11 +1203,13 @@
 							<h2 class="title is-4" style="text-align: center;">ROI on the nuScenes Dataset</h2>
 							<img src="./static/img/qualitative_nuscenes.png" alt="qualitative_nuscenes" />
 							<figcaption>
-								ROI results on sample scenarios selected from the nuScenes dataset with rows
-								representing different behavior change-based methods.
+								<em>
+									ROI results on sample scenarios selected from the nuScenes dataset, with rows
+									representing different behavior change-based methods.
 
-								All detected risk objects are shown with green bounding boxes, while ground truth
-								risks are masked in red.
+									All detected risk objects are shown with green bounding boxes, while ground truth
+									risks are masked in red.
+								</em>
 							</figcaption>
 						</figure>
 
@@ -1235,7 +1237,7 @@
 }</code></pre>
 						<p>
 							If you have any questions, please contact <a
-								href="https://github.com/HCIS-Lab/PF-BCP">Pang-Yuan Pao</a>.
+								href="https://sites.google.com/view/pang-yuan-pao/">Pang-Yuan Pao</a>.
 						</p>
 					</div>
 				</div>

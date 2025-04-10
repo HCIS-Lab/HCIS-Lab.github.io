@@ -4,12 +4,11 @@ This is the repository that contains source code for the [PF-BCP website](https:
 
 If you find PF-BCP useful for your work please cite:
 ```
-@article{pao2024PFBCP,
-    title   = {{Potential Field as Scene Affordance for Behavior Change-Based Visual Risk Object Identification}},
-    author  = {Pang-Yuan Pao and Shu-Wei Lu and Ze-Yan Lu and Yi-Ting Chen},
-    year    = {2024},
-    eprint  = {2409.15846},
-    archivePrefix = {arXiv}
+@inproceedings{pao2025pfbcp,
+	title   = {{Potential Field as Scene Affordance for Behavior Change-Based Visual Risk Object Identification}},
+	author  = {Pang-Yuan Pao and Shu-Wei Lu and Ze-Yan Lu and Yi-Ting Chen},
+	journal = {IEEE International Conference on Robotics and Automation (ICRA)},
+	year    = {2025}
 }
 ```
 
