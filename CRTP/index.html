@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Uncertainty-Aware Vision-based Risk Object Identification via 
+                  Conformal Risk Tube Prediction">
+  <meta name="keywords" content="Autonomous driving, Risk Identification, Dataset, Conformal Prediction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uncertainty-Aware Vision-based Risk Object Identification via 
+                  Conformal Risk Tube Prediction</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+		var id = 0;
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function nextSlide() {
+			slideIndex++
+			showSlides(slideIndex);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+			slideIndex = n
+			showSlides(slideIndex);
+		}
+
+		function showSlides(n) {
+			let i;
+			let gifDurations = [22000, 22000, 22000];
+			let gifRepeat = 2
+			let slides = document.getElementsByClassName("mySlides");
+			let dots = document.getElementsByClassName("dot4");
+
+			if (n > slides.length) { slideIndex = 1 }
+			if (n < 1) { slideIndex = slides.length }
+
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+
+			let gif = slides[slideIndex - 1].getElementsByTagName('img')[0];
+			let currentSrc = gif.src;
+			gif.src = '';
+			gif.src = currentSrc;
+
+			clearTimeout(id);
+			id = setTimeout(nextSlide, gifDurations[slideIndex - 1] * gifRepeat);
+		}
+	</script>
+  
+  <script>
+    var Brake_id = 0;
+		let BrakeIndex = 1;
+    document.addEventListener('DOMContentLoaded', function () {
+ 
+    showBrake(BrakeIndex);    // 初始化 braking 的輪播
+    });
+
+
+
+		// Next/previous controls
+		function nextBrake() {
+			BrakeIndex++
+			showBrake(BrakeIndex);
+		}
+
+		// Thumbnail image controls
+		function currentBrake(n) {
+			BrakeIndex = n
+			showBrake(BrakeIndex);
+		}
+
+		function showBrake(n) {
+			let i;
+			let gifDurations = [7000, 7000, 7000, 7000];
+			let gifRepeat = 2
+			let brakes = document.getElementsByClassName("myBrakes");
+			let dots = document.getElementsByClassName("braking_dot4");
+
+			if (n > brakes.length) { BrakeIndex = 1 }
+			if (n < 1) { BrakeIndex = brakes.length }
+
+			for (i = 0; i < brakes.length; i++) {
+				brakes[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+
+			brakes[BrakeIndex - 1].style.display = "block";
+			dots[BrakeIndex - 1].className += " active";
+
+			let gif = brakes[BrakeIndex - 1].getElementsByTagName('img')[0];
+			let currentSrc = gif.src;
+			gif.src = '';
+			gif.src = currentSrc;
+
+			clearTimeout(Brake_id);
+			Brake_id = setTimeout(nextBrake, gifDurations[BrakeIndex - 1] * gifRepeat);
+      } 
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"
+		onload="renderMathInElement(document.body);"></script>
+
+</head>
+<body>
+  <script type="module">
+		showSlides(slideIndex);
+	</script>
+  
+<section class="hero" id="pagetop">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title" style="color: black !important;">Uncertainty-Aware Vision-based Risk Object Identification <br> via 
+                  Conformal Risk Tube Prediction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+								<a href="">Kai-Yu Fu</a>,
+						</span>
+            <span class="author-block">
+								<a href="https://sites.google.com/site/yitingchen0524/">Yi-Ting Chen</a>
+						</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+							<span class="author-block">Department of Computer Science <br> National Yang Ming Chiao Tung
+								University</span>
+					</div>
+		
+			<div class="is-size-5 publication-authors">
+					<span class="author-block">ICRA 2026</span>
+			</div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+									<a href=""
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="ai ai-arxiv"></i>
+										</span>
+										<span>arXiv</span>
+									</a>
+								</span>
+
+								<!-- Code Link. -->
+								<span class="link-block">
+									<a href=""
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fab fa-github"></i>
+										</span>
+										<span>Code</span>
+									</a>
+								</span>
+
+								<!-- Dataset Link. -->
+								<span class="link-block">
+									<a href="https://drive.google.com/drive/folders/13hRzEaJadxPIgf_hRIaQVJq9Pr1SsGIL?usp=drive_link"
+										class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="far fa-images"></i>
+										</span>
+										<span>Dataset</span>
+									</a>
+								</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Teaser. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full has-text-centered">
+        <img src="./static/img/risk_tube_prediction.png" alt="teaser"/>
+        <div class="content has-text-justified">
+									<p>
+										We propose <b>Risk Tube Prediction</b>, a new formulation for Visual Risk Object Identification that jointly models uncertainty of risk variation across space and time.
+                    For example, as the green-boxed truck (#2) moves forward, it may create an occlusion during future time. 
+                    We should therefore be alert to a possible hidden object (#3) at the red-boxed position. 
+                    At that time, we use a semi-transparent color to depict the model’s evolving uncertainty, turning opaque when the occluded object becomes visible to signal a more confident prediction.
+                  </p>
+				</div>
+      </div>
+    </div>
+
+			
+	</section>
+
+<section class="section hero is-light" id="abstract">
+		<div class="container is-max-desktop">
+			<!-- Abstract. -->
+			<div class="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<h2 class="title is-3" >Abstract</h2>
+					<div class="content has-text-justified">
+						<p>
+							We study object importance-based visual risk object identification (Visual-ROI), a key capability for detecting hazards in intelligent driving systems.
+  
+              Existing approaches are deterministic and ignore uncertainty, which can compromise safety.
+  
+              For example, using a fixed decision threshold in ambiguous scenarios would cause too-early or too-late detection of risks, and predictions that flicker between risky and non-risky states over time.
+              
+              These issues worsen under diverse contexts with multiple interacting risks, perturbing where and when risks occur.
+              
+              However, current vision methods lack a way to capture uncertainty jointly over space and time, limiting their ability to dynamically reflect changes in scene complexity.
+
+						</p>
+
+						<p>
+							We propose Risk Tube Prediction, a unified formulation that models spatiotemporal uncertainty in risk.
+              
+              We further introduce a new conformal prediction framework to provide coverage guarantees for the true risks and yield calibrated risk scores and uncertainty estimates.
+              
+              Specifically, we employ risk-category–aware calibrators that consider distinct characteristics to reduce confused calibration and localize risks more precisely in space and time.
+              
+              To evaluate, we present a new dataset and metrics probing diverse scenario configurations with multi-risk coupling effects. 
+              
+              We systematically conduct experiments of factors that influence uncertainty estimation including variations in scenario configuration, per risk category analysis, and the propagation of perception errors.
+              
+              Our method delivers substantial improvements over prior approaches, enhancing both the robustness of Visual-ROI performance and downstream outcomes, such as reducing nuisance braking alerts.
+
+						</p>
+					</div>
+				</div>
+			</div>
+
+	</section>
+
+
+<section class="section">
+		<div class="container is-max-desktop">
+
+			<!-- Methodology. -->
+			<section class="section is-small" id="method">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-four-fifths">
+							<h2 class="title is-3" style="margin-top:-30px;">Methodology</h2>
+						</div>
+					</div>
+
+
+					<br />
+					<div class="content is-centered">
+						<h2 class="title is-4" style="text-align: center;">Overview of Conformal Risk Tube Prediction</h2>
+						<div class="columns is-centered has-text-centered">
+							<figure style="display: flex; flex-direction: column; align-items: center;">
+								<img src="./static/img/conformal_risk_tube_prediction.png" alt="framework"
+									style="width: 120%; max-width: 120%; height: auto;" />
+								<figcaption>
+                  <div class="content has-text-justified">
+									<p>
+                    Given front-view images, the model performs spatiotemporal relation modeling and predicts each object's future risk interval.
+                    Then, based on the object’s risk category, the corresponding conformal calibrator is applied to calibrate its risk scores over the interval.
+                    The calibrated Risk Tube uses a more precise temporal bound to fully cover the true risk interval of each hazardous object.
+									</p>
+                  </div>
+								</figcaption>
+							</figure>
+						</div>
+  
+  </section>
+  <!-- / Methodology. -->
+
+  <section class="section">
+		<div class="container is-max-desktop">
+
+			<!-- Dataset. -->
+			<section class="section is-small" id="dataset">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-four-fifths">
+							<h2 class="title is-3" style="margin-top:-60px;">Dataset</h2>
+						</div>
+					</div>
+
+
+					<br />
+					<div class="content is-centered">
+						<h2 class="title is-4" style="text-align: center; margin-top:-25px;">Multiple Coexisting Risks Dataset</h2>
+						<div class="columns is-centered has-text-centered">
+							<figure style="display: flex; flex-direction: column; align-items: center;">
+								<img src="./static/gif/dataset.gif" alt="framework" style="margin-top: 10px;" class="big120-gif"/>
+								<figcaption>
+									<div class="content has-text-justified">
+									<p>
+                    We construct the <b>Multiple Coexisting Risks</b> dataset, which integrates four risk categories. 
+                    Within a single scenario, multiple risks with different categories would occur concurrently or in sequence, which ultimately
+                    complicates uncertainty estimation and risk assessment.
+                    In total, we obtain about 1,000 scenarios, enabling comprehensive validation under multi-risk settings.
+									</p>
+                  </div>
+								</figcaption>
+							</figure>
+						</div>
+
+
+						
+					</div>
+        </div>
+    </div>
+  </section>
+  <!-- / Dataset. -->
+
+
+  <!-- Qualitative Results. -->
+			<section class="section is-small" id="qualitative_results">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-five-fifths">
+							<h2 class="title is-3" style="margin-top: -50px;">Qualitative Results</h2>
+						</div>
+					</div>
+
+
+					<br />
+					<br />
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-four-fifths">
+							<h2 class="title is-4" style="margin-top: -40px;">Visual-ROI Visualization: Effect of Calibration</h2>
+
+							<!-- Slideshow container -->
+							<div class="Slideshow-container" style="margin-top: 10px;">
+
+								<!-- Full-width images with number and caption text -->
+								<div class="mySlides fade">
+									<img src="./static/gif/calibration_1.gif" 
+										alt="calibration_1" class="big140-gif"  >
+								</div>
+								<div class="mySlides fade">
+									<img src="./static/gif/calibration_2.gif"
+										alt="calibration_2" class="big140-gif"  >
+								</div>
+								<div class="mySlides fade">
+									<img src="./static/gif/calibration_3.gif"
+										alt="calibration_3" class="big140-gif"  >
+								</div>
+
+							</div>
+
+							<div class="content has-text-justified" style="font-style: italic;">
+								With conformal calibration, we mitigate temporal boundary misalignment (i.e., detecting or releasing risks too early or too late) and reduce fragmented predictions that flicker between risky and non-risky states over time.
+							</div>
+
+							<!-- The dots/circles -->
+							<div style="text-align:center">
+								<span class="dot4" onclick="currentSlide(1)"></span>
+								<span class="dot4" onclick="currentSlide(2)"></span>
+								<span class="dot4" onclick="currentSlide(3)"></span>
+							</div>
+						</div>
+					</div>
+
+					<br />
+					<div class="content is-centered">
+						<h2 class="title is-4" style="text-align: center; margin-top: 50px;">More Visual-ROI Visualization</h2>
+						<div class="columns is-centered has-text-centered">
+							<figure>
+								<br />
+								<img src="./static/gif/vroi_result.gif" alt="vroi_result.gif" style="margin-top: -10px;" class="big120-gif"/>
+							</figure>
+						</div>
+					</div>
+          
+
+          <br />
+					<br />
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-four-fifths">
+							<h2 class="title is-4" style="margin-top: 50px;">Downstream Task: Braking Alerts</h2>
+
+							<!-- Slideshow container -->
+							<div class="Brakeshow-container" style="margin-top: 10px;">
+
+								<!-- Full-width images with number and caption text -->
+								<div class="myBrakes fade">
+									<img src="./static/gif/braking_1.gif" 
+										alt="braking_1" class="big120braking-gif"  >
+								</div>
+								<div class="myBrakes fade">
+									<img src="./static/gif/braking_2.gif"
+										alt="braking_2" class="big120braking-gif"  >
+								</div>
+								<div class="myBrakes fade">
+									<img src="./static/gif/braking_3.gif"
+										alt="braking_3" class="big120braking-gif"  >
+								</div>
+                <div class="myBrakes fade">
+									<img src="./static/gif/braking_4.gif"
+										alt="braking_4" class="big120braking-gif"  >
+								</div>
+
+							</div>
+
+							<div class="content has-text-justified" style="font-style: italic; margin-top: -90px;">
+								Visual-ROI: 2D-Trajectory Prediction (TP), Behavior Prediction (BP), Collision Anticipation (CA).
+                <br>
+                Braking Alerts Criteria: distance &lt; 10 m and Visual-ROI flags risky.
+                <br>
+                Our method, which produces calibrated and temporally aligned risk intervals, 
+                effectively reduces nuisance braking alerts while ensuring timely warnings for genuine risks.
+							<!-- The dots/circles -->
+							<div style="text-align:center; margin-top: 20px;">
+								<span class="braking_dot4" onclick="currentBrake(1)"></span>
+								<span class="braking_dot4" onclick="currentBrake(2)"></span>
+								<span class="braking_dot4" onclick="currentBrake(3)"></span>
+                <span class="braking_dot4" onclick="currentBrake(4)"></span>
+							</div>
+						</div>
+
+			</section>
+    <!-- / Qualitative Results. -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code></code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
