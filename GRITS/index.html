@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="GRITS: A Spillage-Aware Guided Diffusion Policy for Robot Food Scooping Tasks">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="Refine robot motions with spillage-aware guidance for food scooping">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="Robot Assistive Feeding, Food Manipulation, Diffusion Policy, Guidance Mechanism, Spillage Awareness">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Yen-Ling Tai, Yi-Ru Yang, Kuan-Ting Yu, Yu-Wei Chao, Yi-Ting Chen">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="National Yang Ming Chiao Tung University">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="GRITS: A Spillage-Aware Guided Diffusion Policy for Robot Food Scooping Tasks">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="Refine robot motions with spillage-aware guidance for food scooping">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://hcis-lab.github.io/GRITS">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://hcis-lab.github.io/GRITS/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>GRITS: A Spillage-Aware Guided Diffusion Policy for Robot Food Scooping Tasks - Yen-Ling Tai, Yi-Ru Yang, Kuan-Ting Yu, Yu-Wei Chao, Yi-Ting Chen | Academic Research</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "PAPER_TITLE",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "FIRST_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "SECOND_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
+    },
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "INSTITUTION_OR_LAB_NAME",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">GRITS: A Spillage-Aware Guided Diffusion Policy for Robot Food Scooping Tasks</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="https://sites.google.com/view/yenlingtai" target="_blank">Yen-Ling Tai</a><sup>1</sup><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="" target="_blank">Yi-Ru Yang</a><sup>1</sup><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?hl=en&user=a5RZKIkAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Kuan-Ting Yu</a><sup>2</sup>,</span>
+                    <span class="author-block">
+                      <a href="https://research.nvidia.com/person/yu-wei-chao" target="_blank">Yu-Wei Chao</a><sup>3</sup>,</span>
+                      <span class="author-block">
+                        <a href="https://sites.google.com/site/yitingchen0524/home?authuser=0" target="_blank">Yi-Ting Chen</a><sup>1</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <span class="author-block"><sup>1</sup>National Yang Ming Chiao Tung University, <sup>2</sup>XYZ Robotics, <sup>3</sup>NVIDIA<br>IEEE Conference on Robotics and Automation (ICRA) 2026</span>
+                    <!-- TODO: Remove this line if no equal contribution -->
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2510.00573.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- TODO: Replace with your teaser video -->
+      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+        <!-- TODO: Add your video file path here -->
+        <source src="static/videos/GRITS_teaser.mp4" type="video/mp4">
+      </video>
+      <!-- TODO: Replace with your video description -->
+      <!-- <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2> -->
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+<!-- Highlights -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+
+    <!-- Title -->
+    <div class="has-text-centered">
+      <h2 class="title is-3">Highlights</h2>
+    </div>
+
+    <!-- Legend -->
+    <div class="has-text-centered" style="margin-bottom: 1rem;">
+      <img src="static/images/legend.png" style="max-width: 420px;">
+    </div>
+
+    <!-- 3x3 Video Grid -->
+    <div class="columns is-multiline is-variable is-2">
+
+      <div class="column is-one-third">
+        <div class="highlight-crop">
+        <img src="static/gifs/highlights/fuh.gif"
+              class="highlight-gif"
+              loading="lazy">
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="highlight-crop">
+        <img src="static/gifs/highlights/mah.gif"
+              class="highlight-gif"
+              loading="lazy">
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="highlight-crop">
+        <img src="static/gifs/highlights/mkh.gif"
+              class="highlight-gif"
+              loading="lazy">
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="highlight-crop">
+        <img src="static/gifs/highlights/mth.gif"
+              class="highlight-gif"
+              loading="lazy">
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="highlight-crop">
+        <img src="static/gifs/highlights/nuh.gif"
+              class="highlight-gif"
+              loading="lazy">
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="highlight-crop">
+        <img src="static/gifs/highlights/peh.gif"
+              class="highlight-gif"
+              loading="lazy">
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="highlight-crop">
+        <img src="static/gifs/highlights/rbh.gif"
+              class="highlight-gif"
+              loading="lazy">
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="highlight-crop">
+        <img src="static/gifs/highlights/sah.gif"
+              class="highlight-gif"
+              loading="lazy">
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="highlight-crop">
+        <img src="static/gifs/highlights/snh.gif"
+              class="highlight-gif"
+              loading="lazy">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Description Text BELOW the grid -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Robotic food scooping demands exact and delicate control, as small 
+            deviations can result in spillage. GRITS addresses this challenge by 
+            leveraging predicted spillage probabilities to adaptively refine 
+            trajectories, avoiding risky scenarios and enabling safer and more 
+            reliable manipulation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Highlights -->
+
+
+<!-- Paper abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Robotic food scooping is a critical manipulation skill for food 
+            preparation and service robots. However, existing robot learning 
+            algorithms, especially learn-from-demonstration methods, still 
+            struggle to handle diverse and dynamic food states, which often 
+            results in spillage and reduced reliability. In this work, we 
+            introduce GRITS: A Spillage-Aware Guided Diffusion Policy for 
+            Robot Food Scooping Tasks. This framework leverages guided 
+            diffusion policy to minimize food spillage during scooping and 
+            to ensure reliable transfer of food items from the initial to the 
+            target location. Specifically, we design a spillage predictor 
+            that estimates the probability of spillage given current observation 
+            and action rollout. The predictor is trained on a simulated dataset 
+            with food spillage scenarios, constructed from four primitive shapes 
+            (spheres, cubes, cones, and cylinders) with varied physical properties 
+            such as mass, friction, and particle size. At inference time, the 
+            predictor serves as a differentiable guidance signal, steering the 
+            diffusion sampling process toward safer trajectories while preserving 
+            task success. We validate GRITS on a real-world robotic food scooping 
+            platform. GRITS is trained on six food categories and evaluated on 
+            ten unseen categories with different shapes and quantities. GRITS 
+            achieves an 82% task success rate and a 4% spillage rate, reducing 
+            spillage by over 40% compared to baselines without guidance, thereby 
+            demonstrating its effectiveness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Framework Overview -->
+<section class="section section-divider">
+  <div class="container is-max-desktop">
+
+    <!-- Title -->
+    <div class="has-text-centered">
+      <h2 class="title is-3">Framework Overview</h2>
+    </div>
+
+    <!-- Figure -->
+    <div class="framework-figure">
+      <img src="static/images/data_collection.png">
+    </div>
+
+    <!-- Caption / Description -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            We collect 80 real-world expert demonstrations across different food 
+            types and quantities to train the diffusion scooping policy. 
+            On the other hand, to reduce labor-intensive cleanup required under 
+            real-world settings, we collect 4,000 food spillage and non-spillage 
+            cases in the simulation, to train the spillage predictor.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Figure -->
+    <div class="framework-figure">
+      <img src="static/images/framework_overview.png">
+    </div>
+
+    <!-- Caption / Description -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            During inference, given current observation and an initial noisy 
+            trajectory, the diffusion policy denoises it into a refined trajectory. 
+            A spillage predictor, which takes segmented point clouds as 
+            input to reduce the sim-to-real gap, estimates the probability of 
+            spillage for given candidate trajectory. This probability provides 
+            a guidance signal that steers the denoising process toward safer 
+            trajectories. The robot then follows the refined trajectory 
+            using position control to scoop food items.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Framework Overview -->
+
+
+<!-- Experiments -->
+<section class="section section-divider">
+  <div class="container is-max-desktop">
+
+    <!-- Title -->
+    <div class="has-text-centered">
+      <h2 class="title is-3">Real-World Experiments and Results</h2>
+    </div>
+
+    <!-- Figure -->
+    <div class="framework-figure">
+      <img src="static/images/food_categories.png">
+    </div>
+
+    <!-- Caption / Description -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            In the real-world experiments, we prepare 6 food categories for 
+            training (top row) and 10 unseen food categories for testing (bottom row), 
+            covering diverse shapes, quantities, and material properties. 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Figure -->
+    <div class="framework-figure">
+      <img src="static/images/result.png">
+    </div>
+
+    <!-- Caption / Description -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            With spillage predictor, GRITS captures the food states 
+            and dynamics at each step and guide the robot motion generation 
+            accordingly to prevent risky spillage scenarios, achieving 
+            highest 82% success rate and lowest 4% spillage rate. Compared to unguided 
+            baselines, GRITS reducres spillage cases by over 40%.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Framework Overview -->
+
+
+<!-- Limitation and Future Work -->
+<section class="section section-divider">
+  <div class="container is-max-desktop">
+
+    <!-- Title -->
+    <div class="has-text-centered">
+      <h2 class="title is-3">Limitations and Future Works</h2>
+    </div>
+
+    <!-- GIF row -->
+    <div class="columns is-centered is-variable is-4" style="margin-top: 2rem;">
+      
+      <div class="column is-5">
+        <div class="failure-crop">
+          <img src="static/gifs/failures/mah.gif"
+               class="failure-gif"
+               loading="lazy">
+        </div>
+        <p class="has-text-centered is-size-18" style="margin-top: 0.5rem;">
+          Spillage
+        </p>
+      </div>
+
+      <div class="column is-5">
+        <div class="failure-crop">
+          <img src="static/gifs/failures/prh_scfailure.gif"
+               class="failure-gif"
+               loading="lazy">
+        </div>
+        <p class="has-text-centered is-size-18" style="margin-top: 0.5rem;">
+          Scoop Failure
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Text description -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Our experiments reveal that failure cases often arise from the lack of 
+            detailed information about the physical properties of food, beyond what 
+            can be captured by visual features alone. To address this limitation, 
+            future work could incorporate pre-interaction strategies and multimodal 
+            sensing, including force-torque and tactile feedback, to build a more 
+            comprehensive representation of food characteristics and improve robustness.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End Failure Cases -->
+
+
+<!-- Team Section -->
+<section class="section section-divider">
+  <div class="container is-max-desktop">
+
+    <div class="has-text-centered">
+      <h2 class="title is-3">Team</h2>
+    </div>
+
+    <!-- Team grid -->
+    <div class="columns is-multiline is-centered team-grid">
+
+      <!-- Member -->
+      <div class="column is-narrow has-text-centered team-member">
+        <figure class="image team-avatar">
+          <img src="static/images/authors.png" alt="Authors">
+        </figure>
+
+        <div class="team-names">
+          <a href="https://sites.google.com/view/yenlingtai" target="_blank" class="author author-yl">
+            Yen-Ling Tai<sup>1</sup>
+          </a>
+          <a href="" target="_blank" class="author author-yr">
+            Yi-Ru Yang<sup>1</sup>
+          </a>
+          <a href="https://scholar.google.com/citations?hl=en&user=a5RZKIkAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" class="author author-kt">
+            Kuan-Ting Yu<sup>2</sup>
+          </a>
+          <a href="https://research.nvidia.com/person/yu-wei-chao" target="_blank" class="author author-yw">
+            Yu-Wei Chao<sup>3</sup>
+          </a>
+          <a href="https://sites.google.com/site/yitingchen0524/home?authuser=0" target="_blank" class="author author-yt">
+            Yi-Ting Chen<sup>1</sup>
+          </a>
+        </div>
+      </div>
+
+    <!-- Affiliations -->
+    <div class="affiliations">
+      <p><sup>1</sup> National Yang Ming Chiao Tung University</p>
+      <p><sup>2</sup> XYZ Robotics</p>
+      <p><sup>3</sup> NVIDIA</p>
+    </div>
+
+  </div>
+</section>
+<!-- End Team Section -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{tai2025grits,
+  title={GRITS: A Spillage-Aware Guided Diffusion Policy for Robot Food Scooping Tasks},
+  author={Tai, Yen-Ling and Yang, Yi-Ru and Yu, Kuan-Ting and Chao, Yu-Wei and Chen, Yi-Ting},
+  journal={arXiv preprint arXiv:2510.00573},
+  year={2025}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
