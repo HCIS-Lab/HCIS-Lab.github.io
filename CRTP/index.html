@@ -232,32 +232,11 @@
 					<h2 class="title is-3" >Abstract</h2>
 					<div class="content has-text-justified">
 						<p>
-							We study object importance-based visual risk object identification (Visual-ROI), a key capability for detecting hazards in intelligent driving systems.
-  
-              Existing approaches are deterministic and ignore uncertainty, which can compromise safety.
-  
-              For example, using a fixed decision threshold in ambiguous scenarios would cause too-early or too-late detection of risks, and predictions that flicker between risky and non-risky states over time.
-              
-              These issues worsen under diverse contexts with multiple interacting risks, perturbing where and when risks occur.
-              
-              However, current vision methods lack a way to capture uncertainty jointly over space and time, limiting their ability to dynamically reflect changes in scene complexity.
+							We study object importance-based vision risk object identification (Vision-ROI), a key capability for hazard detection in intelligent driving systems. Existing approaches make deterministic decisions and ignore uncertainty, which could lead to safety-critical failures. Specifically, in ambiguous scenarios, fixed decision thresholds may cause premature or delayed risk detection and temporally unstable predictions, especially in complex scenes with multiple interacting risks. Despite these challenges, current methods lack a principled framework to model risk uncertainty jointly across space and time. We propose Conformal Risk Tube Prediction, a unified formulation that captures spatiotemporal risk uncertainty, provides coverage guarantees for true risks, and produces calibrated risk scores with uncertainty estimates. To conduct a systematic evaluation, we present a new dataset and metrics probing diverse scenario configurations with multi-risk coupling effects, which are not supported by existing datasets. We systematically analyze factors affecting uncertainty estimation, including scenario variations, per-risk category behavior, and perception error propagation. Our method delivers substantial improvements over prior approaches, enhancing vision-ROI robustness and downstream performance, such as reducing nuisance braking alerts.
 
 						</p>
 
-						<p>
-							We propose Risk Tube Prediction, a unified formulation that models spatiotemporal uncertainty in risk.
-              
-              We further introduce a new conformal prediction framework to provide coverage guarantees for the true risks and yield calibrated risk scores and uncertainty estimates.
-              
-              Specifically, we employ risk-category–aware calibrators that consider distinct characteristics to reduce confused calibration and localize risks more precisely in space and time.
-              
-              To evaluate, we present a new dataset and metrics probing diverse scenario configurations with multi-risk coupling effects. 
-              
-              We systematically conduct experiments of factors that influence uncertainty estimation including variations in scenario configuration, per risk category analysis, and the propagation of perception errors.
-              
-              Our method delivers substantial improvements over prior approaches, enhancing both the robustness of Visual-ROI performance and downstream outcomes, such as reducing nuisance braking alerts.
-
-						</p>
+						
 					</div>
 				</div>
 			</div>
