@@ -868,3 +868,11 @@ a:focus {
   padding: 0;
   white-space: nowrap;
 }
+
+.award-note {
+  display: inline-block;
+  margin-top: 0.25rem;
+  color: #8a1c2c;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
